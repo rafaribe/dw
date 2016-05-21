@@ -1,5 +1,5 @@
 <?php
-class Navbar extends REST_Controller{
+class Navbar extends MY_Controller{
 
   function __construct() {
       parent::__construct();
