@@ -1,0 +1,3 @@
+http://code.tutsplus.com/tutorials/working-with-restful-services-in-codeigniter-2--net-8814
+http://code.tutsplus.com/tutorials/hmvc-an-introduction-and-application--net-11850
+https://www.youtube.com/watch?v=DS0GeknUkds&index=3&list=PLdDElSubBuxrBcOBa1AYVfVy3ecLpb-_4
