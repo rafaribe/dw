@@ -35,7 +35,7 @@ $config['base_url'] = 'http://localhost/dw/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'main.php';
+$config['index_page'] = 'index.php';
 
 /*
 |--------------------------------------------------------------------------
