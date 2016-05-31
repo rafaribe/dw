@@ -1,6 +1,6 @@
 <?php
 
-class Authentication extends MY_Controller{
+class Login extends MY_Controller{
 
   function __construct(){
   parent::__construct();
@@ -17,10 +17,8 @@ function logging_in_get()
    }
 function view_all_users_get()
   {
-
     $this->load->model('login_model');
     $data['list'] = $this->login_model->teste();
     $this->load->view('login_view', $data);
-
   }
  }
