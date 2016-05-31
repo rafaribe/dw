@@ -26,8 +26,7 @@ function view_all_users_get()
   {
       // Users from a data store e.g. database
       $this->load->model('Login_model');
-      $users = $this->Login_model->users_list();
-
+      $users = $this->Login_model->users_list_all();
       $id = $this->get('id');
 
       // If the id parameter doesn't exist return all the users
