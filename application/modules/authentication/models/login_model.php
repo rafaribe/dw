@@ -25,11 +25,13 @@ class Login_model extends CI_Model {
 
             return $result->result();
         }
+      function user_insert($username,$password)
+      {
+        $data = array(
+       'USER_NAME' => $this->$username,
+       'USER_PASSWORD' => $this->$password );
 
-        function teste_varray($id=NULL)
-          {
-          $result =  $this->db->query('SELECT USER_PHONE FROM USERS');
+        $this->db->insert('USERS',$data);
 
-              return $result->result();
-          }
+      }
 }

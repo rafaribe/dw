@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
-class Users extends REST_Controller
+class Users extends MY_Controller
 {
 	function __construct()
     {
@@ -16,26 +16,6 @@ class Users extends REST_Controller
 		{
 			// get all record
 			$users = $this->login_model->users_list_all();
-		} else {
-			// get a record based on ID
-			$users = null;
-		}
-
-		if($users)
-		{
-			$this->response($users, 200); // 200 being the HTTP response code
-		} else {
-			$this->response([], 404);
-		}
-	}
-
-	public function teste_varray_get($id=NULL)
-	{
-		$this->load->model('login_model');
-		if(! $this->get('id'))
-		{
-			// get all record
-			$users = $this->login_model->teste_varray();
 		} else {
 			// get a record based on ID
 			$users = null;
@@ -70,5 +50,25 @@ public function user_get()
 			$this->response([], 404);
 		}
 	}
+
+	public function insert_user_post()
+	{
+		if(! $this->post('user_name'))
+		{
+			$this->response(array('error' => 'Missing post data: user_name'), 400);
+		}
+		else if(! $this->post('user_password'))
+		{
+			$this->response(array('error' => 'Missing post data: user_password'), 400);
+		}
+		else {
+			$data = array(
+				'user_name' => $this->input->post('user_name'),
+				'user_password' => $this->post('user_password'));
+				$result = $this->login_model->user_insert($data);
+				$this->response($message, 200); // 200 being the HTTP response code
+	}
+}
+
 
 }
