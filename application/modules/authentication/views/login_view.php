@@ -7,10 +7,8 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <div class = "jumbotron">
-  <div class = "container">
-
+  <div class = "container"
     <h1>Lista de Users</h1>
-
 <table class="table">
   <tr>
     <th>Username</th>
