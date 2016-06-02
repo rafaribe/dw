@@ -1,6 +1,5 @@
 @import url(http://weloveiconfonts.com/api/?family=entypo);
 @import url(http://fonts.googleapis.com/css?family=Roboto);
-
 /* zocial */
 [class*="entypo-"]:before {
   font-family: 'entypo', sans-serif;
@@ -62,20 +61,6 @@ button {
   padding: 10px;
   color:white;
   font-size:22px;
-}
-
-.inputUserIcon {
-  position:absolute;
-  top:68px;
-  right: 80px;
-  color:white;
-}
-
-.inputPassIcon {
-  position:absolute;
-  top:136px;
-  right: 80px;
-  color:white;
 }
 
 input::-webkit-input-placeholder {
