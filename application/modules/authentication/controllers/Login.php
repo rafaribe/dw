@@ -12,14 +12,14 @@ class Login extends MY_Controller{
 function logging_in_get()
    {
      // the "TRUE" argument tells it to return the content, rather than display it immediately
-     $data['menu'] = $this->load->view('common/views/sample_navbar_view', NULL, TRUE);
-     $this->load->view ('login_view', $data);
+     $data['menu'] = $this->load->view('common/sample_navbar_view.php', NULL, TRUE);
+     $this->load->view ('login_popup.php');
    }
 function view_all_users_get()
   {
     $this->load->model('login_model');
     $data['list'] = $this->login_model->teste();
-    $this->load->view('login_view', $data);
+    $this->load->view('list_users_view', $data);
   }
 
   public function users_get()

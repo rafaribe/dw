@@ -51,7 +51,7 @@ public function user_get()
 		}
 	}
 
-	public function insert_user_post()
+	public function insert_user()
 	{
 		if(! $this->post('user_name'))
 		{
