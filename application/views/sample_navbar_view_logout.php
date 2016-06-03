@@ -19,7 +19,7 @@
     <ul class="nav navbar-nav">
       <li><a href="Home">Home</a></li>
       <li><a href="Restaurantes">Restaurantes</a></li>
-      <li><a href="<?php base_url().Users/view_all_users?>">Users</a></li>
+      <li><a href="<?php base_url('Users')?>">Users</a></li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">REST API <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="Users">View All Users in JSON</a></li>
