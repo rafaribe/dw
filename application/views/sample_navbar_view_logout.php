@@ -17,7 +17,7 @@
       <li class="active"><a href="Home">Home</a></li>
       <li><a href="Restaurantes">Restaurantes</a></li>
       <li><a href="Receitas">Receitas</a></li>
-      <li><a href="Login">Login</a></li>
+      <li><a href="Home/Logout">Logout</a></li>
     </ul>
   </div>
 </nav>
