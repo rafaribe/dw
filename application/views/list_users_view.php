@@ -9,9 +9,11 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="https://cdn.rawgit.com/Nagashitw/dw/master/angular/scripts/login.js"></script>
 <!--Popup -->
+
+<!--Popup -->
 <div>
   <div class = "container"
-    <h1>Lista de Users</h1>
+    <p style="font-size: 45px"> Lista de Users </p>
 <table class="table">
   <tr>
     <th>Username</th>
