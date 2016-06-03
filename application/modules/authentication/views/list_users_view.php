@@ -19,6 +19,7 @@
     <tr>
       <td><?php echo $login->USER_NAME ?></td>
       <td><?php echo $login->USER_PASSWORD ?></td>
+      <td><?php echo $login->USER_PHONE ?></td>
     </tr>
   <?php endforeach ?>
 </table>

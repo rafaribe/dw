@@ -5,14 +5,14 @@ class Login_model extends CI_Model {
 
   function teste()
     {
-        $this->db->select('USER_NAME,USER_PASSWORD');
+        $this->db->select('USER_NAME,USER_PASSWORD,USER_PHONE');
         $result = $this->db->get('USERS');
         return $result->result();
     }
 
     function users_list_all()
       {
-          $this->db->select('USER_ID,USER_NAME,USER_PASSWORD,USER_CREATIONDATE');
+          $this->db->select('USER_ID,USER_NAME,USER_PASSWORD,USER_CREATIONDATE,USER_PHONE');
           $result = $this->db->get('USERS');
           return $result->result();
       }

@@ -15,6 +15,8 @@ function logging_in_get()
      $data['menu'] = $this->load->view('common/sample_navbar_view.php', NULL, TRUE);
      $this->load->view ('login_popup.php');
    }
+
+
 function view_all_users_get()
   {
     $this->load->model('login_model');
