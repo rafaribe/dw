@@ -51,7 +51,7 @@ input:focus {
   color: #e74c3c;
 }
 
-button {
+.button-login {
   float:right;
   height: 121px;
   width: 50px;
