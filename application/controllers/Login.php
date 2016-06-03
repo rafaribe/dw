@@ -1,6 +1,6 @@
 <?php
 
-class Login extends MY_Controller{
+class Login extends REST_Controller{
 
   function __construct(){
   parent::__construct();
@@ -17,10 +17,11 @@ function index_get()
    }
 
 
-function view_all_users_get()
+public function view_all_users_get()
   {
     $this->load->model('login_model');
     $data['list'] = $this->login_model->teste();
+    $data['erro'] = $this->login_model->check_username();
     $this->load->view('list_users_view', $data);
   }
 
@@ -89,6 +90,16 @@ function view_all_users_get()
               'message' => 'User could not be found'
           ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
       }
+  }
+
+  function logging_in_post()
+  {
+    $username = $this->post('username');
+    $password = $this->post('password');
+
+    if ($username == null){
+      echo('Mete um username');
+        }
   }
 
  }

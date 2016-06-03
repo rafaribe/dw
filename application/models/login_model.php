@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Users extends CI_Model {
+class Login_Model extends CI_Model {
 
   function teste()
     {
-        $this->db->select('USER_NAME,USER_PASSWORD,USER_PHONE');
+        $this->db->select('USER_NAME,USER_PASSWORD');
         $result = $this->db->get('USERS');
         return $result->result();
     }

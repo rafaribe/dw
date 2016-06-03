@@ -50,25 +50,4 @@ public function user_get()
 			$this->response([], 404);
 		}
 	}
-
-	public function insert_user()
-	{
-		if(! $this->post('user_name'))
-		{
-			$this->response(array('error' => 'Missing post data: user_name'), 400);
-		}
-		else if(! $this->post('user_password'))
-		{
-			$this->response(array('error' => 'Missing post data: user_password'), 400);
-		}
-		else {
-			$data = array(
-				'user_name' => $this->input->post('user_name'),
-				'user_password' => $this->post('user_password'));
-				$result = $this->login_model->user_insert($data);
-				$this->response($message, 200); // 200 being the HTTP response code
-	}
-}
-
-
 }

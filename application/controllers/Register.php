@@ -19,7 +19,7 @@ class Register extends MY_Controller {
 		}
 		else
 		{
-			$this->load->view('formsuccess');
+			$this->load->view('Welcome');
 		}
 	}
 
