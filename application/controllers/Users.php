@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
-class Users extends MY_Controller
+class Users extends REST_Controller
 {
 	function __construct()
     {
