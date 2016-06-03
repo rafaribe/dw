@@ -31,7 +31,7 @@ class Users extends MY_Controller
 
 public function user_get()
 	{
-        $id = $this->uri->segment(4);
+        $id = $this->uri->segment(3);
 
 		$this->load->model('login_model');
 

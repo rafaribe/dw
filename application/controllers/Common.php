@@ -1,5 +1,5 @@
 <?php
-class Navbar extends MY_Controller{
+class Common extends CI_Controller{
 
   function __construct() {
       parent::__construct();

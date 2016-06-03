@@ -4,16 +4,16 @@ class Login extends MY_Controller{
 
   function __construct(){
   parent::__construct();
-  $data['header'] = 'common/sample_navbar_view';  //the view you want to include
-  $this->load->view('sample_navbar_view',$data);    //load your main view
+//  $data['header'] = 'common/sample_navbar_view';  //the view you want to include
+//  $this->load->view('sample_navbar_view',$data);    //load your main view
   }
 
 
-function logging_in_get()
+function index_get()
    {
      // the "TRUE" argument tells it to return the content, rather than display it immediately
-     $data['menu'] = $this->load->view('common/sample_navbar_view.php', NULL, TRUE);
-     $this->load->view ('login_popup.php');
+    $data['menu'] = $this->load->view('sample_navbar_view.php', NULL, TRUE);
+     $this->load->view ('login_view.php',$data);
    }
 
 

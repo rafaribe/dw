@@ -1,6 +1,6 @@
 <?php
 
-class Form extends MY_Controller {
+class Register extends MY_Controller {
 
 	public function index()
 	{
