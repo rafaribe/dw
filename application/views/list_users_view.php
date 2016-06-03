@@ -12,8 +12,8 @@
 
 <!--Popup -->
 <div>
-  <div class = "container"
-    <p style="font-size: 45px"> Lista de Users </p>
+  <div class = "container">
+    <p style="font-size: 45px"> Lista de Utilizadores </p>
 <table class="table">
   <tr>
     <th>Username</th>
