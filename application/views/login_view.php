@@ -12,6 +12,7 @@
     <input class="form-control"id="password"type="password" class="pass" name="password" placeholder="password">
     <?php echo validation_errors(); ?>
     <button class="btn btn-danger"type="submit">Login</button>
+    <a class="btn btn-primary" href="Register">Register</a>
   </form>
 </div>
 </div>

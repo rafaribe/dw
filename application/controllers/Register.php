@@ -1,6 +1,13 @@
 <?php
 
-class Register extends MY_Controller {
+class Register extends CI_Controller {
+
+	function __construct()
+		{
+				// Construct our parent class
+				parent::__construct();
+
+		}
 
 	public function index()
 	{
@@ -8,33 +15,69 @@ class Register extends MY_Controller {
 
 		$this->load->library('form_validation');
 
-		$this->form_validation->set_rules('username', 'Username', 'callback_username_check');
-		$this->form_validation->set_rules('password', 'Password', 'required');
-		$this->form_validation->set_rules('passconf', 'Password Confirmation', 'required');
-		$this->form_validation->set_rules('email', 'Email', 'required|is_unique[users.email]');
+		$config = array(
+	               array(
+	                     'field'   => 'username',
+	                     'label'   => 'Username',
+	                     'rules'   => 'required|callback_check_database'
+	                  ),
+	               array(
+	                     'field'   => 'password',
+	                     'label'   => 'Password',
+	                     'rules'   => 'required'
+	                  ),
+	               array(
+	                     'field'   => 'phone',
+	                     'label'   => 'Phone',
+	                     'rules'   => 'required'
+	                  ),
+	               array(
+	                     'field'   => 'email',
+	                     'label'   => 'Email',
+	                     'rules'   => 'required|valid_email'
+	                  )
+	            );
+
+		$this->form_validation->set_rules($config);
 
 		if ($this->form_validation->run() == FALSE)
 		{
-			$this->load->view('myform');
+			$this->load->view('register_view');
 		}
 		else
 		{
-			$this->load->view('Welcome');
+	//		$this->load->view('login_view');
 		}
 	}
 
-	public function username_check($str)
-	{
-		if ($str == 'test')
+	function check_database($username)
+  {
+    //Field validation succeeded.  Validate against database
+		$data = array(
+			'USER_NAME' => $username,
+			'USER_PASSWORD' => md5($this->input->post('password')),
+			'USER_PHONE' => $this->input->	post('phone'),
+			'USER_EMAIL' => $this->input->post('email')
+		);
+
+		$this->load->model('user');
+		$result = $this->user->check_username($username);
+
+		if($result > 0)
 		{
-			$this->form_validation->set_message('username_check', 'The %s field can not be the word "test"');
-			return FALSE;
+			$this->form_validation->set_message('check_database', 'User already exists');
+			//if a user exists
 		}
 		else
 		{
-			return TRUE;
+			$this->user->register($data);
 		}
-	}
+
+
+
+
+
+  }
 
 }
 ?>
