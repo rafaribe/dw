@@ -36,8 +36,18 @@ class Login_Model extends CI_Model {
 
     function users_list_all()
       {
+          $this->db->trans_begin();
+
           $this->db->select('USER_ID,USER_NAME,USER_PASSWORD,USER_CREATIONDATE');
           $result = $this->db->get('USERS');
+          if ($this->db->trans_status() === FALSE)
+        	{
+        			$this->db->trans_rollback();
+        	}
+        	else
+        	{
+        			$this->db->trans_commit();
+        	}
           return $result->result();
       }
 

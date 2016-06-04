@@ -55,11 +55,20 @@ Class User extends CI_Model
 	}
 function check_username($username)
 {
+	$this->db->trans_begin();
 	$query = "SELECT USER_NAME FROM USERS WHERE USER_NAME = '".$username."'";
 
 	$result = $this->db->query($query);
 	$rows = $result->num_rows();
-	return $rows;
+	if ($this->db->trans_status() === FALSE)
+	{
+			$this->db->trans_rollback();
+	}
+	else
+	{
+			$this->db->trans_commit();
+	}
+return $rows;
 }
 }
 ?>

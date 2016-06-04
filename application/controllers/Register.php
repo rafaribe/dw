@@ -1,7 +1,6 @@
 <?php
 
 class Register extends CI_Controller {
-
 	function __construct()
 		{
 				// Construct our parent class
@@ -43,10 +42,12 @@ class Register extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$this->load->view('register_view');
+			return;
 		}
 		else
 		{
-	//		$this->load->view('login_view');
+			$this->load->view('login_view');
+			return;
 		}
 	}
 
@@ -64,19 +65,22 @@ class Register extends CI_Controller {
 		$result = $this->user->check_username($username);
 
 		if($result > 0)
-		{
-			$this->form_validation->set_message('check_database', 'User already exists');
+				{
 			//if a user exists
-		}
+					$this->form_validation->set_message('check_database', 'Username already exists');
+		//	$erro = array('Error_Message' => 'O Utilizador Já existe na base de dados');
+		//	echo $erro['Error_Message'];
+					header("Location: Register");
+					exit();
+				}
 		else
-		{
-			$this->user->register($data);
-		}
-
-
-
-
-
+				{
+					$this->user->register($data);
+					$erro = 'Utilizador Registado com sucesso';
+					header	("Location: Login");
+					exit();
+				}
+					
   }
 
 }
