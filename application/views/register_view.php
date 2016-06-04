@@ -10,7 +10,10 @@
     <input class="form-control"type="password" class="pass" name="password" placeholder="password">
     <input class="form-control"type="number" class="numero" name="phone" placeholder="Telefone">
     <input class="form-control"type="email" class="email" name="email" placeholder="Email">
-    <?php echo validation_errors(); ?>
+    <div class="container">
+      <?php echo validation_errors(); ?>
+    </div>
+
     <button class="btn btn-danger"type="submit">Registar</button>
   </form>
 </div>
