@@ -5,13 +5,12 @@ class Restaurant extends CI_Controller
     {
         // Construct our parent class
         parent::__construct();
+				$this->load->model('Restaurant_Model');
 
     }
-public function view_all_restaurant_get()
-    {
-	$thid->load->model('restaurant_model');
-	$data['list'] = $this->restaurant_model->teste();
-	$this->load->view('list_restaurant_view');
-    }
+	function index()
+		{
+			$this->load->view('restaurant_view');
+		}
 }
 ?>

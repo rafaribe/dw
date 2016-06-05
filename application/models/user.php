@@ -6,7 +6,7 @@ Class User extends CI_Model
 		$this -> db -> select('USER_ID, USER_NAME, USER_PASSWORD');
 		$this -> db -> from('USERS');
 		$this -> db -> where('USER_NAME = ' . "'" . $username . "'");
-		$this -> db -> where('USER_PASSWORD = ' . "'" . $password . "'");
+		$this -> db -> where('USER_PASSWORD = ' . "'" . MD5($password) . "'");
 		$this -> db -> limit(1);
 
 		$query = $this -> db -> get();
