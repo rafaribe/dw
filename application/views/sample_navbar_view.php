@@ -17,7 +17,7 @@
     </div>
     <ul class="nav navbar-nav">
       <li><a href="Home">Home</a></li>
-      <li><a href="Restaurantes">Restaurantes</a></li>
+      <li><a href="Restaurants">Restaurants</a></li>
       <li><a href="Users/view_all_users">Users</a></li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">REST API <span class="caret"></span></a>
         <ul class="dropdown-menu">
@@ -26,7 +26,7 @@
          <li><a href="Users/user/1">View User 1 </a></li>
        </ul>
       </li>
-      <li><a href="Receitas">Receitas</a></li>
+      <li><a href="Recipes">Recipes</a></li>
       <li><a href="Login">Login</a></li>
     </ul>
   </div>
