@@ -12,5 +12,9 @@ class Dishes extends CI_Controller
 		{
 			$this->load->view('dishes_view');
 		}
+	function dish_register()
+	{
+		$this->load->view('dishes_add');
+	}
 }
 ?>
