@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
-class Users extends REST_Controller
+class REST_API extends REST_Controller
 {
 	function __construct()
     {
@@ -7,15 +7,18 @@ class Users extends REST_Controller
         parent::__construct();
 
     }
-
-	// get all recipes if no parameter supplied
-	public function index_get()
+	public function index()
 	{
-		$this->load->model('login_model');
+		$this->all_users_get();
+	}
+	// get all recipes if no parameter supplied
+	public function all_users_get()
+	{
+		$this->load->model('rest_model');
 		if(! $this->get('id'))
 		{
 			// get all record
-			$users = $this->login_model->users_list_all();
+			$users = $this->rest_model->users_list_all();
 		} else {
 			// get a record based on ID
 			$users = null;
@@ -33,12 +36,12 @@ public function user_get()
 	{
         $id = $this->uri->segment(3);
 
-		$this->load->model('login_model');
+		$this->load->model('rest_model');
 
 		if(isset($id))
 		{
 			// get a record based on ID
-			$user = $this->login_model->users_list($id);
+			$user = $this->rest_model->users_list($id);
 		} else {
 			$user = null;
 		}
@@ -52,8 +55,8 @@ public function user_get()
 	}
 	public function view_all_users_get()
 	  {
-	    $this->load->model('login_model');
-	    $data['list'] = $this->login_model->teste();
+	    $this->load->model('rest_model');
+	    $data['list'] = $this->rest_model->teste();
 
 	    $this->load->view('list_users_view', $data);
 	  }
@@ -61,8 +64,8 @@ public function user_get()
 	  public function users_get()
 	  {
 	      // Users from a data store e.g. database
-	      $this->load->model('Login_model');
-	      $users = $this->Login_model->users_list_all();
+	      $this->load->model('rest_model');
+	      $users = $this->rest_model->users_list_all();
 	      $id = $this->get('id');
 
 	      // If the id parameter doesn't exist return all the users
@@ -124,36 +127,4 @@ public function user_get()
 	          ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
 	      }
 	  }
-
-	  function logging_in_post()
-	  {
-
-	    //inicializar as variáveis username e password
-	    $username = $this->post('username');
-	    $password = $this->post('password');
-
-	    // criar o array para as variaveis de sessao
-	    $array = array(
-	      'username' => $username,
-	      'password' => $password );
-	    // imprime o array
-	    print_r(array_values($array));
-	    $data = $this->Login_Model->check_username($username);
-	    //inicializa as variaiveis de sessao
-	    $this->session->set_userdata($array);
-
-	    if ($username == null){
-	          $data['erro'] = 'Coloque um Username válido';
-	          echo ($data['erro']);
-	         }
-	    else if ($password == null){
-	          $data['erro'] = 'Coloque uma password válida';
-	          echo ($data['erro']);
-	        }
-	    else {
-
-	    }
-
-	  }
-
 }
