@@ -3,7 +3,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/style.css"/>
 <script src="<?php echo base_url();?>assets/scripts/restaurant.js"></script>
 <!-- Projects Row -->
-<a href="#" onclick="data()">TESTE</a>
+<a href="#">TESTE</a>
        <div class="row" id="div-row1">
            <div class="col-md-4 portfolio-item">
                <a href="#">
