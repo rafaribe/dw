@@ -4,7 +4,7 @@ $active_group = 'default';
 $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.1.163)(PORT = 1521))
+	'hostname' => '(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.130.94)(PORT = 1521))
 	        (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = orcl)))',
 	'username' => 'trabalho',
 	'password' => '1234',

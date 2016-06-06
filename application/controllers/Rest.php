@@ -11,6 +11,8 @@ class Rest extends REST_Controller
 	// get all recipes if no parameter supplied
 	public function index_get()
 	{
+		if($this->session->userdata('logged_in'))
+		{
 		$this->load->model('rest_model');
 		if(! $this->get('id'))
 		{
@@ -29,8 +31,17 @@ class Rest extends REST_Controller
 		}
 	}
 
+else
+{
+	//If no session, redirect to login page
+	redirect('login', 'refresh');
+}
+}
+
 public function user_get()
 	{
+		 if($this->session->userdata('logged_in'))
+		 {
         $id = $this->uri->segment(3);
 
 		$this->load->model('rest_model');
@@ -49,17 +60,32 @@ public function user_get()
 		} else {
 			$this->response([], 404);
 		}
+		}
+		else
+			{
+					//If no session, redirect to login page
+						redirect('login', 'refresh');
+			}
 	}
-	public function view_all_users_get()
+	public function all_users_get(){
+	 if($this->session->userdata('logged_in'))
 	  {
 	    $this->load->model('rest_model');
 	    $data['list'] = $this->rest_model->teste();
 
 	    $this->load->view('list_users_view', $data);
 	  }
+		else
+			{
+					//If no session, redirect to login page
+						redirect('login', 'refresh');
+			}
+	}
 
 	  public function users_get()
 	  {
+			if($this->session->userdata('logged_in'))
+			 {
 	      // Users from a data store e.g. database
 	      $this->load->model('rest_model');
 	      $users = $this->rest_model->users_list_all();
@@ -125,35 +151,38 @@ public function user_get()
 	      }
 	  }
 
-	  function logging_in_post()
-	  {
+		else {
+			     redirect('login', 'refresh');
+		}	}
 
-	    //inicializar as variáveis username e password
-	    $username = $this->post('username');
-	    $password = $this->post('password');
+// RESTAURANT
 
-	    // criar o array para as variaveis de sessao
-	    $array = array(
-	      'username' => $username,
-	      'password' => $password );
-	    // imprime o array
-	    print_r(array_values($array));
-	    $data = $this->rest_model->check_username($username);
-	    //inicializa as variaiveis de sessao
-	    $this->session->set_userdata($array);
+public function all_restaurant_get()
+{
 
-	    if ($username == null){
-	          $data['erro'] = 'Coloque um Username válido';
-	          echo ($data['erro']);
-	         }
-	    else if ($password == null){
-	          $data['erro'] = 'Coloque uma password válida';
-	          echo ($data['erro']);
-	        }
-	    else {
+ if($this->session->userdata('logged_in'))
 
-	    }
+			{
+			$this->load->model('rest_model');
+			if(! $this->get('id'))
+			{
+				// get all record
+				$data = $this->rest_model->get_all_restaurants();
+			} else {
+				// get a record based on ID
+				$data = null;
+			}
 
-	  }
+			if($data)
+			{
+				$this->response($data, 200); // 200 being the HTTP response code
+			} else {$this->response([], 404);	}
+			}
+			else
+			{
+			//If no session, redirect to login page
+			redirect('login', 'refresh');
+			}
+
 
 }
