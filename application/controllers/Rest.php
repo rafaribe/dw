@@ -157,7 +157,7 @@ public function user_get()
 
 // RESTAURANT
 
-public function all_restaurant_get()
+public function all_restaurants_get()
 {
 
  if($this->session->userdata('logged_in'))

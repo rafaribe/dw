@@ -1,7 +1,7 @@
 <?php include "sample_navbar_view.php" ?>
 <!-- Page Content -->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/style.css"/>
-
+<script src="<?php echo base_url();?>assets/scripts/restaurant.js"></script>
 <!-- Projects Row -->
        <div class="row">
            <div class="col-md-4 portfolio-item">
@@ -9,9 +9,9 @@
                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
                </a>
                <h3>
-                   <a href="#">Project Name</a>
+                   <a href="#" value="Cenas" text="cenas"></a>
                </h3>
-               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+
            </div>
            <div class="col-md-4 portfolio-item">
                <a href="#">
@@ -20,7 +20,7 @@
                <h3>
                    <a href="#">Project Name</a>
                </h3>
-               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+
            </div>
            <div class="col-md-4 portfolio-item">
                <a href="#">
@@ -29,7 +29,7 @@
                <h3>
                    <a href="#">Project Name</a>
                </h3>
-               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+
            </div>
        </div>
        <!-- /.row -->
@@ -43,7 +43,7 @@
                <h3>
                    <a href="#">Project Name</a>
                </h3>
-               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+
            </div>
            <div class="col-md-4 portfolio-item">
                <a href="#">
@@ -52,7 +52,7 @@
                <h3>
                    <a href="#">Project Name</a>
                </h3>
-               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+
            </div>
            <div class="col-md-4 portfolio-item">
                <a href="#">
@@ -61,7 +61,7 @@
                <h3>
                    <a href="#">Project Name</a>
                </h3>
-               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+
            </div>
        </div>
 
@@ -74,7 +74,7 @@
                <h3>
                    <a href="#">Project Name</a>
                </h3>
-               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+
            </div>
            <div class="col-md-4 portfolio-item">
                <a href="#">
@@ -83,7 +83,7 @@
                <h3>
                    <a href="#">Project Name</a>
                </h3>
-               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+
            </div>
            <div class="col-md-4 portfolio-item">
                <a href="#">
@@ -92,7 +92,7 @@
                <h3>
                    <a href="#">Project Name</a>
                </h3>
-               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+
            </div>
        </div>
        <!-- /.row -->
