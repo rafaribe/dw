@@ -1,7 +1,13 @@
 <?php include "sample_navbar_view.php" ?>
 <!-- Page Content -->
-<link rel="stylesheet" href="https://raw.githubusercontent.com/Nagashitw/dw/master/assets/css/style.css">
-    <div class="container">
+<style>
+.portfolio-item {
+  margin-bottom: 25px;
+}
+
+footer {
+  margin: 50px 0;
+}</style>
 
         <!-- Page Heading -->
         <div class="row">
