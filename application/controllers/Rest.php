@@ -71,7 +71,7 @@ public function user_get()
 	 if($this->session->userdata('logged_in'))
 	  {
 	    $this->load->model('rest_model');
-	    $data['list'] = $this->rest_model->teste();
+	    $data['list'] = $this->restaurant_model->teste();
 
 	    $this->load->view('list_users_view', $data);
 	  }
