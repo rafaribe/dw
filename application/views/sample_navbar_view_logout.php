@@ -18,18 +18,19 @@
       <a class="navbar-brand" href="#">Bom Garfo</a>
     </div>
     <ul class="nav navbar-nav">
-        <li><a href="http://localhost/dw/Home.php">Home</a></li>
-      <li><a href="http://localhost/dw/Restaurant">Restaurants</a></li>
-      <li><a href="http://localhost/dw/Users">Users</a></li>
+        <li><a href=" <?php echo base_url().'Home' ?>">Home</a></li>
+      <li><a href=" <?php echo base_url().'Restaurant'?>">Restaurants </a></li>
+      <li><a href=" <?php echo base_url(). 'Users' ?>">Users</a></li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">REST API <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="http://localhost/dw/rest">View All Users in JSON</a></li>
-          <li><a href="http://localhost/dw/rest?format=xml">View All Users in XML</a></li>
-         <li><a href="http://localhost/dw/rest/user/1">View User 1 </a></li>
+          <li><a href=" <?php echo base_url(). 'rest'?>">View All Users in JSON</a></li>
+          <li><a href=" <?php echo base_url(). 'rest?format=xml'?>">View All Users in XML</a></li>
+          <li><a href=" <?php echo base_url(). 'rest/user/1'?>">View User 1 </a></li>
        </ul>
       </li>
-      <li><a href="http://localhost/dw/recipes">Recipes</a></li>
-      <li><a href="http://localhost/dw/Home/logout">Logout</a></li>
+      <li><a href=" <?php echo base_url(). 'recipes'?>">Recipes</a></li>
+      <li><a href=" <?php echo base_url(). 'Home/logout'?>">Logout</a></li>
+        <li><a> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> <?php echo $this->session->userdata('id');?></a></li>
     </ul>
   </div>
 </nav>
