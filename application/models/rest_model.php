@@ -3,12 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class rest_model extends CI_Model {
 
-  function teste()
-    {
-        $this->db->select('USER_NAME,USER_PASSWORD');
-        $result = $this->db->get('USERS');
-        return $result->result();
-    }
+
 
     function check_user()
     {
@@ -60,7 +55,7 @@ class rest_model extends CI_Model {
             $this->db->select('RESTAURANT_ID,RESTAURANT_NAME,RESTAURANT_ADDRESS,
                               RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
                               RESTAURANT_DELIVERY,RESTAURANT_MULTIBANCO,
-                              RESTAURANT_OUTDOOR_SEATING,RESTAURANT_POINTS');
+                              RESTAURANT_OUTDOOR_SEATING,RESTAURANT_POINTS, RESTAURANT_IMAGE');
             $result = $this->db->get('RESTAURANTS');
             return $result->result();
         }

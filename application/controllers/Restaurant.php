@@ -11,7 +11,19 @@ class Restaurant extends CI_Controller
     }
 	function index()
 		{
-			$this->load->view('restaurant_view');
+
+			 if($this->session->userdata('logged_in'))
+			  {
+			    $this->load->model('restaurant_model');
+			    $data['list'] = $this->restaurant_model->restaurant_id_name_image();
+
+			    $this->load->view('restaurant_view', $data);
+			  }
+				else
+					{
+							//If no session, redirect to login page
+								redirect('login', 'refresh');
+					}
+			}
 		}
-}
 ?>

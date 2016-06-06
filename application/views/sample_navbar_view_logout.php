@@ -24,7 +24,7 @@
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">REST API <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="http://localhost/dw/rest">View All Users in JSON</a></li>
-          <li><a href="http://localhost/dw/rest/all_users/format/xml">View All Users in XML</a></li>
+          <li><a href="http://localhost/dw/rest?format=xml">View All Users in XML</a></li>
          <li><a href="http://localhost/dw/rest/user/1">View User 1 </a></li>
        </ul>
       </li>
