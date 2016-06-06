@@ -7,7 +7,7 @@ class Register extends CI_Controller {
 				parent::__construct();
 
 		}
-
+//Register a user
 	public function index()
 	{
 		$this->load->helper(array('form', 'url'));
@@ -80,8 +80,53 @@ class Register extends CI_Controller {
 					header	("Location: Login");
 					exit();
 				}
-					
+
   }
+
+	// Register a RESTAURANT
+
+	/*	function restaurant_add()
+		{
+			$this->load->helper(array('form', 'url'));
+
+			$this->load->library('form_validation');
+
+			$config = array(
+		               array(
+		                     'field'   => 'username',
+		                     'label'   => 'Username',
+		                     'rules'   => 'required|callback_check_database'
+		                  ),
+		               array(
+		                     'field'   => 'password',
+		                     'label'   => 'Password',
+		                     'rules'   => 'required'
+		                  ),
+		               array(
+		                     'field'   => 'phone',
+		                     'label'   => 'Phone',
+		                     'rules'   => 'required'
+		                  ),
+		               array(
+		                     'field'   => 'email',
+		                     'label'   => 'Email',
+		                     'rules'   => 'required|valid_email'
+		                  )
+		            );
+
+			$this->form_validation->set_rules($config);
+
+			if ($this->form_validation->run() == FALSE)
+			{
+				$this->load->view('register_view');
+				return;
+			}
+			else
+			{
+				$this->load->view('login_view');
+				return;
+			}
+		}*/
 
 }
 ?>

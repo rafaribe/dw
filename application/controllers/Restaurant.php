@@ -5,6 +5,7 @@ class Restaurant extends CI_Controller
     {
         // Construct our parent class
         parent::__construct();
+				$this->load->helper('url');
 				$this->load->model('Restaurant_Model');
 
     }

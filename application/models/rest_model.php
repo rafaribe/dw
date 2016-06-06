@@ -1,26 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Login_Model extends CI_Model {
-  function login($username, $password)
- {
-   $this -> db -> select('id, username, password');
-   $this -> db -> from('users');
-   $this -> db -> where('username', $username);
-   $this -> db -> where('password', MD5($password));
-   $this -> db -> limit(1);
-
-   $query = $this -> db -> get();
-
-   if($query -> num_rows() == 1)
-   {
-     return $query->result();
-   }
-   else
-   {
-     return false;
-   }
- }
+class rest_model extends CI_Model {
 
   function teste()
     {
@@ -36,18 +17,8 @@ class Login_Model extends CI_Model {
 
     function users_list_all()
       {
-          $this->db->trans_begin();
-
           $this->db->select('USER_ID,USER_NAME,USER_PASSWORD,USER_CREATIONDATE');
           $result = $this->db->get('USERS');
-          if ($this->db->trans_status() === FALSE)
-        	{
-        			$this->db->trans_rollback();
-        	}
-        	else
-        	{
-        			$this->db->trans_commit();
-        	}
           return $result->result();
       }
 
@@ -84,4 +55,13 @@ class Login_Model extends CI_Model {
           }
 
       }
+      function  get_all_restaurants()
+        {
+            $this->db->select('RESTAURANT_ID,RESTAURANT_NAME,RESTAURANT_ADDRESS,
+                              RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
+                              RESTAURANT_DELIVERY,RESTAURANT_MULTIBANCO,
+                              RESTAURANT_OUTDOOR_SEATING,RESTAURANT_POINTS');
+            $result = $this->db->get('RESTAURANTS');
+            return $result->result();
+        }
 }
