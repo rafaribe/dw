@@ -1,5 +1,6 @@
 <?php include "sample_navbar_view.php" ?>
 <!-- Page Content -->
+<link rel="stylesheet" href="https://raw.githubusercontent.com/Nagashitw/dw/master/assets/css/style.css">
     <div class="container">
 
         <!-- Page Heading -->
