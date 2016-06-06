@@ -1,4 +1,3 @@
-<?php include "sample_navbar_view.php" ?>
 <!-- Page Content -->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/style.css"/>
 <script src="<?php echo base_url();?>assets/scripts/restaurant.js"></script>

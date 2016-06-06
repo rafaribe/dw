@@ -10,10 +10,12 @@ class Dishes extends CI_Controller
     }
 	function index()
 		{
+			$this->load->view('sample_navbar_view');
 			$this->load->view('dishes_view');
 		}
 	function dish_register()
 	{
+		$this->load->view('sample_navbar_view');
 		$this->load->view('dishes_add');
 	}
 }

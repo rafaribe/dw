@@ -1,4 +1,3 @@
-<?php include "sample_navbar_view.php" ?>
 <div class="container">
 
 <h2 class="text-center">Login</h2>

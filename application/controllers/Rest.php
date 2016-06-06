@@ -72,7 +72,7 @@ public function user_get()
 	  {
 	    $this->load->model('rest_model');
 	    $data['list'] = $this->restaurant_model->teste();
-
+			$this->load->view('sample_navbar_view');
 	    $this->load->view('list_users_view', $data);
 	  }
 		else

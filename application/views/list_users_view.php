@@ -1,5 +1,3 @@
-<?php include('sample_navbar_view.php');?>
-
 <!--Popup -->
 <div>
   <div class = "container">

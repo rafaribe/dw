@@ -1,10 +1,9 @@
-<?php include "sample_navbar_view_logout.php" ?>
 <!--Register Page -->
 <div class="container">
 <div class="row">
 <div class="col-md-4 col-md-offset-4">
     <?php echo form_open('Register'); ?>
-  <form name="register" method="post" action="<?php echo site_url('Register'); ?>">
+  <form name="register" method="post" action="<?php echo site_url().'Register'; ?>">
     <h2>Registar Restaurant</h2>
     <input class="form-control" type="text" class="user" name="username" placeholder="username">
     <input class="form-control"type="password" class="pass" name="password" placeholder="password">

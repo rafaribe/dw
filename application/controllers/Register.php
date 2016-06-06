@@ -28,7 +28,7 @@ class Register extends CI_Controller {
 	               array(
 	                     'field'   => 'phone',
 	                     'label'   => 'Phone',
-	                     'rules'   => 'required'
+	                     'rules'   => 'required|max_length[9]|integer'
 	                  ),
 	               array(
 	                     'field'   => 'email',
@@ -41,11 +41,13 @@ class Register extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE)
 		{
+			$this->load->view('sample_navbar_view');
 			$this->load->view('register_view');
 			return;
 		}
 		else
 		{
+			$this->load->view('sample_navbar_view');
 			$this->load->view('login_view');
 			return;
 		}

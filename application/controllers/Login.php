@@ -10,6 +10,7 @@ class Login extends CI_Controller {
   function index()
   {
     $this->load->helper('form');
+    $this->load->view('sample_navbar_view');
     $this->load->view('login_view');
   }
 

@@ -18,6 +18,7 @@ class VerifyLogin extends CI_Controller {
    if($this->form_validation->run() == FALSE)
    {
      //Field validation failed.  User redirected to login page
+     $this->load->view('sample_navbar_view');
      $this->load->view('login_view');
    }
    else
@@ -38,7 +39,7 @@ class VerifyLogin extends CI_Controller {
 
    if($result)
    {
-     
+
      $sess_array = array();
      foreach($result as $row)
      {

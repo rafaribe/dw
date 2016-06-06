@@ -1,4 +1,3 @@
-<?php include "sample_navbar_view_logout.php" ?>
 <!--Register Page -->
 <div class="container">
 <div class="row">
