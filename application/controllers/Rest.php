@@ -70,8 +70,8 @@ public function user_get()
 	public function all_users_get(){
 	 if($this->session->userdata('logged_in'))
 	  {
-	    $this->load->model('rest_model');
-	    $data['list'] = $this->restaurant_model->teste();
+	    $this->load->model('user');
+	    $data['list'] = $this->user->teste();
 			$this->load->view('sample_navbar_view');
 	    $this->load->view('list_users_view', $data);
 	  }

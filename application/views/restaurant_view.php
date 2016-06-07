@@ -18,4 +18,5 @@
 
   <?php endforeach ?>
     </div>
+      </div>
     <!-- /.container -->

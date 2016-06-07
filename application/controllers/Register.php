@@ -64,7 +64,7 @@ class Register extends CI_Controller {
 		);
 
 		$this->load->model('user');
-		$result = $this->user->check_username($username);
+		$result = $this->restaurant_model->check_restaurant_name();
 
 		if($result > 0)
 				{
@@ -72,7 +72,7 @@ class Register extends CI_Controller {
 					$this->form_validation->set_message('check_database', 'Username already exists');
 		//	$erro = array('Error_Message' => 'O Utilizador Já existe na base de dados');
 		//	echo $erro['Error_Message'];
-					header("Location: Register");
+					header("Location: base_url().Register");
 					exit();
 				}
 		else
@@ -95,7 +95,7 @@ class Register extends CI_Controller {
 
 			$config = array(
 		               array(
-		                     'field'   => 'username',
+		                     'field'   => 'RESTAURANT_NAME',
 		                     'label'   => 'Username',
 		                     'rules'   => 'required|callback_check_database'
 		                  ),
