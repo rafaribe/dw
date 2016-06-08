@@ -28,7 +28,7 @@
           <li><a href=" <?php echo base_url(). 'rest/user/1'?>">View User 1 </a></li>
        </ul>
       </li>
-      <li><a href=" <?php echo base_url(). 'recipes'?>">Recipes</a></li>
+      <li><a href=" <?php echo base_url(). 'dish'?>">Dish</a></li>
       <li><a href=" <?php echo base_url(). 'Home/logout'?>">Logout</a></li>
         <li><a> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> <?php echo $this->session->userdata('id');?></a></li>
     </ul>

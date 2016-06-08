@@ -547,7 +547,7 @@ values(
 );
 INSERT INTO Dishes (DISH_NAME,DISH_TYPE,DISH_IMAGE)
 values(
-'Ssrdinha Assada com Batata Cozida e Pimentos',
+'Sardinha Assada com Batata Cozida e Pimentos',
 'Peixe',
 'sardinha.jpg'
 );
