@@ -89,21 +89,26 @@ class Restaurant_Model extends CI_Model
   }
   function restaurant_template($id)
   {
-    $this->db->select(
-   'RESTAURANT_ID,
-    RESTAURANT_NAME,
-    RESTAURANT_ADDRESS,
-    RESTAURANT_RESERVATIONS,
-    RESTAURANT_WIFI,
-    RESTAURANT_DELIVERY,
-    RESTAURANT_MULTIBANCO,
-    RESTAURANT_OUTDOOR_SEATING,
-    RESTAURANT_POINTS,
-    RESTAURANT_IMAGE');
-     $this->db->where('RESTAURANT_ID',$id);
-     $this->db->from('RESETAURANTS');
-     $this->db->join('COORDS','RESTAURANTS.RESTAURANT_ID = COORDS.RESTAURANT_ID');
-    $result = $this->db->get('RESTAURANTS');
-    return $result->result();
+    $query = "SELECT r.RESTAURANT_ID,
+     r.RESTAURANT_NAME,
+     r.RESTAURANT_ADDRESS,
+     r.RESTAURANT_RESERVATIONS,
+     r.RESTAURANT_WIFI,
+     r.RESTAURANT_DELIVERY,
+     r.RESTAURANT_MULTIBANCO,
+     r.RESTAURANT_OUTDOOR_SEATING,
+     r.RESTAURANT_POINTS,
+     r.RESTAURANT_IMAGE,
+     c.LATITUDE,
+     c.LONGITUDE
+     FROM RESTAURANTS r JOIN COORDS c
+     ON r.RESTAURANT_ID = c.RESTAURANT_ID
+     WHERE r.RESTAURANT_ID = '".$id."'";
+    // echo $query;
+
+
+    $result = $this->db->query($query);
+    $rows = $result->row();
+    return $rows;
   }
 }

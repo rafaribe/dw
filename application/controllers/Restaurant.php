@@ -228,30 +228,32 @@ function restaurant_edit_data()
 }
 
 function restaurant_delete()
-{
-		$this->load->view('sample_navbar_view');
-		$this->load->model('restaurant_model');
-		//Get ID and Name to populate combobox
-		$data['list'] = $this->restaurant_model->edit_restaurant();
-		$this->load->view('restaurant_delete',$data);
-}
+		{
+			$this->load->view('sample_navbar_view');
+			$this->load->model('restaurant_model');
+			//Get ID and Name to populate combobox
+			$data['list'] = $this->restaurant_model->edit_restaurant();
+			$this->load->view('restaurant_delete',$data);
+		}
 
 function restaurant_delete_data()
-{
+		{
 			$id = $this->input->post('SelectResaurant');
 			$this->load->model('restaurant_model');
 			$this->restaurant_model->restaurant_delete($id);
 			$this->index();
-}
+		}
 
 function restaurant_template()
-{
-	$id = $this->input->get('id');
-	$this->load->model('restaurant_model');
-	$this->restaurant_model->restaurant
-	$this->load->view('sample_navbar_view');
-	$this->load->view('restaurant_template_view');
-}
+		{
+			$id = $this->input->get('id');
+			$this->load->model('restaurant_model');
+			$data['list'] = $this->restaurant_model->restaurant_template($id);
+
+			$this->load->view('sample_navbar_view');
+			$this->load->view('restaurant_template_view',$data);
+			print_r($data);
+		}
 }
 
 ?>
