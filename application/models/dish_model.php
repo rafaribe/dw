@@ -14,5 +14,29 @@ class Dish_Model extends CI_Model
           $result = $this->db->get('DISHES');
           return $result->result();
       }
+      function dish_add($data)
+     {
+
+     			$result=$this->db->insert('DISHES',$data);
+
+          return ;
+
+     }
+     function check_dish_name($dishname)    {
+      $this->db->trans_begin();
+      $query = "SELECT DISH_NAME FROM DISHES WHERE DISH_NAME = '".$dishname."'";
+
+      $result = $this->db->query($query);
+      $rows = $result->num_rows();
+      if ($this->db->trans_status() === FALSE)
+      {
+          $this->db->trans_rollback();
+      }
+      else
+      {
+          $this->db->trans_commit();
+      }
+     return $rows;
+     }
 
 }
