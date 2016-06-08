@@ -26,7 +26,7 @@
    <div class="collapse navbar-collapse" id="myNavbar">
     <ul class="nav navbar-nav">
         <li><a href=" <?php echo base_url().'Home' ?>">Home</a></li>
-      <li><a href=" <?php echo base_url().'Restaurant'?>">Restaurants </a></li>
+    <!--  <li><a href=" <?php echo base_url().'Restaurant'?>">Restaurants </a></li>-->
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Restaurants <span class="caret"></span></a>
         <ul class="dropdown-menu">
@@ -37,7 +37,16 @@
        </ul>
       </li>
       <li><a href=" <?php echo base_url(). 'Menus' ?>">Menus</a></li>
-      <li><a href=" <?php echo base_url(). 'Dishes'?>">Dishes</a></li>
+    <!--  <li><a href=" <?php echo base_url(). 'Dishes'?>">Dish</a></li> -->
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dish <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href=" <?php echo base_url(). 'dish/dish_add'?>">Add Dish</a></li>
+          <li><a href=" <?php echo base_url(). 'dish/dish_edit'?>">Edit Dish</a></li>
+            <li><a href=" <?php echo base_url(). 'dish'?>">View Dish</a></li>
+          <li><a href=" <?php echo base_url(). 'dish/dish_delete'?>">Delete Dish</a></li>
+       </ul>
+      </li>
 
 
       <li class="dropdown">
