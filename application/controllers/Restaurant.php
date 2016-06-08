@@ -238,11 +238,7 @@ function restaurant_delete()
 }
 
 function restaurant_delete_data()
-<<<<<<< HEAD
-		{
-=======
 {
->>>>>>> 8cfcbe38dd6fed227b065df3f9bd87365bd4cb9f
 			$id = $this->input->post('SelectRestaurant');
 			$this->load->model('restaurant_model');
 			$this->restaurant_model->restaurant_delete($id);
@@ -250,7 +246,7 @@ function restaurant_delete_data()
 }
 
 function restaurant_template()
-<<<<<<< HEAD
+
 		{
 			$id = $this->input->get('id');
 			$this->load->model('restaurant_model');
@@ -260,7 +256,9 @@ function restaurant_template()
 			$this->load->view('restaurant_template_view',$data);
 					print_r($data['row']);
 		}
-=======
+
+	function restaurant_template_naosei()
+
 {
 	$id = $this->input->get('id');
 	$this->load->model('restaurant_model');
@@ -268,7 +266,6 @@ function restaurant_template()
 	$this->load->view('sample_navbar_view');
 	$this->load->view('restaurant_template_view');
 }
->>>>>>> 8cfcbe38dd6fed227b065df3f9bd87365bd4cb9f
 }
 
 ?>
