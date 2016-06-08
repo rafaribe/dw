@@ -13,6 +13,9 @@
 
                    </div>
                    <div class="ratings">
+                     <?php for ($i=0; $i < $row->RESTAURANT_POINTS, i++) {
+                    echo   "<span class="glyphicon glyphicon-star"></span>";
+                     } ?>
                        <p class="pull-right">3 reviews</p>
                        <p>
                            <span class="glyphicon glyphicon-star"></span>
@@ -35,6 +38,7 @@
 
                    <div class="row">
                        <div class="col-md-12">
+                         <?php  ?>
                            <span class="glyphicon glyphicon-star"></span>
                            <span class="glyphicon glyphicon-star"></span>
                            <span class="glyphicon glyphicon-star"></span>
