@@ -1,4 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
+require(APPPATH.'libraries/REST_Controller.php');
+
 class Rest extends REST_Controller
 {
 	function __construct()

@@ -4,7 +4,7 @@
 </head>
 <body>
 
-<h3>Your file was successfully uploaded!</h3>
+<h3>Your restaurant has been sucessfully added to the database, thank you!</h3>
 
 </body>
 </html>

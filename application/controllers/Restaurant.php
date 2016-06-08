@@ -82,7 +82,8 @@ class Restaurant extends CI_Controller
 				}
 				else
 				{
-					$this->do_upload();
+
+					$file_name = $this->do_upload();
 	//			echo 'file_name';
 				//	echo $file_name;
 					$data = array(
@@ -95,6 +96,7 @@ class Restaurant extends CI_Controller
 		 'RESTAURANT_OUTDOOR_SEATING'=> $this->input->   post('RestaurantOutdoorSeating'),
 		 'RESTAURANT_IMAGE'=> $file_name
  );
+
  			$this->load->model('restaurant_model');
  		  $this->restaurant_model->restaurant_add($data);
 
@@ -112,7 +114,8 @@ function restaurant_check($restaurantname){
 				return TRUE;
 			}
 	}
-	public function do_upload(){
+function do_upload()
+	{
 				 $config['upload_path']          = './assets/images/restaurantes';
 				 $config['allowed_types']        = 'gif|jpg|png';
 				 $config['max_size']             = 2000;
@@ -121,21 +124,105 @@ function restaurant_check($restaurantname){
 
 				 $this->load->library('upload', $config);
 
-				 if ( ! $this->upload->do_upload('RestaurantImage'))
-				 {
-								 $error = array('error' => $this->upload->display_errors());
+		 if ( ! $this->upload->do_upload('RestaurantImage'))
+		 {
+						 $error = array('error' => $this->upload->display_errors());
 
-								 $this->load->view('success_view', $error);
-				 }
-				 else
-				 {
-								 $data = array('upload_data' => $this->upload->data());
+						 $this->load->view('success_view', $error);
+		 }
+		 else
+		 {
+						 $data = array('upload_data' => $this->upload->data());
 
-								 $this->load->view('success_view', $data);
-				 }
-				 $upload_data = $this->upload->data();
-	 			$file_name = $upload_data['file_name'];
-		return $file_name;
+						 $this->load->view('success_view', $data);
+		 }
+			$file_name =  $this->upload->file_name;
+			return $file_name;
  }
+
+ function restaurant_edit(){
+	 $this->load->view('sample_navbar_view');
+	 $this->load->model('restaurant_model');
+	 $data['list'] = $this->restaurant_model->edit_restaurant();
+	 $this->load->view('restaurant_edit',$data);
+
+ }
+
+ function restaurant_ajax(){
+	 $this->load->model('restaurant_model');
+	 $this->restaurant_model->restaurant_ajax();
+ }
+
 }
+
+// RESTAURANT EDIT (AINDA NAO FUNCIONA)
+
+function restaurant_edit()
+{
+	$this->load->helper(array('form', 'url'));
+
+	$this->load->library('form_validation');
+
+	$config = array(
+										array(
+										 'field'   => 'RestaurantName',
+										 'label'   => 'Restaurant Name',
+										 'rules'   => 'required'
+										),
+										array(
+										 'field'   => 'RestaurantAddress',
+										 'label'   => 'Address',
+										 'rules'   => 'required'
+										),
+										array(
+										 'field'   => 'RestaurantReservations',
+										 'label'   => 'Reservations',
+										 'rules'   => 'max_length[1]|integer'
+										),
+										array(
+										 'field'   => 'RestaurantWifi',
+										 'label'   => 'RestaurantWifi',
+										 'rules'   => 'max_length[1]|integer'
+										),
+										array(
+											'field'   => 'RestaurantDelivery',
+											'label'   => 'Restaurant Delivery',
+											'rules'   => 'max_length[1]|integer'
+										 ),
+										array(
+											'field'   => 'RestaurantMultibanco',
+											'label'   => 'RestaurantMultibanco',
+											'rules'   => 'max_length[1]|integer'
+										)
+										);
+
+			$this->form_validation->set_rules($config);
+
+			if ($this->form_validation->run() == FALSE)
+			{
+				$this->load->view('sample_navbar_view');
+				$this->load->view('restaurant_edit');
+				return FALSE;
+			}
+			else
+			{
+
+		/*		$data = array(
+	 'RESTAURANT_NAME' => $this->input->post('RestaurantName'),
+	 'RESTAURANT_ADDRESS' => $this->input->  post('RestaurantAddress'),
+	 'RESTAURANT_RESERVATIONS'=> $this->input->  post('RestaurantReservations'),
+	 'RESTAURANT_WIFI'=> $this->input->  post('RestaurantWifi'),
+	 'RESTAURANT_DELIVERY'=> $this->input->  post('RestaurantDelivery'),
+	 'RESTAURANT_MULTIBANCO'=> $this->input->    post('RestaurantMultibanco'),
+	 'RESTAURANT_OUTDOOR_SEATING'=> $this->input->   post('RestaurantOutdoorSeating')
+
+);*/
+		$this->load->model('restaurant_model');
+		$this->restaurant_model->restaurant_edit();
+		echo 'ja carregou o model';
+				return TRUE;
+			}
+}
+
+
 ?>

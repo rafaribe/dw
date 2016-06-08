@@ -4,7 +4,7 @@ Class User extends CI_Model
 
 	function teste()
 		{
-				$this->db->select('USER_NAME,USER_PASSWORD,USER_EMAIL');
+				$this->db->select('USER_NAME,USER_PASSWORD');
 				$result = $this->db->get('USERS');
 				return $result->result();
 		}
