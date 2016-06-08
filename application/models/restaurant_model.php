@@ -85,6 +85,25 @@ class Restaurant_Model extends CI_Model
   function restaurant_delete($id){
     $this->db->where('RESTAURANT_ID',$id);
     $this->db->delete('RESTAURANTS');
-    $result->this->db-
+  //  $result->this->db-
+  }
+  function restaurant_template($id)
+  {
+    $this->db->select(
+   'RESTAURANT_ID,
+    RESTAURANT_NAME,
+    RESTAURANT_ADDRESS,
+    RESTAURANT_RESERVATIONS,
+    RESTAURANT_WIFI,
+    RESTAURANT_DELIVERY,
+    RESTAURANT_MULTIBANCO,
+    RESTAURANT_OUTDOOR_SEATING,
+    RESTAURANT_POINTS,
+    RESTAURANT_IMAGE');
+     $this->db->where('RESTAURANT_ID',$id);
+     $this->db->from('RESETAURANTS');
+     $this->db->join('COORDS','RESTAURANTS.RESTAURANT_ID = COORDS.RESTAURANT_ID');
+    $result = $this->db->get('RESTAURANTS');
+    return $result->result();
   }
 }

@@ -64,7 +64,7 @@ class Register extends CI_Controller {
 		);
 
 		$this->load->model('user');
-		$result = $this->restaurant_model->check_restaurant_name();
+		$result = $this->user->check_username();
 
 		if($result > 0)
 				{

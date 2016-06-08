@@ -234,7 +234,6 @@ function restaurant_delete()
 		//Get ID and Name to populate combobox
 		$data['list'] = $this->restaurant_model->edit_restaurant();
 		$this->load->view('restaurant_delete',$data);
-
 }
 
 function restaurant_delete_data()
@@ -243,6 +242,15 @@ function restaurant_delete_data()
 			$this->load->model('restaurant_model');
 			$this->restaurant_model->restaurant_delete($id);
 			$this->index();
+}
+
+function restaurant_template()
+{
+	$id = $this->input->get('id');
+	$this->load->model('restaurant_model');
+	$this->restaurant_model->restaurant
+	$this->load->view('sample_navbar_view');
+	$this->load->view('restaurant_template_view');
 }
 }
 
