@@ -160,7 +160,6 @@ function do_upload()
 function restaurant_edit()
 {
 	$this->load->helper(array('form', 'url'));
-
 	$this->load->library('form_validation');
 
 	$config = array(
