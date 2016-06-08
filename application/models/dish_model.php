@@ -38,5 +38,15 @@ class Dish_Model extends CI_Model
       }
      return $rows;
      }
+     function dish_delete($id){
+       $this->db->where('DISH_ID',$id);
+       $this->db->delete('DISHES');
+     //  $result->this->db-
+     }
+     function  edit_dish(){
+       $this->db->select('DISH_ID,DISH_NAME');
+       $result = $this->db->get('DISHES');
+       return $result->result();
+     }
 
 }

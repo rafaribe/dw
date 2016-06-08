@@ -238,7 +238,7 @@ function restaurant_delete()
 
 function restaurant_delete_data()
 {
-			$id = $this->input->post('SelectResaurant');
+			$id = $this->input->post('SelectRestaurant');
 			$this->load->model('restaurant_model');
 			$this->restaurant_model->restaurant_delete($id);
 			$this->index();
@@ -248,7 +248,7 @@ function restaurant_template()
 {
 	$id = $this->input->get('id');
 	$this->load->model('restaurant_model');
-	$this->restaurant_model->restaurant
+	$this->restaurant_model->restaurant;
 	$this->load->view('sample_navbar_view');
 	$this->load->view('restaurant_template_view');
 }

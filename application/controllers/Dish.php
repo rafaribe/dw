@@ -102,8 +102,8 @@ class Dish extends CI_Controller
 							 $config['upload_path']          = './assets/images/dishes';
 							 $config['allowed_types']        = 'gif|jpg|png';
 							 $config['max_size']             = 20000;
-							 $config['max_width']            = 750;
-							 $config['max_height']           = 450;
+							 $config['max_width']            = 700;
+							 $config['max_height']           = 400;
 
 							 $this->load->library('upload', $config);
 
@@ -120,6 +120,22 @@ class Dish extends CI_Controller
 					 }
 						$file_name =  $this->upload->file_name;
 						return $file_name;
+			 }
+			 function dish_delete()
+			 {
+			 		$this->load->view('sample_navbar_view');
+			 		$this->load->model('dish_model');
+			 		//Get ID and Name to populate combobox
+			 		$data['list'] = $this->dish_model->edit_dish();
+			 		$this->load->view('dish_delete',$data);
+			 }
+
+			 function dish_delete_data()
+			 {
+			 			$id = $this->input->post('SelectDish');
+			 			$this->load->model('dish_model');
+			 			$this->dish_model->dish_delete($id);
+			 			$this->index();
 			 }
 }
 
