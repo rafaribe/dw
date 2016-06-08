@@ -38,5 +38,31 @@ class Dish_Model extends CI_Model
       }
      return $rows;
      }
+     function dish_delete($id){
+       $this->db->where('DISH_ID',$id);
+       $this->db->delete('DISHES');
+     //  $result->this->db-
+     }
+     function  edit_dish(){
+       $this->db->select('DISH_ID,DISH_NAME');
+       $result = $this->db->get('DISHES');
+       return $result->result();
+     }
+
+     function dish_ajax(){
+       $this->db->select('DISH_NAME,DISH_TYPE');
+       $id = $this->input->post('dish_id');
+       $this->db->where('DISH_ID',$id);
+       $result = $this->db->get('DISHES');
+       $array = array();
+       $array= $result->result();
+       echo json_encode($array);
+     }
+   // function to perform update operation on restaurants.
+     function dish_edit($data,$id){
+       $this->db->where('DISH_ID',$id);
+       $this->db->update('DISHES',$data);
+
+     }
 
 }
