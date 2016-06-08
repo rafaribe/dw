@@ -27,6 +27,15 @@
     <ul class="nav navbar-nav">
         <li><a href=" <?php echo base_url().'Home' ?>">Home</a></li>
       <li><a href=" <?php echo base_url().'Restaurant'?>">Restaurants </a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Restaurants <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href=" <?php echo base_url(). 'restaurant/restaurant_add'?>">Add Restaurant</a></li>
+          <li><a href=" <?php echo base_url(). 'restaurant/restaurant_edit'?>">Edit Restaurant</a></li>
+            <li><a href=" <?php echo base_url(). 'restaurant'?>">View Restaurant</a></li>
+          <li><a href=" <?php echo base_url(). 'restaurant/restaurant_delete'?>">Delete Restaurant</a></li>
+       </ul>
+      </li>
       <li><a href=" <?php echo base_url(). 'Menus' ?>">Menus</a></li>
       <li><a href=" <?php echo base_url(). 'Dishes'?>">Dishes</a></li>
 

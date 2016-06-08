@@ -8,15 +8,15 @@ postal_code VARCHAR(8)
 );
 
 create or replace type phone_list_type as VARRAY(3) of varchar(30);
-
+/
 create or replace type Email_list_type as VARRAY(3) of varchar(30);
-
+/
 create or replace type coordinates_type as OBJECT(
 latitude varchar(20),
 longitude varchar(20));
-
+/
 create or replace type open_hours_type as table of VARCHAR(5);
-
+/
 create or replace type COMMENTS_TYPE AS OBJECT
 (
    COMMENT_ID           INT,
@@ -26,8 +26,7 @@ create or replace type COMMENTS_TYPE AS OBJECT
 )NOT FINAL ;
 /
 
-create or replace type COMMENT_RESTAURANT_TYPE AS OBJECT(
-   COMMENT_ID  ref COMMENTS_TYPE,
+create or replace type COMMENT_RESTAURANT_TYPE UNDER COMMENTS_TYPE(
    RESTAURANT_ID        INTEGER,
    RESTAURANT_RATING    INTEGER,
    RESTAURANT_REVIEW_TYPE VARCHAR2(25)
@@ -35,13 +34,11 @@ create or replace type COMMENT_RESTAURANT_TYPE AS OBJECT(
 /
 
 
-create or replace type COMMENT_DISH_TYPE AS OBJECT(
-COMMENT_ID    ref COMMENTS_TYPE,
+create or replace type COMMENT_DISH_TYPE UNDER COMMENTS_TYPE(
    DISH_ID        INTEGER,
    DISH_RATING    INTEGER
    ) NOT FINAL;
-/
-
+/  
 -- Create Tables --
 
 create table USERS

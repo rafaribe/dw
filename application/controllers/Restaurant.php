@@ -118,17 +118,16 @@ function do_upload()
 	{
 				 $config['upload_path']          = './assets/images/restaurantes';
 				 $config['allowed_types']        = 'gif|jpg|png';
-				 $config['max_size']             = 2000;
-				 $config['max_width']            = 1024;
-				 $config['max_height']           = 768;
+				 $config['max_size']             = 20000;
+				 $config['max_width']            = 750;
+				 $config['max_height']           = 450;
 
 				 $this->load->library('upload', $config);
 
 		 if ( ! $this->upload->do_upload('RestaurantImage'))
 		 {
 						 $error = array('error' => $this->upload->display_errors());
-
-						 $this->load->view('success_view', $error);
+						 $this->load->view('error_restaurant_edit', $error);
 		 }
 		 else
 		 {
@@ -145,7 +144,6 @@ function do_upload()
 	 $this->load->model('restaurant_model');
 	 $data['list'] = $this->restaurant_model->edit_restaurant();
 	 $this->load->view('restaurant_edit',$data);
-
  }
 
  function restaurant_ajax(){
@@ -153,11 +151,11 @@ function do_upload()
 	 $this->restaurant_model->restaurant_ajax();
  }
 
-}
+
 
 // RESTAURANT EDIT (AINDA NAO FUNCIONA)
 
-function restaurant_edit()
+function restaurant_edit_data()
 {
 	$this->load->helper(array('form', 'url'));
 	$this->load->library('form_validation');
@@ -165,7 +163,7 @@ function restaurant_edit()
 	$config = array(
 										array(
 										 'field'   => 'RestaurantName',
-										 'label'   => 'Restaurant Name',
+										 'label'   => 'RestaurantName',
 										 'rules'   => 'required'
 										),
 										array(
@@ -192,7 +190,12 @@ function restaurant_edit()
 											'field'   => 'RestaurantMultibanco',
 											'label'   => 'RestaurantMultibanco',
 											'rules'   => 'max_length[1]|integer'
-										)
+										),
+										array(
+											'field'   => 'RestaurantOutdoorSeating',
+											'label'   => 'RestaurantOutdoorSeating',
+											'rules'   => 'max_length[1]|integer'
+										 )
 										);
 
 			$this->form_validation->set_rules($config);
@@ -200,28 +203,47 @@ function restaurant_edit()
 			if ($this->form_validation->run() == FALSE)
 			{
 				$this->load->view('sample_navbar_view');
-				$this->load->view('restaurant_edit');
+				$this->load->view('error_restaurant_edit');
 				return FALSE;
 			}
 			else
 			{
 
-		/*		$data = array(
-	 'RESTAURANT_NAME' => $this->input->post('RestaurantName'),
-	 'RESTAURANT_ADDRESS' => $this->input->  post('RestaurantAddress'),
-	 'RESTAURANT_RESERVATIONS'=> $this->input->  post('RestaurantReservations'),
-	 'RESTAURANT_WIFI'=> $this->input->  post('RestaurantWifi'),
-	 'RESTAURANT_DELIVERY'=> $this->input->  post('RestaurantDelivery'),
-	 'RESTAURANT_MULTIBANCO'=> $this->input->    post('RestaurantMultibanco'),
-	 'RESTAURANT_OUTDOOR_SEATING'=> $this->input->   post('RestaurantOutdoorSeating')
+				$id = $this->input->post('SelectResaurant');
+				$data = array(
+											 'RESTAURANT_NAME' => $this->input->post('RestaurantName'),
+											 'RESTAURANT_ADDRESS' => $this->input->  post('RestaurantAddress'),
+											 'RESTAURANT_RESERVATIONS'=> $this->input->  post('RestaurantReservations'),
+											 'RESTAURANT_WIFI'=> $this->input->  post('RestaurantWifi'),
+											 'RESTAURANT_DELIVERY'=> $this->input->  post('RestaurantDelivery'),
+											 'RESTAURANT_MULTIBANCO'=> $this->input->    post('RestaurantMultibanco'),
+											 'RESTAURANT_OUTDOOR_SEATING'=> $this->input->   post('RestaurantOutdoorSeating')
 
-);*/
+	 								 		);
 		$this->load->model('restaurant_model');
-		$this->restaurant_model->restaurant_edit();
-		echo 'ja carregou o model';
-				return TRUE;
+		$this->restaurant_model->restaurant_edit($data,$id);
+			$this->index();
+		return TRUE;
 			}
 }
 
+function restaurant_delete()
+{
+		$this->load->view('sample_navbar_view');
+		$this->load->model('restaurant_model');
+		//Get ID and Name to populate combobox
+		$data['list'] = $this->restaurant_model->edit_restaurant();
+		$this->load->view('restaurant_delete',$data);
+
+}
+
+function restaurant_delete_data()
+{
+			$id = $this->input->post('SelectResaurant');
+			$this->load->model('restaurant_model');
+			$this->restaurant_model->restaurant_delete($id);
+			$this->index();
+}
+}
 
 ?>

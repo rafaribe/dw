@@ -2,9 +2,8 @@
 <div class="container">
 <div class="row">
 <div class="col-md-4 col-md-offset-4">
-    <?php echo form_open('Restaurant/restaurant_edit');?>
-
-    <form name="restaurant_edit" method="post" action="<?php echo site_url().'Restaurant/restaurant_edit'; ?>">
+    <?php echo form_open('Restaurant/restaurant_edit_data');?>
+    <form name="restaurant_edit" method="post" action="<?php echo site_url().'Restaurant/restaurant_edit_data'; ?>">
           <h2>Edit your Restaurant</h2><br><hr>
           <label for="SelectRestaurant">Select your Restaurant</label><br>
           <select id="SelectResaurant" name="SelectResaurant">
