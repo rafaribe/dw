@@ -1,0 +1,9 @@
+select d.dish_name,d.dish_id,p.price_value, m.menu_name
+from dishes d join dishes_prices dp
+on d.dish_id = dp.dish_id join 
+dishes_menus dm
+on dm.dish_id= d.dish_id join prices p
+on dp.price_id=p.price_id join menus m
+on m.menu_id=dm.menu_id
+
+;
