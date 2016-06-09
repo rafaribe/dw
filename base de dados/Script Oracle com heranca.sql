@@ -392,7 +392,22 @@ open_hours_type('9:00','3:00'),
 '1',
 '3',
 'mac.jpg');
---INSERTS MENU--
+INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS,RESTAURANT_COORDS,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
+RESTAURANT_DELIVERY,RESTAURANT_MULTIBANCO,RESTAURANT_OUTDOOR_SEATING,RESTAURANT_POINTS,RESTAURANT_IMAGE)
+values(
+'Solar do Verde Gaio',
+'Viseu',
+coordinates_type('111','200'),
+open_hours_type('9:00'',00:00'),
+'1',
+'0',
+'1',
+'1',
+'1',
+'5',
+'verd.jpg');
+
+--INSERTS Menus--
 INSERT INTO Menus (RESTAURANT_ID, MENU_NAME)
 values(
 '1',
@@ -475,8 +490,47 @@ values(
 '16',
 'Menu Mac'
 );
+INSERT INTO Menus (RESTAURANT_ID, MENU_NAME)
+values(
+'17',
+'Menu Verde'
+);
 --INSERTS PRICES--
---INSERTS DISHES--
+insert into Prices (menu_id,price_value)
+values('1','20');
+insert into Prices (menu_id,price_value)
+values('2','15');
+insert into Prices (menu_id,price_value)
+values('3','25');
+insert into Prices (menu_id,price_value)
+values('4','10');
+insert into Prices (menu_id,price_value)
+values('5','20');
+insert into Prices (menu_id,price_value)
+values('6','9,50');
+insert into Prices (menu_id,price_value)
+values('7','30');
+insert into Prices (menu_id,price_value)
+values('8','15');
+insert into Prices (menu_id,price_value)
+values('9','20');
+insert into Prices (menu_id,price_value)
+values('10','35');
+insert into Prices (menu_id,price_value)
+values('11','6');
+insert into Prices (menu_id,price_value)
+values('12','35');
+insert into Prices (menu_id,price_value)
+values('13','15');
+insert into Prices (menu_id,price_value)
+values('14','8');
+insert into Prices (menu_id,price_value)
+values('15','15');
+insert into Prices (menu_id,price_value)
+values('16','7');
+insert into Prices (menu_id,price_value)
+values('17','40');
+--insert dish
 INSERT INTO Dishes (DISH_NAME,DISH_TYPE,DISH_IMAGE)
 values(
 'Bacalhau a Bras',
@@ -780,10 +834,318 @@ values(
 );
 
 --INSERTS DISH_PRICES--
+insert into Dishes_Prices (Dish_id, price_id)
+values ('1','1');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('1','3');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('1','10');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('1','13');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('2','2');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('2','8');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('2','9');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('2','12');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('3','3');
+insert into Dishes_Prices (Dish_id, PRICE_IDid)
+values ('3','17');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('3','15');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('3','9');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('4','11');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('4','14');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('4','6');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('4','4');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('5','5');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('5','8');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('5','9');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('5','10');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('6','6');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('6','12');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('6','2');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('6','17');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('7','3');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('7','11');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('7','15');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('8','1');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('8','10');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('8','11');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('9','1');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('9','5');
+insert into Dishes_Prices (Dish_id,price_id)
+values ('9','6');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('10','10');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('10','12');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('10','14');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('10','16');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('11','3');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('11','6');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('11','9');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('12','12');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('12','1');
+insert into Dishes_Prices (Dish_id,price_id)
+values ('12','3');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('13','3');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('13','6');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('13','9');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('14','2');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('14','4');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('14','6');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('14','8');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('15','3');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('15','6');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('15','9');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('15','12');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('15','15');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('16','4');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('16','8');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('16','12');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('16','16');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('17','17');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('17','12');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('17','5');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('18','1');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('18','3');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('18','7');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('18','9');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('19','1');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('19','10');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('19','15');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('20','17');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('20','16');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('20','15');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('20','14');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('21','1');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('21','10');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('22','1');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('22','2');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('22','3');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('22','4');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('23','6');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('23','7');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('23','8');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('23','9');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('23','10');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('24','10');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('24','11');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('24','12');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('25','8');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('25','9');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('25','10');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('25','11');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('25','12');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('26','15');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('26','16');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('26','17');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('27','16');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('27','17');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('28','3');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('28','4');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('28','5');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('29','2');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('29','3');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('29','4');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('29','6');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('29','7');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('30','8');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('30','2');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('30','4');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('30','6');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('31','9');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('31','2');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('31','10');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('31','17');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('32','1');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('32','12');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('33','6');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('33','12');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('33','17');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('33','13');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('34','2');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('34','4');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('34','6');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('35','10');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('35','12');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('35','15');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('36','2');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('36','4');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('36','6');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('37','4');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('37','5');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('37','8');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('37','17');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('38','10');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('38','11');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('39','1');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('39','10');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('39','17');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('40','3');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('40','6');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('40','9');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('41','1');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('41','2');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('42','3');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('42','6');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('42','9');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('43','10');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('43','11');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('43','12');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('43','13');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('44','1');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('44','10');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('45','12');
+insert into Dishes_Prices (Dish_id, price_id)
+values ('45','13');
+insert into Dishes_Prices (Dish_id,price_id)
+values ('46','2');
 
 --inserts coords
 insert into coords (COORDS_ID,RESTAURANT_ID,LATITUDE,LONGITUDE)
 values('1',
 '6',
 '40.656700',
-'7.915568');
+'-7.915568');
