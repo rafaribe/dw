@@ -110,12 +110,13 @@ class Dish extends CI_Controller
 					 if ( ! $this->upload->do_upload('DishImage'))
 					 {
 									 $error = array('error' => $this->upload->display_errors());
+									 $this->load->view('sample_navbar_view');
 									 $this->load->view('error_restaurant_edit', $error);
 					 }
 					 else
 					 {
 									 $data = array('upload_data' => $this->upload->data());
-
+									 $this->load->view('sample_navbar_view');
 									 $this->load->view('success_view', $data);
 					 }
 						$file_name =  $this->upload->file_name;
@@ -191,6 +192,12 @@ class Dish extends CI_Controller
 						$this->index();
 					return TRUE;
 						}
+			}
+			function sucess()
+			{
+				$this->load->view('sample_navbar_view');
+					$this->load->view('success_view');
+
 			}
 }
 
