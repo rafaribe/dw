@@ -254,7 +254,6 @@ function restaurant_template()
 
 			$this->load->view('sample_navbar_view');
 			$this->load->view('restaurant_template_view',$data);
-					print_r($data['row']);
 		}
 }
 

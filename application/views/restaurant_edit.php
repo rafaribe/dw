@@ -32,5 +32,5 @@
         </form>
 </div>
 <div>
-  <script src="http://localhost/dw/assets/scripts/restaurant.js"></script>
+<script src="<?php echo base_url().'assets/scripts/restaurant.js.'?>"> </script>
 </div>
