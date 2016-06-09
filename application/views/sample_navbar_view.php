@@ -1,5 +1,6 @@
 <!-- Includes -->
 <!-- jQuery library -->
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/style.css"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <!-- Latest compiled and minified CSS -->
