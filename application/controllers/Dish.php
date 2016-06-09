@@ -193,6 +193,12 @@ class Dish extends CI_Controller
 					return TRUE;
 						}
 			}
+			function sucess()
+			{
+					$this->load->view('sample_navbar_view');
+					$this->load->view('success_view');
+
+			}
 		}
 
 
