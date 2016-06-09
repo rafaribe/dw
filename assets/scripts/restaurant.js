@@ -21,7 +21,7 @@ console.log(x);
                 }
             });
     });
-    $("#SelectDish").change(function() {
+$("#SelectDish").change(function() {
                 var x = $(this).find("option:selected").val();
     console.log(x);
                     $.ajax({
