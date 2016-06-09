@@ -1149,3 +1149,21 @@ values('1',
 '6',
 '40.656700',
 '-7.915568');
+
+-- insert USERS
+
+
+INSERT INTO USERS (USER_NAME,USER_PASSWORD,USER_CREATIONDATE,USER_EMAIL,USER_PHONE)
+values(
+'Filipa',
+'1234',
+sysdate,
+Email_list_type('claudiaftrigo@hotmail.com'),
+phone_list_type('935136801'));
+INSERT INTO USERS (USER_NAME,USER_PASSWORD,USER_CREATIONDATE,USER_EMAIL,USER_PHONE)
+values(
+'Rafael',
+'1234',
+sysdate,
+Email_list_type('rafael.ntw@gmail.com'),
+phone_list_type('935136300'));
