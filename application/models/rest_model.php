@@ -59,4 +59,19 @@ class rest_model extends CI_Model {
             $result = $this->db->get('RESTAURANTS');
             return $result->result();
         }
+
+        function get_menu_by_id($id)
+        {
+          $query= "Select D.DISH_NAME, P.PRICE_VALUE, D.DISH_TYPE, RESTAURANT_NAME
+          FROM DISHES D JOIN DISHES_PRICES DP
+          ON   D.DISH_ID = DP.DISH_ID JOIN PRICES P
+          ON DP.PRICE_ID = P.PRICE_ID JOIN MENUS M
+          ON P.MENU_ID = M.MENU_ID JOIN RESTAURANTS R
+          ON M.RESTAURANT_ID = R.RESTAURANT_ID
+           ORDER BY R.RESTAURANT_NAME"
+          ;
+          $qr= $this->db->query($query);
+          $result = $qr->result_array();
+          return $result;
+        }
 }

@@ -188,4 +188,18 @@ public function all_restaurants_get()
 
 
 }
+public function menu_info_get()
+{
+//	$id = $this->uri->segment(3);
+$id='1';
+	$this->load->model('rest_model');
+$data =	$this->rest_model->get_menu_by_id($id);
+if ($data)
+{
+	if($data)
+	{
+		$this->response($data, 200); // 200 being the HTTP response code
+	} else {$this->response([], 404);	}
+}
+}
 }
