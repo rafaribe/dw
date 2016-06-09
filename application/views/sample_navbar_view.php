@@ -36,8 +36,13 @@
           <li><a href=" <?php echo base_url(). 'restaurant/restaurant_delete'?>">Delete Restaurant</a></li>
        </ul>
       </li>
-      <li><a href=" <?php echo base_url(). 'Menus' ?>">Menus</a></li>
+    <!--  <li><a href=" <?php echo base_url(). 'Menus' ?>">Menus</a></li> -->
     <!--  <li><a href=" <?php echo base_url(). 'Dishes'?>">Dish</a></li> -->
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">Menus <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+          <li><a href=" <?php echo base_url(). 'menu'?>">View Menu</a></li>
+     </ul>
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dish <span class="caret"></span></a>
         <ul class="dropdown-menu">
