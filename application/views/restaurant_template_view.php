@@ -13,17 +13,47 @@
 
                    </div>
                    <div class="ratings">
-                     <?php for ($i=0; $i < $row->RESTAURANT_POINTS, i++) {
-                    echo   "<span class="glyphicon glyphicon-star"></span>";
-                     } ?>
+
                        <p class="pull-right">3 reviews</p>
                        <p>
-                           <span class="glyphicon glyphicon-star"></span>
-                           <span class="glyphicon glyphicon-star"></span>
-                           <span class="glyphicon glyphicon-star"></span>
-                           <span class="glyphicon glyphicon-star"></span>
-                           <span class="glyphicon glyphicon-star-empty"></span>
-                           4.0 stars
+                         <?php
+                         $stars = round($row->RESTAURANT_POINTS);
+                         switch ($stars)
+                         {
+                         case  "1":
+                                   echo "<span class='glyphicon glyphicon-star'></span>";
+                                   echo " 1 Star ";
+                                   break;
+                         case "2":
+                                   echo "<span class='glyphicon glyphicon-star'></span>";
+                                   echo "<span class='glyphicon glyphicon-star'></span>";
+                                   echo " 2 Stars ";
+                                   break;
+                         case "3":
+                                   echo "<span class='glyphicon glyphicon-star'></span>";
+                                   echo "<span class='glyphicon glyphicon-star'></span>";
+                                   echo "<span class='glyphicon glyphicon-star'></span>";
+                                   echo " 3 Stars ";
+                                   break;
+                         case "4":
+                                   echo "<span class='glyphicon glyphicon-star'></span>";
+                                   echo "<span class='glyphicon glyphicon-star'></span>";
+                                   echo "<span class='glyphicon glyphicon-star'></span>";
+                                   echo "<span class='glyphicon glyphicon-star'></span>";
+                                   echo " 4 Stars ";
+                                   break;
+                         default:
+                                   echo "<span class='glyphicon glyphicon-star'></span>";
+                                   echo "<span class='glyphicon glyphicon-star'></span>";
+                                   echo "<span class='glyphicon glyphicon-star'></span>";
+                                   echo "<span class='glyphicon glyphicon-star'></span>";
+                                   echo "<span class='glyphicon glyphicon-star'></span>";
+                                   echo " 5 Stars ";
+                                   break;
+                         }
+
+                         ?>
+
                        </p>
                    </div>
                </div>

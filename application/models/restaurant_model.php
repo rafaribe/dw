@@ -104,8 +104,6 @@ class Restaurant_Model extends CI_Model
      FROM RESTAURANTS r JOIN COORDS c
      ON r.RESTAURANT_ID = c.RESTAURANT_ID
      WHERE r.RESTAURANT_ID = '".$id."'";
-    // echo $query;
-
 
     $result = $this->db->query($query);
     $rows = $result->row();
