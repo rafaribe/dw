@@ -128,11 +128,13 @@ function do_upload()
 		 if ( ! $this->upload->do_upload('RestaurantImage'))
 		 {
 						 $error = array('error' => $this->upload->display_errors());
+						 	$this->load->view('sample_navbar_view');
 						 $this->load->view('error_restaurant_edit', $error);
 		 }
 		 else
 		 {
 						 $data = array('upload_data' => $this->upload->data());
+						 	$this->load->view('sample_navbar_view');
 
 						 $this->load->view('success_view', $data);
 		 }
@@ -255,6 +257,13 @@ function restaurant_template()
 			$this->load->view('sample_navbar_view');
 			$this->load->view('restaurant_template_view',$data);
 		}
-}
+		function sucess()
+		{
+				$this->load->view('sample_navbar_view');
+				$this->load->view('error_restaurant_edit');
+
+		}
+
+	}
 
 ?>
