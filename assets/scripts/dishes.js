@@ -1,5 +1,11 @@
 var app = angular.module('myApp', []);
 app.controller('dishesCtrl', function($scope, $http) {
-    $http.get("http://192.168.130.145/dw/rest/menu_info")
-    .then(function (response) {$scope.info = response.data;});
+    $("#SelectMenu").change(function() {
+        $scope.id = $(this).find("option:selected").val();
+        console.log($scope.id);
+    $http.get('http://192.168.1.162/dw/rest/menu_info/' + $scope.id)
+      .then(function(response) {
+          $scope.info = response.data;
+            });
+    });
 });

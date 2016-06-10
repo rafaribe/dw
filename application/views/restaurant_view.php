@@ -5,13 +5,13 @@
 <div>
 
        <div class="row" id="div-row1">
-           <?php foreach($list as $data): ?>
+           <?php foreach ($list as $data): ?>
            <div class="col-md-4 portfolio-item">
-               <a href="#">
-                   <img class="img-responsive" src="<?php echo base_url().'assets/images/restaurantes/'. $data->RESTAURANT_IMAGE ?>" alt="<?php echo base_url().'assets/images/'. $data->RESTAURANT_NAME ?>" width="700" height="400">
+               <a href="<?php echo base_url().'Restaurant/restaurant_template?id='.$data->RESTAURANT_ID ?>">
+                   <img class="img-responsive" src="<?php echo base_url().'assets/images/restaurantes/'.$data->RESTAURANT_IMAGE ?>" alt="<?php echo base_url().'assets/images/'.$data->RESTAURANT_NAME ?>" width="700" height="400">
                </a>
                <h3>
-                   <a href="<?php echo base_url().'Restaurants/'. $data->RESTAURANT_ID ?>"><?php echo $data->RESTAURANT_NAME ?></a>
+                   <a href="<?php echo base_url().'Restaurant/restaurant_template?id='.$data->RESTAURANT_ID ?>"> <?php echo $data->RESTAURANT_NAME ?></a>
                </h3>
 
            </div>

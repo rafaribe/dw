@@ -6,7 +6,7 @@
                 <h2><a href="#"><?php echo $row->RESTAURANT_NAME; ?></a> </h2>
                 <hr />
                     <img class="img-responsive" src="<?php echo base_url().'assets/images/restaurantes/'.
-                    $row->RESTAURANT_IMAGE ?>" alt="<?php echo base_url().'assets/images/'. $row->RESTAURANT_NAME ?>" >
+                    $row->RESTAURANT_IMAGE ?>" alt="<?php echo base_url().'assets/images/'.$row->RESTAURANT_NAME ?>" >
 
                </div>
 
@@ -18,39 +18,39 @@
 <div id="longitude" name="<?php echo $longitude;?>"></div>
 
 <?php //Change Binary to Yes/No
- if ($row->RESTAURANT_WIFI == '1')
- {
-    $wifi = 'Yes';
+
+ if ($row->RESTAURANT_WIFI == '1') {
+     $wifi = 'Yes';
+ } else {
+     $wifi = 'No';
+ }
+ if ($row->RESTAURANT_DELIVERY == '1') {
+     $delivery = 'Yes';
+ } else {
+     $delivery = 'No';
+ }
+ if ($row->RESTAURANT_MULTIBANCO == '1') {
+     $multibanco = 'Yes';
+ } else {
+     $multibanco = 'No';
+ }
+ if ($row->RESTAURANT_OUTDOOR_SEATING == '1') {
+     $outdoor_seating = 'Yes';
+ } else {
+     $outdoor_seating = 'No';
  }
 
- else{
-    $wifi = 'No';
- }
- if ($row->RESTAURANT_DELIVERY == '1')
- {
-    $delivery = 'Yes';
- }
-
- else{
-    $delivery = 'No';
- }
- if ($row->RESTAURANT_MULTIBANCO == '1')
- {
-    $multibanco = 'Yes';
- }
-
- else{
-    $multibanco = 'No';
- }
- if ($row->RESTAURANT_OUTDOOR_SEATING == '1')
- {
-    $outdoor_seating = 'Yes';
- }
-
- else{
-    $outdoor_seating = 'No';
- }
  ?>
+
+ <?php
+ //function to read a clob
+ function read_clob($field)
+ {
+     return $field->read($field->size());
+ }
+?>
+
+
 <div class="col-xs-12 col-sm-4 col-md-4">
     <h2>Restaurant Info:</h2><hr />
     <div class="panel-group">
@@ -83,29 +83,28 @@
       <div class="panel panel-primary">
         <div class="panel-heading"><strong>Star Score: <?php
         $stars = round($row->RESTAURANT_POINTS);
-        switch ($stars)
-        {
-        case  "1":
+        switch ($stars) {
+        case  '1':
                   echo "<span class='glyphicon glyphicon-star'></span>";
-                  echo " 1 Star ";
+                  echo ' 1 Star ';
                   break;
-        case "2":
+        case '2':
                   echo "<span class='glyphicon glyphicon-star'></span>";
                   echo "<span class='glyphicon glyphicon-star'></span>";
-                  echo " 2 Stars ";
+                  echo ' 2 Stars ';
                   break;
-        case "3":
+        case '3':
                   echo "<span class='glyphicon glyphicon-star'></span>";
                   echo "<span class='glyphicon glyphicon-star'></span>";
                   echo "<span class='glyphicon glyphicon-star'></span>";
-                  echo " 3 Stars ";
+                  echo ' 3 Stars ';
                   break;
-        case "4":
+        case '4':
                   echo "<span class='glyphicon glyphicon-star'></span>";
                   echo "<span class='glyphicon glyphicon-star'></span>";
                   echo "<span class='glyphicon glyphicon-star'></span>";
                   echo "<span class='glyphicon glyphicon-star'></span>";
-                  echo " 4 Stars ";
+                  echo ' 4 Stars ';
                   break;
         default:
                   echo "<span class='glyphicon glyphicon-star'></span>";
@@ -113,7 +112,7 @@
                   echo "<span class='glyphicon glyphicon-star'></span>";
                   echo "<span class='glyphicon glyphicon-star'></span>";
                   echo "<span class='glyphicon glyphicon-star'></span>";
-                  echo " 5 Stars ";
+                  echo ' 5 Stars ';
                   break;
         }
 
@@ -141,8 +140,25 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 <h2>Comments</h2>
 <div ng-app="App">
-  
 
+  <div class="form-group" >
+    <form method="POST" action="Restaurants/comments">
+    <label for="comment">Insert a Comment</label>
+    <input type="text" class="form-control input-lg" id="comment" placeholder="leave a comment"><br>
+      <label for="comment">Leave a Rating</label>
+    <input type="number" class="form-control input-sm" id="rating" placeholder="Choose the rating"><br>
+    <button class="btn btn-success"type="submit">Comment</button>
+  </form>
+  </div>
+  <div>
+<?php foreach ($comment as $cmt): ?>
+<div class="jumbotron">
+  <div class="alert alert-success" role="alert"><?php $cmt->USER_NAME; ?></div>
+
+  <?php echo read_clob($cmt->COMMENT_TEXT); ?>
+</div>
+    <?php endforeach; ?>
+</div>
 </div>
 </div>
 </div>

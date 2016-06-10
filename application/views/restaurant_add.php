@@ -18,7 +18,11 @@
           <label for="RestaurantMultibanconame">Have Multibanco</label>
           <input class="form-control"type="number" class="numero" id="RestaurantMultibanconame"name="RestaurantMultibanco" placeholder="Have Multibanco?"><br>
           <label for="RestaurantOutdoorSeating">Have Outdoor Siting</label>
-          <input class="form-control"type="number" class="numero" id="RestaurantOutdoorSeating" name="RestaurantOutdoorSeating" placeholder="Have Outdoor Siting"><br>
+          <input class="form-control"type="text" class="numero" id="RestaurantOutdoorSeating" name="RestaurantOutdoorSeating" placeholder="Have Outdoor Siting"><br>
+          <label for="Latitude">Latitude</label>
+          <input class="form-control"type="text" class="numero" id="Latitude" name="Latitude" placeholder="Latitude"><br>
+          <label for="Longitude">Longitude</label>
+          <input class="form-control"type="text" class="numero" id="Longitude" name="Longitude" placeholder="Longitude"><br>
           <label for="RestaurantImage">Upload a picture of your restaurant</label>
           <input class="form-control"type="file" class="image" id="RestaurantImage"name="RestaurantImage" placeholder="Upload a Picture"><br>
 <div class="container">
