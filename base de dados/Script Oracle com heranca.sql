@@ -1173,7 +1173,7 @@ insert into coords (COORDS_ID,RESTAURANT_ID,LATITUDE,LONGITUDE)
 values('6',
 '5',
 '40.642002',
-'-7.9268327');
+'7.9268327');
 insert into coords (COORDS_ID,RESTAURANT_ID,LATITUDE,LONGITUDE)
 values('7',
 '7',
