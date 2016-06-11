@@ -221,13 +221,16 @@ public function restaurant_edit_data()
              'RESTAURANT_DELIVERY' => $this->input->post('RestaurantDelivery'),
              'RESTAURANT_MULTIBANCO' => $this->input->post('RestaurantMultibanco'),
              'RESTAURANT_OUTDOOR_SEATING' => $this->input->post('RestaurantOutdoorSeating'),
+             'RESTAURANT_LATITUDE' => $this->input->post('RestaurantLatitude'),
+             'RESTAURANT_LONGITUDE' => $this->input->post('RestaurantLongitude'),
 
               );
         $this->load->model('restaurant_model');
         $this->restaurant_model->restaurant_edit($data, $id);
 //        $this->index();
 
-        return true;
+        $this->load->view('sample_navbar_view');
+        $this->load->view('success_view');
     }
 }
 
@@ -277,7 +280,7 @@ public function restaurant_edit_data()
         $this->load->model('restaurant_model');
         $this->restaurant_model->comment_add($data);
         $this->load->view('sample_navbar_view');
-        $this->load->view('success_view');  
+        $this->load->view('success_view');
 
     }
 }

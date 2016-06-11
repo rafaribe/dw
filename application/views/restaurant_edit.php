@@ -16,15 +16,19 @@
           <label for="RestaurantAddress">Address</label>
           <input class="form-control"type="text" class="pass" id="RestaurantAddress"name="RestaurantAddress" placeholder="Restaurant Address"><br>
           <label for="RestaurantReservations">Reservations</label>
-          <input class="form-control"type="number" class="numero" id="RestaurantReservations"name="RestaurantReservations" placeholder="Restaurant Rerservations"><br>
+          <input class="form-control"type="number" class="numero" id="RestaurantReservations"name="RestaurantReservations" min="0" max="1" placeholder="Restaurant Rerservations"><br>
           <label for="RestaurantWifi">Have Wifi</label>
-          <input class="form-control"type="number" class="numero" id="RestaurantWifi"name="RestaurantWifi" placeholder="Wi-Fi"><br>
+          <input class="form-control"type="number" class="numero" id="RestaurantWifi"name="RestaurantWifi"  min="0" max="1" placeholder="Wi-Fi"><br>
           <label for="RestaurantDelivery">Home Delivery</label>
-          <input class="form-control"type="number" class="numero" id="RestaurantDelivery"name="RestaurantDelivery" placeholder="Home Deliveries"><br>
+          <input class="form-control"type="number" class="numero" id="RestaurantDelivery"name="RestaurantDelivery"  min="0" max="1" placeholder="Home Deliveries"><br>
           <label for="RestaurantMultibanco">Have Multibanco</label>
-          <input class="form-control"type="number" class="numero" id="RestaurantMultibanco"name="RestaurantMultibanco" placeholder="Have Multibanco?"><br>
+          <input class="form-control"type="number" class="numero" id="RestaurantMultibanco"name="RestaurantMultibanco"  min="0" max="1" placeholder="Have Multibanco?"><br>
           <label for="RestaurantOutdoorSeating">Have Outdoor Siting</label>
-          <input class="form-control"type="number" class="numero" id="RestaurantOutdoorSeating" name="RestaurantOutdoorSeating" placeholder="Have Outdoor Siting"><br>
+          <input class="form-control"type="number" class="numero" id="RestaurantOutdoorSeating" name="RestaurantOutdoorSeating"  min="0" max="1" placeholder="Have Outdoor Siting"><br>
+          <label for="RestaurantLatitude">Latitude</label>
+          <input class="form-control"type="number" class="numero" id="RestaurantLatitude" name="RestaurantLatitude" placeholder="Latitude"><br>
+          <label for="RestaurantLongitude">Longitude</label>
+          <input class="form-control"type="number" class="numero" id="RestaurantLongitude" name="RestaurantLongitude" placeholder="Have Outdoor Siting"><br>
 <div class="container">
       <?php echo validation_errors(); ?>
 </div>
