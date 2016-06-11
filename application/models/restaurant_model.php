@@ -123,14 +123,20 @@ class Restaurant_Model extends CI_Model
 
     public function comments_restaurant($id)
     {
-        //$user = $this->session->userdata('id');
-        $query = "SELECT CR.COMMENT_ID, CR.USER_ID, CR.COMMENT_TEXT, U.USER_NAME
+        $query = "SELECT CR.COMMENT_ID, CR.USER_ID, CR.COMMENT_TEXT, USER_NAME
         FROM COMMENTS_RESTAURANT CR JOIN USERS U
         ON CR.USER_ID = U.USER_ID WHERE CR.RESTAURANT_ID = '".$id."'";
-      //  echo $query;
-        $result = $this->db->query($query);
-        $res = $result->row();
 
-        return $res;
+        $result = $this->db->query($query);
+        $comment = $result->result();
+
+        return $comment;
+    }
+
+    public function comment_add($data)
+    {
+    $this->db->insert('COMMENTS_RESTAURANT', $data);
+
+       return ;
     }
 }

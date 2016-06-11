@@ -10,6 +10,7 @@ class VerifyLogin extends CI_Controller
     {
         parent::__construct();
         $this->load->model('user', '', true);
+        $this->load->library('session');
     }
 
     public function index()

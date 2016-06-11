@@ -1,5 +1,5 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 <div class="container">
-
 <div class="row">
            <div class="col-xs-12 col-sm-4 col-md-4  ">
 
@@ -41,16 +41,6 @@
  }
 
  ?>
-
- <?php
- //function to read a clob
- function read_clob($field)
- {
-     return $field->read($field->size());
- }
-?>
-
-
 <div class="col-xs-12 col-sm-4 col-md-4">
     <h2>Restaurant Info:</h2><hr />
     <div class="panel-group">
@@ -137,25 +127,26 @@
 </div>
 <hr />
 <div class="row">
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-<h2>Comments</h2>
-<div ng-app="App">
 
+<h2>Comments</h2>
+<div>
   <div class="form-group" >
-    <form method="POST" action="Restaurants/comments">
+      <?php echo form_open('restaurant/restaurant_comments');?>
+    <form method="POST" action="restaurant_comments">
     <label for="comment">Insert a Comment</label>
-    <input type="text" class="form-control input-lg" id="comment" placeholder="leave a comment"><br>
+    <input type="text" class="form-control input-lg" id="comment" name="comment" placeholder="leave a comment"><br>
       <label for="comment">Leave a Rating</label>
-    <input type="number" class="form-control input-sm" id="rating" placeholder="Choose the rating"><br>
+    <input type="number" class="form-control input-sm" id="rating" name="rating"min="0" max="5" placeholder="Choose the rating"><br>
+    <input type="hidden" class="form-control input-sm" id="restaurant_id" name="restaurant_id"value="<?php echo $row->RESTAURANT_ID ?>"><br>
     <button class="btn btn-success"type="submit">Comment</button>
   </form>
   </div>
   <div>
 <?php foreach ($comment as $cmt): ?>
-<div class="jumbotron">
-  <div class="alert alert-success" role="alert"><?php $cmt->USER_NAME; ?></div>
+<div class="alert alert-info">
+<h3><span class="label label-success"><?php echo $cmt->USER_NAME ?></span></h3>
 
-  <?php echo read_clob($cmt->COMMENT_TEXT); ?>
+  <?php echo $cmt->COMMENT_TEXT ?>
 </div>
     <?php endforeach; ?>
 </div>

@@ -11,6 +11,7 @@ class Restaurant extends CI_Controller
                 parent::__construct();
         $this->load->helper(array('form', 'url'));
         $this->load->model('Restaurant_Model');
+        $this->load->library('session');
     }
     public function index()
     {
@@ -256,9 +257,27 @@ public function restaurant_edit_data()
         $this->load->view('sample_navbar_view');
         $this->load->view('restaurant_template_view', $data);
     }
-    public function sucess()
+    public function success()
     {
         $this->load->view('sample_navbar_view');
         $this->load->view('error_restaurant_edit');
+    }
+
+    public function restaurant_comments()
+    {
+      $session_data = $this->session->userdata('logged_in');
+      $id = $session_data['id'];
+      $idrestaurant = $this->input->post('restaurant_id');
+        $data = array(
+            'USER_ID' => $id,
+            'COMMENT_TEXT' => $this->input->post('comment'),
+            'RESTAURANT_ID' => $idrestaurant,
+            'RESTAURANT_RATING' => $this->input->post('rating')
+        );
+        $this->load->model('restaurant_model');
+        $this->restaurant_model->comment_add($data);
+        $this->load->view('sample_navbar_view');
+        $this->load->view('success_view');  
+
     }
 }
