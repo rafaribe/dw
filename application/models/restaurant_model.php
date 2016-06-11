@@ -25,7 +25,7 @@ class Restaurant_Model extends CI_Model
                     "INSERT INTO RESTAURANTS
     				(RESTAURANT_NAME,RESTAURANT_ADDRESS,RESTAURANT_RESERVATIONS,
             RESTAURANT_WIFI,RESTAURANT_DELIVERY,RESTAURANT_MULTIBANCO,
-            RESTAURANT_OUTDOOR_SEATING,RESTAURANT_IMAGE
+            RESTAURANT_OUTDOOR_SEATING,RESTAURANT_IMAGE,RESTAURANT_LATITUDE,RESTAURANT_LONGITUDE
             )
     				VALUES
     				(
@@ -36,25 +36,15 @@ class Restaurant_Model extends CI_Model
             '".$info['RESTAURANT_DELIVERY']."',
             '".$info['RESTAURANT_MULTIBANCO']."',
             '".$info['RESTAURANT_OUTDOOR_SEATING']."',
-            '".$info['RESTAURANT_IMAGE']."'
+            '".$info['RESTAURANT_IMAGE']."',
+            '".$info['RESTAURANT_LATITUDE']."',
+            '".$info['RESTAURANT_LONGITUDE']."'
     				)
     				";
 
-        $query2 = 'SELECT MAX(RESTAURANT_ID) FROM RESTAURANTS';
-
-        $query3 = "INSERT INTO COORDS RESTAURANT_ID,LATITUDE,LONGITUDE
-        VALUES
-         (
-           ('".$query2."'),
-            '".$info['LATITUDE']."',
-            '".$info['LONGITUDE']."'
-            )";
-
         $result = $this->db->query($query);
-        echo $result2;
-        $result2 = $this->db->query($query2);
-        echo $result1;
-        echo $result2;
+
+
 
         return true;
     }
@@ -120,10 +110,9 @@ class Restaurant_Model extends CI_Model
      r.RESTAURANT_OUTDOOR_SEATING,
      r.RESTAURANT_POINTS,
      r.RESTAURANT_IMAGE,
-     c.LATITUDE,
-     c.LONGITUDE
-     FROM RESTAURANTS r JOIN COORDS c
-     ON r.RESTAURANT_ID = c.RESTAURANT_ID
+     r.RESTAURANT_LATITUDE,
+     r.RESTAURANT_LONGITUDE
+     FROM RESTAURANTS r
      WHERE r.RESTAURANT_ID = '".$id."'";
 
         $result = $this->db->query($query);

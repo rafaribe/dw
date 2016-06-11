@@ -98,8 +98,8 @@ class Restaurant extends CI_Controller
                  'RESTAURANT_DELIVERY' => $this->input->post('RestaurantDelivery'),
                  'RESTAURANT_MULTIBANCO' => $this->input->post('RestaurantMultibanco'),
                  'RESTAURANT_OUTDOOR_SEATING' => $this->input->post('RestaurantOutdoorSeating'),
-                 'LATITUDE' => $this->input->post('Latitude'),
-                 'LONGITUDE' => $this->input->post('Longitude'),
+                 'RESTAURANT_LATITUDE' => $this->input->post('Latitude'),
+                 'RESTAURANT_LONGITUDE' => $this->input->post('Longitude'),
                  'RESTAURANT_IMAGE' => $file_name,
                 );
 

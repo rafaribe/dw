@@ -9,7 +9,7 @@
           <input class="form-control" type="text" class="user" id="DishName" name="DishName" placeholder="Dish Name"><br>
           <label for="DishType">Dish Type</label>
           <input class="form-control"type="text" class="pass" id="DishType"name="DishType" placeholder="Dish Type"><br>
-          <label for="DishImage">Upload a picture of your restaurant</label>
+          <label for="DishImage">Picture</label>
           <input class="form-control"type="file" class="image" id="DishImage"name="DishImage" placeholder="Upload a Picture"><br>
 <div class="container">
       <?php echo validation_errors(); ?>

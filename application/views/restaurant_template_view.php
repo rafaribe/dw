@@ -11,8 +11,8 @@
                </div>
 
                <?php
-               $latitude = $row->LATITUDE;
-               $longitude = $row->LONGITUDE;
+               $latitude = $row->RESTAURANT_LATITUDE;
+               $longitude = $row->RESTAURANT_LONGITUDE;
                ?>
 <div id="latitude" name="<?php echo $latitude;?>"></div>
 <div id="longitude" name="<?php echo $longitude;?>"></div>
@@ -121,7 +121,7 @@
       </div>
 
       <div class="panel panel-success">
-        <div class="panel-heading"><strong>Coordinates:  <?php echo $row->LATITUDE; echo ' '; echo $row->LONGITUDE ?></strong></div>
+        <div class="panel-heading"><strong>Coordinates:  <?php echo $row->RESTAURANT_LATITUDE; echo ' '; echo $row->RESTAURANT_LONGITUDE ?></strong></div>
       </div>
 
 

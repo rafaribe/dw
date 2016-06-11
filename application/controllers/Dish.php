@@ -103,7 +103,7 @@ class Dish extends CI_Controller
 							 $config['allowed_types']        = 'gif|jpg|png';
 							 $config['max_size']             = 20000;
 							 $config['max_width']            = 700;
-							 $config['max_height']           = 400;
+							 $config['max_height']           = 5000;
 
 							 $this->load->library('upload', $config);
 
