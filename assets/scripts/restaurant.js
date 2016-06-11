@@ -20,6 +20,8 @@ $("#SelectResaurant").change(function() {
             $("#RestaurantDelivery").val(resultado[0].RESTAURANT_DELIVERY);
             $("#RestaurantMultibanco").val(resultado[0].RESTAURANT_MULTIBANCO);
             $("#RestaurantOutdoorSeating").val(resultado[0].RESTAURANT_OUTDOOR_SEATING);
+            $("#RestaurantLatitude").val(resultado[0].RESTAURANT_LATITUDE);
+            $("#RestaurantLongitude").val(resultado[0].RESTAURANT_LONGITUDE);
         }
     });
 });

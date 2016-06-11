@@ -77,7 +77,7 @@ class Restaurant_Model extends CI_Model
     {
         $this->db->select('RESTAURANT_NAME,RESTAURANT_ADDRESS,RESTAURANT_RESERVATIONS,
     RESTAURANT_WIFI,RESTAURANT_DELIVERY,RESTAURANT_MULTIBANCO,
-    RESTAURANT_OUTDOOR_SEATING');
+    RESTAURANT_OUTDOOR_SEATING,RESTAURANT_LATITUDE,RESTAURANT_LONGITUDE');
         $id = $this->input->post('restaurant_id');
         $this->db->where('RESTAURANT_ID', $id);
         $result = $this->db->get('RESTAURANTS');
