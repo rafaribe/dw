@@ -6,7 +6,7 @@
     <form name="restaurant_edit" method="post" action="<?php echo site_url().'Restaurant/restaurant_edit_data'; ?>">
           <h2>Delete Restaurant</h2><br><hr>
           <label for="SelectRestaurant">Select your Restaurant</label><br>
-          <select id="SelectResaurant" name="SelectResaurant">
+          <select id="SelectRestaurant" name="SelectRestaurant">
             <?php foreach($list as $lista): ?>
               <option value="<?php echo $lista->RESTAURANT_ID; ?>"><?php echo $lista->RESTAURANT_NAME; ?></option>
             <?php endforeach;  ?>

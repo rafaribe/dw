@@ -94,6 +94,7 @@ class Restaurant_Model extends CI_Model
 
     public function restaurant_delete($id)
     {
+        echo $id;
         $this->db->where('RESTAURANT_ID', $id);
         $this->db->delete('RESTAURANTS');
   //  $result->this->db-
