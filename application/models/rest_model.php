@@ -77,6 +77,7 @@ class rest_model extends CI_Model {
         function varray()
         {
           $query = 'SELECT t1.USER_ID, USER_NAME,USER_PASSWORD,USER_CREATIONDATE, t2.column_value AS TELEFONE, t3.column_value AS EMAIL  FROM USERS t1, TABLE(t1.USER_PHONE) t2, TABLE(t1.USER_EMAIL) t3';
+          //echo $query;
           $qr= $this->db->query($query);
           $result = $qr->result_array();
           return $result;
