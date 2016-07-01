@@ -26,9 +26,9 @@
           <label for="RestaurantOutdoorSeating">Have Outdoor Siting</label>
           <input class="form-control"type="number" class="numero" id="RestaurantOutdoorSeating" name="RestaurantOutdoorSeating"  min="0" max="1" placeholder="Have Outdoor Siting"><br>
           <label for="RestaurantLatitude">Latitude</label>
-          <input class="form-control"type="number" class="numero" id="RestaurantLatitude" name="RestaurantLatitude" placeholder="Latitude"><br>
+          <input class="form-control"type="text" class="numero" id="RestaurantLatitude" name="RestaurantLatitude" placeholder="Latitude"><br>
           <label for="RestaurantLongitude">Longitude</label>
-          <input class="form-control"type="number" class="numero" id="RestaurantLongitude" name="RestaurantLongitude" placeholder="Have Outdoor Siting"><br>
+          <input class="form-control"type="text" class="numero" id="RestaurantLongitude" name="RestaurantLongitude" placeholder="Have Outdoor Siting"><br>
 <div class="container">
       <?php echo validation_errors(); ?>
 </div>

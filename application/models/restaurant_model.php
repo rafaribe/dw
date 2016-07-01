@@ -94,7 +94,7 @@ class Restaurant_Model extends CI_Model
 
     public function restaurant_delete($id)
     {
-        echo $id;
+     //   echo $id;
         $this->db->where('RESTAURANT_ID', $id);
         $this->db->delete('RESTAURANTS');
   //  $result->this->db-
@@ -134,10 +134,23 @@ class Restaurant_Model extends CI_Model
         return $comment;
     }
 
-    public function comment_add($data)
+    public function comment_add($info)
     {
-    $this->db->insert('COMMENTS_RESTAURANT', $data);
+        $query =
+                    "INSERT INTO COMMENTS_RESTAURANT
+            VALUES
+            (comments_restaurant_seq.nextval,
+            '".$info['USER_ID']."',
+               sysdate,
+            '".$info['COMMENT_TEXT']."',
+            '".$info['RESTAURANT_ID']."',
+            '".$info['RESTAURANT_RATING']."'
+            )
+            ";
 
-       return ;
+        $result = $this->db->query($query);
+
+        return true;
     }
+
 }

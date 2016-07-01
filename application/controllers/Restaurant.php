@@ -89,7 +89,7 @@ class Restaurant extends CI_Controller
             return false;
         } else {
             $file_name = $this->do_upload();
-        //			echo 'file_name';
+        			echo 'file_name';
                                 //	echo $file_name;
   $data = array(
                  'RESTAURANT_NAME' => $this->input->post('RestaurantName'),
@@ -271,14 +271,14 @@ public function restaurant_edit_data()
       $session_data = $this->session->userdata('logged_in');
       $id = $session_data['id'];
       $idrestaurant = $this->input->post('restaurant_id');
-        $data = array(
+        $info= array(
             'USER_ID' => $id,
             'COMMENT_TEXT' => $this->input->post('comment'),
             'RESTAURANT_ID' => $idrestaurant,
             'RESTAURANT_RATING' => $this->input->post('rating')
         );
         $this->load->model('restaurant_model');
-        $this->restaurant_model->comment_add($data);
+        $this->restaurant_model->comment_add($info);
         $this->load->view('sample_navbar_view');
         $this->load->view('success_view');
 

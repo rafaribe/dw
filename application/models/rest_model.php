@@ -12,8 +12,8 @@ class rest_model extends CI_Model {
 
     function users_list_all()
       {
-          $this->db->select('USER_ID,USER_NAME,USER_PASSWORD,USER_CREATIONDATE');
-          $result = $this->db->get('USERS');
+          $this->db->select('U.USER_ID,U.USER_NAME,U.USER_PASSWORD,U.USER_CREATIONDATE,U.USER_PHONE');
+          $result = $this->db->get('USERS U');
           return $result->result();
       }
 
