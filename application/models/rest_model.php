@@ -12,9 +12,12 @@ class rest_model extends CI_Model {
 
     function users_list_all()
       {
-          $this->db->select('U.USER_ID,U.USER_NAME,U.USER_PASSWORD,U.USER_CREATIONDATE,U.USER_PHONE');
-          $result = $this->db->get('USERS U');
-          return $result->result();
+        /*  $this->db->select('USER_ID,USER_NAME,USER_PASSWORD,USER_CREATIONDATE');
+          $result = $this->db->get('USERS');
+          return $result->result();*/
+          $query = 'Select U.USER_ID, U.USER_NAME, U.USER_PASSWORD, U.USER_CREATIONDATE, U.USER_PHONE FROM USERS U';
+          echo $query;
+          $result =  $this->db->query();
       }
 
       function users_list($id=NULL)
