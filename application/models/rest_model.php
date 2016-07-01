@@ -12,12 +12,9 @@ class rest_model extends CI_Model {
 
     function users_list_all()
       {
-        /*  $this->db->select('USER_ID,USER_NAME,USER_PASSWORD,USER_CREATIONDATE');
+         $this->db->select('USER_ID,USER_NAME,USER_PASSWORD,USER_CREATIONDATE');
           $result = $this->db->get('USERS');
-          return $result->result();*/
-          $query = 'Select U.USER_ID, U.USER_NAME, U.USER_PASSWORD, U.USER_CREATIONDATE, U.USER_PHONE FROM USERS U';
-          echo $query;
-          $result =  $this->db->query();
+          return $result->result();
       }
 
       function users_list($id=NULL)
@@ -72,6 +69,14 @@ class rest_model extends CI_Model {
           ON P.MENU_ID = M.MENU_ID
          WHERE M.MENU_ID = '".$id."'
            ORDER BY D.DISH_NAME";
+          $qr= $this->db->query($query);
+          $result = $qr->result_array();
+          return $result;
+        }
+
+        function varray()
+        {
+          $query = 'SELECT t1.USER_ID, USER_NAME,USER_PASSWORD,USER_CREATIONDATE, t2.column_value AS TELEFONE, t3.column_value AS EMAIL  FROM USERS t1, TABLE(t1.USER_PHONE) t2, TABLE(t1.USER_EMAIL) t3';
           $qr= $this->db->query($query);
           $result = $qr->result_array();
           return $result;

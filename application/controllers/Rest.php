@@ -202,4 +202,33 @@ if ($data)
 	} else {$this->response([], 404);	}
 }
 }
+public function varray_get()
+{
+
+ if($this->session->userdata('logged_in'))
+
+			{
+			$this->load->model('rest_model');
+			if(! $this->get('id'))
+			{
+				// get all record
+				$data = $this->rest_model->varray();
+			} else {
+				// get a record based on ID
+				$data = null;
+			}
+
+			if($data)
+			{
+				$this->response($data, 200); // 200 being the HTTP response code
+			} else {$this->response([], 404);	}
+			}
+			else
+			{
+			//If no session, redirect to login page
+			redirect('login', 'refresh');
+			}
+
+
+		}
 }

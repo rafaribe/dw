@@ -147,7 +147,7 @@ class Restaurant_Model extends CI_Model
             '".$info['RESTAURANT_RATING']."'
             )
             ";
-
+//echo($query);
         $result = $this->db->query($query);
 
         return true;

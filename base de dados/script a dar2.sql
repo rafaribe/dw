@@ -318,7 +318,8 @@ values(
 sysdate,
 ' Este restaurante recomenda-se, pois tem um optimo funcionamento e a qualidade e muito boa',
 '15',
-'3,5'
+'3,5',
+'familia'
 );
 
 --INSERTS RESTAURANTS--
