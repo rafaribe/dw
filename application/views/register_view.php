@@ -9,7 +9,11 @@
     <input class="form-control" type="text" class="user" name="username" placeholder="username"><br />
     <input class="form-control"type="password" class="pass" name="password" placeholder="password"><br />
     <input class="form-control"type="number" class="numero" name="phone" placeholder="Telefone"><br />
+    <input class="form-control"type="number" class="numero" name="phone2" placeholder="Telefone 2"><br />
+    <input class="form-control"type="number" class="numero" name="phone3" placeholder="Telefone 3"><br />
     <input class="form-control"type="email" class="email" name="email" placeholder="Email"><br />
+    <input class="form-control"type="email" class="email" name="email2" placeholder="Email 2"><br />
+    <input class="form-control"type="email" class="email" name="email3" placeholder="Email 3"><br />
     <div class="container">
       <?php echo validation_errors(); ?>
     </div>

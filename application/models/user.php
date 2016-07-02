@@ -42,10 +42,7 @@ Class User extends CI_Model
 				(
 						'".$info['USER_NAME']."',
 						'".$info['USER_PASSWORD']."',
-						PHONE_LIST_TYPE('".$info['USER_PHONE']."'),
-						EMAIL_LIST_TYPE('".$info['USER_EMAIL']."')
-				)
-				";
+				)";
 
 //TRANSACTION
 

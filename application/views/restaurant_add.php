@@ -11,6 +11,8 @@
           <input class="form-control"type="text" class="pass" id="RestaurantAddress"name="RestaurantAddress" placeholder="Restaurant Address"><br>
           <label for="RestaurantReservations">Reservations</label>
           <input class="form-control"type="number" class="numero" id="RestaurantReservations"name="RestaurantReservations" min="0" max="1" placeholder="Restaurant Rerservations"><br>
+          <label for="RestaurantOpenHours">Open Hours</label>
+          <input class="form-control"type="text" class="numero" id="RestaurantOpenHours"name="RestaurantOpenHours" placeholder="Insert like this: 10:00,15:00,etc."><br>
           <label for="RestaurantWifi">Have Wifi</label>
           <input class="form-control"type="number" class="numero" id="RestaurantWifi"name="RestaurantWifi" min="0" max="1" placeholder="Wi-Fi"><br>
           <label for="RestaurantDelivery">Home Delivery</label>
