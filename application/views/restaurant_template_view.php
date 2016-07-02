@@ -49,6 +49,13 @@
         <div class="panel-heading"><strong>Address:  <?php echo $row->RESTAURANT_ADDRESS ?></strong></div>
 
       </div>
+      <div class="panel panel-success">
+        <div class="panel-heading"><strong>Open Hours: <?php for ($i=0 ; $i<6; $i++){
+          if (isset($openhours[$i]))
+          echo $openhours[$i]->RESTAURANT_OPEN_HOURS." ";
+          else break;
+        } ?></strong></div>
+      </div>
 
       <div class="panel panel-success">
         <div class="panel-heading"><strong>Wifi: <?php echo $wifi ?></strong></div>
@@ -134,7 +141,7 @@
       <?php echo form_open('restaurant/restaurant_comments');?>
     <form method="POST" action="restaurant_comments">
     <label for="comment">Insert a Comment</label>
-    <input type="text" class="form-control input-lg" id="comment" name="comment" placeholder="leave a comment"><br>
+    <textarea type="text" class="form-control input-lg" id="comment" rows="5"name="comment" placeholder="leave a comment"></textarea><br>
       <label for="comment">Leave a Rating</label>
     <input type="number" class="form-control input-sm" id="rating" name="rating"min="0" max="5" placeholder="Choose the rating"><br>
     <input type="hidden" class="form-control input-sm" id="restaurant_id" name="restaurant_id"value="<?php echo $row->RESTAURANT_ID ?>"><br>

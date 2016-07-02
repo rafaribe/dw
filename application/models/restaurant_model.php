@@ -23,7 +23,7 @@ class Restaurant_Model extends CI_Model
     {
         $query =
                     "INSERT INTO RESTAURANTS
-    				(RESTAURANT_NAME,RESTAURANT_ADDRESS,RESTAURANT_RESERVATIONS,
+    				(RESTAURANT_NAME,RESTAURANT_ADDRESS,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,
             RESTAURANT_WIFI,RESTAURANT_DELIVERY,RESTAURANT_MULTIBANCO,
             RESTAURANT_OUTDOOR_SEATING,RESTAURANT_IMAGE,RESTAURANT_LATITUDE,RESTAURANT_LONGITUDE
             )
@@ -31,6 +31,8 @@ class Restaurant_Model extends CI_Model
     				(
             '".$info['RESTAURANT_NAME']."',
 						'".$info['RESTAURANT_ADDRESS']."',
+          	OPEN_HOURS_TYPE('".$info['RESTAURANT_OPEN_HOURS']."','".$info['RESTAURANT_OPEN_HOURS2']."','".$info['RESTAURANT_OPEN_HOURS3']."',
+            '".$info['RESTAURANT_OPEN_HOURS4']."','".$info['RESTAURANT_OPEN_HOURS5']."','".$info['RESTAURANT_OPEN_HOURS6']."'),
             '".$info['RESTAURANT_RESERVATIONS']."',
             '".$info['RESTAURANT_WIFI']."',
             '".$info['RESTAURANT_DELIVERY']."',
@@ -86,10 +88,25 @@ class Restaurant_Model extends CI_Model
         echo json_encode($array);
     }
 // function to perform update operation on restaurants.
-  public function restaurant_edit($data, $id)
+  public function restaurant_edit($info, $id)
   {
-      $this->db->where('RESTAURANT_ID', $id);
-      $this->db->update('RESTAURANTS', $data);
+    $query = "UPDATE RESTAURANTS SET
+    RESTAURANT_NAME =   '".$info['RESTAURANT_NAME']."',
+    RESTAURANT_ADDRESS = '".$info['RESTAURANT_ADDRESS']."',
+    RESTAURANT_OPEN_HOURS = 	OPEN_HOURS_TYPE('".$info['RESTAURANT_OPEN_HOURS']."','".$info['RESTAURANT_OPEN_HOURS2']."','".$info['RESTAURANT_OPEN_HOURS3']."',
+      '".$info['RESTAURANT_OPEN_HOURS4']."','".$info['RESTAURANT_OPEN_HOURS5']."','".$info['RESTAURANT_OPEN_HOURS6']."'),
+    RESTAURANT_RESERVATIONS ='".$info['RESTAURANT_RESERVATIONS']."',
+    RESTAURANT_WIFI ='".$info['RESTAURANT_WIFI']."',
+    RESTAURANT_DELIVERY ='".$info['RESTAURANT_DELIVERY']."',
+    RESTAURANT_MULTIBANCO = '".$info['RESTAURANT_MULTIBANCO']."',
+    RESTAURANT_OUTDOOR_SEATING ='".$info['RESTAURANT_OUTDOOR_SEATING']."',
+    RESTAURANT_LATITUDE ='".$info['RESTAURANT_LATITUDE']."',
+    RESTAURANT_LONGITUDE =  '".$info['RESTAURANT_LONGITUDE']."'
+    WHERE RESTAURANT_ID = '".$id."'
+        ";
+
+    $result = $this->db->query($query);
+    return true;
   }
 
     public function restaurant_delete($id)
@@ -132,6 +149,18 @@ class Restaurant_Model extends CI_Model
         $comment = $result->result();
 
         return $comment;
+    }
+
+    function restaurant_get_openhours($id)
+    {
+    $query ="   SELECT t1.RESTAURANT_ID, t2.column_value AS RESTAURANT_OPEN_HOURS
+FROM RESTAURANTS t1, TABLE(t1.RESTAURANT_OPEN_HOURS) t2
+where RESTAURANT_ID = '".$id."'
+";
+$result = $this->db->query($query);
+$openhours = $result->result();
+
+return $openhours;
     }
 
     public function comment_add($info)

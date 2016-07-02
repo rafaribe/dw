@@ -89,11 +89,15 @@ class Restaurant extends CI_Controller
             return false;
         } else {
             $file_name = $this->do_upload();
-        			echo 'file_name';
-                                //	echo $file_name;
   $data = array(
                  'RESTAURANT_NAME' => $this->input->post('RestaurantName'),
                  'RESTAURANT_ADDRESS' => $this->input->post('RestaurantAddress'),
+                 'RESTAURANT_OPEN_HOURS' => $this->input->post('RestaurantOpenHours'),
+                 'RESTAURANT_OPEN_HOURS2' => $this->input->post('RestaurantOpenHours2'),
+                 'RESTAURANT_OPEN_HOURS3' => $this->input->post('RestaurantOpenHours3'),
+                 'RESTAURANT_OPEN_HOURS4' => $this->input->post('RestaurantOpenHours4'),
+                 'RESTAURANT_OPEN_HOURS5' => $this->input->post('RestaurantOpenHours5'),
+                 'RESTAURANT_OPEN_HOURS6' => $this->input->post('RestaurantOpenHours6'),
                  'RESTAURANT_RESERVATIONS' => $this->input->post('RestaurantReservations'),
                  'RESTAURANT_WIFI' => $this->input->post('RestaurantWifi'),
                  'RESTAURANT_DELIVERY' => $this->input->post('RestaurantDelivery'),
@@ -183,6 +187,36 @@ public function restaurant_edit_data()
      'rules' => 'max_length[1]|integer',
     ),
     array(
+     'field' => 'RestaurantOpenHours',
+     'label' => 'RestaurantOpenHours',
+     'rules' => 'max_length[5]',
+    ),
+    array(
+     'field' => 'RestaurantOpenHours2',
+     'label' => 'RestaurantOpenHours2',
+     'rules' => 'max_length[5]',
+    ),
+    array(
+     'field' => 'RestaurantOpenHours3',
+     'label' => 'RestaurantOpenHours3',
+     'rules' => 'max_length[5]',
+    ),
+    array(
+     'field' => 'RestaurantOpenHours4',
+     'label' => 'RestaurantOpenHours4',
+     'rules' => 'max_length[5]',
+    ),
+    array(
+     'field' => 'RestaurantOpenHours5',
+     'label' => 'RestaurantOpenHours5',
+     'rules' => 'max_length[5]',
+    ),
+    array(
+     'field' => 'RestaurantOpenHours6',
+     'label' => 'RestaurantOpenHours6',
+     'rules' => 'max_length[5]',
+    ),
+    array(
      'field' => 'RestaurantWifi',
      'label' => 'RestaurantWifi',
      'rules' => 'max_length[1]|integer',
@@ -214,16 +248,21 @@ public function restaurant_edit_data()
     } else {
         $id = $this->input->post('SelectResaurant');
         $data = array(
-             'RESTAURANT_NAME' => $this->input->post('RestaurantName'),
-             'RESTAURANT_ADDRESS' => $this->input->post('RestaurantAddress'),
-             'RESTAURANT_RESERVATIONS' => $this->input->post('RestaurantReservations'),
-             'RESTAURANT_WIFI' => $this->input->post('RestaurantWifi'),
-             'RESTAURANT_DELIVERY' => $this->input->post('RestaurantDelivery'),
-             'RESTAURANT_MULTIBANCO' => $this->input->post('RestaurantMultibanco'),
-             'RESTAURANT_OUTDOOR_SEATING' => $this->input->post('RestaurantOutdoorSeating'),
-             'RESTAURANT_LATITUDE' => $this->input->post('RestaurantLatitude'),
-             'RESTAURANT_LONGITUDE' => $this->input->post('RestaurantLongitude'),
-
+                      'RESTAURANT_NAME' => $this->input->post('RestaurantName'),
+                      'RESTAURANT_ADDRESS' => $this->input->post('RestaurantAddress'),
+                      'RESTAURANT_OPEN_HOURS' => $this->input->post('RestaurantOpenHours'),
+                      'RESTAURANT_OPEN_HOURS2' => $this->input->post('RestaurantOpenHours2'),
+                      'RESTAURANT_OPEN_HOURS3' => $this->input->post('RestaurantOpenHours3'),
+                      'RESTAURANT_OPEN_HOURS4' => $this->input->post('RestaurantOpenHours4'),
+                      'RESTAURANT_OPEN_HOURS5' => $this->input->post('RestaurantOpenHours5'),
+                      'RESTAURANT_OPEN_HOURS6' => $this->input->post('RestaurantOpenHours6'),
+                      'RESTAURANT_RESERVATIONS' => $this->input->post('RestaurantReservations'),
+                      'RESTAURANT_WIFI' => $this->input->post('RestaurantWifi'),
+                      'RESTAURANT_DELIVERY' => $this->input->post('RestaurantDelivery'),
+                      'RESTAURANT_MULTIBANCO' => $this->input->post('RestaurantMultibanco'),
+                      'RESTAURANT_OUTDOOR_SEATING' => $this->input->post('RestaurantOutdoorSeating'),
+                      'RESTAURANT_LATITUDE' => $this->input->post('RestaurantLatitude'),
+                      'RESTAURANT_LONGITUDE' => $this->input->post('RestaurantLongitude'),
               );
         $this->load->model('restaurant_model');
         $this->restaurant_model->restaurant_edit($data, $id);
@@ -257,6 +296,7 @@ public function restaurant_edit_data()
         $this->load->model('restaurant_model');
         $data['row'] = $this->restaurant_model->restaurant_template($id);
         $data['comment'] = $this->restaurant_model->comments_restaurant($id);
+        $data['openhours'] = $this->restaurant_model->restaurant_get_openhours($id);
         $this->load->view('sample_navbar_view');
         $this->load->view('restaurant_template_view', $data);
     }

@@ -1,0 +1,4 @@
+1 - Fazer editar restaurant com a NESTED
+2 - Fazer o XML em algum lado :s
+3 - Fazer XML na db
+4 - sei la caralho
