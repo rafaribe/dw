@@ -13,29 +13,49 @@ class Register extends CI_Controller {
 		$this->load->helper(array('form', 'url'));
 
 		$this->load->library('form_validation');
-
+		//$username = $this->input->post('username');
 		$config = array(
-	               array(
-	                     'field'   => 'username',
-	                     'label'   => 'Username',
-	                     'rules'   => 'required|callback_check_database'
-	                  ),
-	               array(
-	                     'field'   => 'password',
-	                     'label'   => 'Password',
-	                     'rules'   => 'required'
-	                  ),
-	               array(
-	                     'field'   => 'phone',
-	                     'label'   => 'Phone',
-	                     'rules'   => 'required|max_length[9]|integer'
-	                  ),
-	               array(
-	                     'field'   => 'email',
-	                     'label'   => 'Email',
-	                     'rules'   => 'required|valid_email'
-	                  )
-	            );
+											array(
+											'field'   => 'username',
+											'label'   => 'Username',
+											'rules'   => 'required|callback_check_database'
+											),
+											array(
+											'field'   => 'password',
+											'label'   => 'Password',
+											'rules'   => 'required'
+											),
+											array(
+											'field'   => 'phone',
+											'label'   => 'Phone',
+											'rules'   => 'required|max_length[9]|integer'
+											),
+											array(
+											'field'   => 'phone2',
+											'label'   => 'Phone',
+											'rules'   => 'required|max_length[9]|integer'
+											),
+											array(
+											'field'   => 'phone3',
+											'label'   => 'Phone',
+											'rules'   => 'required|max_length[9]|integer'
+											),
+											array(
+											'field'   => 'email',
+											'label'   => 'Email',
+											'rules'   => 'required|valid_email'
+											),
+											array(
+											'field'   => 'email2',
+											'label'   => 'Email',
+											'rules'   => 'required|valid_email'
+											),
+											array(
+											'field'   => 'email3',
+											'label'   => 'Email',
+											'rules'   => 'required|valid_email'
+											)
+									);
 
 		$this->form_validation->set_rules($config);
 
@@ -55,16 +75,22 @@ class Register extends CI_Controller {
 
 	function check_database($username)
   {
+
+		echo $username;
     //Field validation succeeded.  Validate against database
 		$data = array(
 			'USER_NAME' => $username,
 			'USER_PASSWORD' => md5($this->input->post('password')),
 			'USER_PHONE' => $this->input->	post('phone'),
-			'USER_EMAIL' => $this->input->post('email')
+			'USER_PHONE2' => $this->input->	post('phone2'),
+			'USER_PHONE3' => $this->input->	post('phone3'),
+			'USER_EMAIL' => $this->input->post('email'),
+			'USER_EMAIL2' => $this->input->post('email2'),
+			'USER_EMAIL3' => $this->input->post('email3')
 		);
 
 		$this->load->model('user');
-		$result = $this->user->check_username();
+		$result = $this->user->check_username($username);
 
 		if($result > 0)
 				{
