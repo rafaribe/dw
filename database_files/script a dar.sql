@@ -1,8 +1,6 @@
 -- DROP TYPES
 drop type address_type force;
 /
-drop type comment_dish_type force;
-/
 drop type comment_restaurant_type force;
 /
 drop type comments_type force;
@@ -29,8 +27,7 @@ drop type dishes_prices_type force;
 
 DROP TABLE DISHES_PRICES;
 /
-DROP TABLE COMMENTS_DISH;
-/
+
 DROP TABLE COMMENTS_RESTAURANT;
 /
 DROP TABLE DISHES;
@@ -88,14 +85,6 @@ create or replace type COMMENT_RESTAURANT_TYPE UNDER COMMENTS_TYPE(
    RESTAURANT_RATING    INTEGER
    ) NOT FINAL;
 /
-
-
-create or replace type COMMENT_DISH_TYPE UNDER COMMENTS_TYPE(
-   DISH_ID        INTEGER,
-   DISH_RATING    INTEGER
-   ) NOT FINAL;
-/
-
 create or replace type users_type as object
 (
    USER_ID              INT ,
@@ -264,13 +253,7 @@ ALTER TABLE COMMENTS_RESTAURANT
 MODIFY (COMMENT_ID DEFAULT COMMENTS_RESTAURANT_SEQ.NEXTVAL );
 /
 alter table COMMENTS_RESTAURANT
-add   constraint PK_COMMENTS_RESTAURANTS primary key (COMMENT_ID);
-/
-alter table COMMENTS_RESTAURANT
 modify (COMMENT_CREATION_DATE default sysdate);
-
-/
-CREATE TABLE COMMENTS_DISH OF COMMENT_DISH_TYPE;
 /
 create table DISHES_PRICES OF DISHES_PRICES_TYPE;
 /
@@ -293,16 +276,6 @@ values(
 '1',
 sysdate,
 ' Este restaurante recomenda-se, pois tem um optimo funcionamento e a qualidade e muito boa'
-);
-
-INSERT INTO Comments_Dish
-values(
-'1',
-'1',
-sysdate,
-' Este restaurante recomenda-se, pois tem um optimo funcionamento e a qualidade e muito boa',
-'15',
-'3,5'
 );
 INSERT INTO Comments_restaurant
 values(
