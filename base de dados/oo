@@ -1,0 +1,151 @@
+<!-- edited with XML Spy v4.0 U (http://www.xmlspy.com) by Mark (Drake) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xdb="http://xmlns.oracle.com/xdb" version="1.0" xdb:storeVarrayAsTable="true" xdb:numProps="26" xdb:flags="2105639" xdb:schemaURL="http://localhost:8080/source/schemas/poSource/xsd/purchaseOrder.xsd" xdb:schemaOwner="OE">
+  <xs:element name="PurchaseOrder" type="PurchaseOrderType" xdb:defaultTable="PURCHASEORDER" xdb:propNumber="3960" xdb:global="true" xdb:SQLName="PurchaseOrder" xdb:SQLType="PURCHASEORDER_T" xdb:SQLSchema="OE" xdb:memType="258" xdb:defaultTableSchema="OE"/>
+  <xs:complexType name="PurchaseOrderType" xdb:SQLType="PURCHASEORDER_T" xdb:SQLSchema="OE">
+    <xs:sequence>
+      <xs:element name="Reference" type="ReferenceType" minOccurs="1" xdb:SQLName="REFERENCE" xdb:propNumber="3961" xdb:global="false" xdb:SQLType="VARCHAR2" xdb:memType="1" xdb:MemInline="true" xdb:SQLInline="true" xdb:JavaInline="true"/>
+      <xs:element name="Actions" type="ActionsType" xdb:SQLName="ACTIONS" xdb:propNumber="3962" xdb:global="false" xdb:SQLType="ACTIONS_T" xdb:SQLSchema="OE" xdb:memType="258" xdb:MemInline="false" xdb:SQLInline="true" xdb:JavaInline="false"/>
+      <xs:element name="Reject" type="RejectionType" minOccurs="0" xdb:SQLName="REJECTION" xdb:propNumber="3963" xdb:global="false" xdb:SQLType="REJECTION_T" xdb:SQLSchema="OE" xdb:memType="258" xdb:MemInline="false" xdb:SQLInline="true" xdb:JavaInline="false"/>
+      <xs:element name="Requestor" type="RequestorType" xdb:SQLName="REQUESTOR" xdb:propNumber="3964" xdb:global="false" xdb:SQLType="VARCHAR2" xdb:memType="1" xdb:MemInline="true" xdb:SQLInline="true" xdb:JavaInline="true"/>
+      <xs:element name="User" type="UserType" minOccurs="1" xdb:SQLName="USERID" xdb:propNumber="3965" xdb:global="false" xdb:SQLType="VARCHAR2" xdb:memType="1" xdb:MemInline="true" xdb:SQLInline="true" xdb:JavaInline="true"/>
+      <xs:element name="CostCenter" type="CostCenterType" xdb:SQLName="COST_CENTER" xdb:propNumber="3966" xdb:global="false" xdb:SQLType="VARCHAR2" xdb:memType="1" xdb:MemInline="true" xdb:SQLInline="true" xdb:JavaInline="true"/>
+      <xs:element name="ShippingInstructions" type="ShippingInstructionsType" xdb:SQLName="SHIPPING_INSTRUCTIONS" xdb:propNumber="3967" xdb:global="false" xdb:SQLType="SHIPPING_INSTRUCTIONS_T" xdb:SQLSchema="OE" xdb:memType="258" xdb:MemInline="false" xdb:SQLInline="true" xdb:JavaInline="false"/>
+      <xs:element name="SpecialInstructions" type="SpecialInstructionsType" xdb:SQLName="SPECIAL_INSTRUCTIONS" xdb:propNumber="3968" xdb:global="false" xdb:SQLType="VARCHAR2" xdb:memType="1" xdb:MemInline="true" xdb:SQLInline="true" xdb:JavaInline="true"/>
+      <xs:element name="LineItems" type="LineItemsType" xdb:SQLName="LINEITEMS" xdb:propNumber="3969" xdb:global="false" xdb:SQLType="LINEITEMS_T" xdb:SQLSchema="OE" xdb:memType="258" xdb:MemInline="false" xdb:SQLInline="true" xdb:JavaInline="false"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LineItemsType" xdb:SQLType="LINEITEMS_T" xdb:SQLSchema="OE">
+    <xs:sequence>
+      <xs:element name="LineItem" type="LineItemType" maxOccurs="unbounded" xdb:SQLName="LINEITEM" xdb:SQLCollType="LINEITEM_V" xdb:propNumber="3970" xdb:global="false" xdb:SQLType="LINEITEM_T" xdb:SQLSchema="OE" xdb:memType="258" xdb:MemInline="false" xdb:SQLInline="true" xdb:JavaInline="false" xdb:SQLCollSchema="OE"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LineItemType" xdb:SQLType="LINEITEM_T" xdb:SQLSchema="OE">
+    <xs:sequence>
+      <xs:element name="Description" type="DescriptionType" xdb:SQLName="DESCRIPTION" xdb:propNumber="3972" xdb:global="false" xdb:SQLType="VARCHAR2" xdb:memType="1" xdb:MemInline="true" xdb:SQLInline="true" xdb:JavaInline="true"/>
+      <xs:element name="Part" type="PartType" xdb:SQLName="PART" xdb:propNumber="3973" xdb:global="false" xdb:SQLType="PART_T" xdb:SQLSchema="OE" xdb:memType="258" xdb:MemInline="false" xdb:SQLInline="true" xdb:JavaInline="false"/>
+    </xs:sequence>
+    <xs:attribute name="ItemNumber" type="xs:integer" xdb:SQLName="ITEMNUMBER" xdb:SQLType="NUMBER" xdb:propNumber="3971" xdb:global="false" xdb:memType="2"/>
+  </xs:complexType>
+  <xs:complexType name="PartType" xdb:SQLType="PART_T" xdb:SQLSchema="OE">
+    <xs:attribute name="Id" xdb:SQLName="PART_NUMBER" xdb:SQLType="VARCHAR2" xdb:propNumber="3974" xdb:global="false" xdb:memType="1">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="10"/>
+          <xs:maxLength value="14"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="Quantity" type="quantityType" xdb:SQLName="QUANTITY" xdb:propNumber="3975" xdb:global="false" xdb:SQLType="NUMBER" xdb:memType="2"/>
+    <xs:attribute name="UnitPrice" type="moneyType" xdb:SQLName="UNITPRICE" xdb:propNumber="3976" xdb:global="false" xdb:SQLType="NUMBER" xdb:memType="2"/>
+  </xs:complexType>
+  <xs:simpleType name="ReferenceType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="18"/>
+      <xs:maxLength value="30"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ActionsType" xdb:SQLType="ACTIONS_T" xdb:SQLSchema="OE">
+    <xs:sequence>
+      <xs:element name="Action" maxOccurs="4" xdb:SQLName="ACTION" xdb:SQLCollType="ACTION_V" xdb:propNumber="3979" xdb:global="false" xdb:SQLType="ACTION_T" xdb:SQLSchema="OE" xdb:memType="258" xdb:MemInline="false" xdb:SQLInline="true" xdb:JavaInline="false" xdb:SQLCollSchema="OE">
+        <xs:complexType xdb:SQLType="ACTION_T" xdb:SQLSchema="OE">
+          <xs:sequence>
+            <xs:element name="User" type="UserType" xdb:SQLName="ACTIONED_BY" xdb:propNumber="3977" xdb:global="false" xdb:SQLType="VARCHAR2" xdb:memType="1" xdb:MemInline="true" xdb:SQLInline="true" xdb:JavaInline="true"/>
+            <xs:element name="Date" type="DateType" minOccurs="0" xdb:SQLName="DATE_ACTIONED" xdb:propNumber="3978" xdb:global="false" xdb:SQLType="DATE" xdb:memType="12" xdb:MemInline="true" xdb:SQLInline="true" xdb:JavaInline="true"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RejectionType" xdb:SQLType="REJECTION_T" xdb:SQLSchema="OE">
+    <xs:all>
+      <xs:element name="User" type="UserType" minOccurs="0" xdb:SQLName="REJECTED_BY" xdb:propNumber="3980" xdb:global="false" xdb:SQLType="VARCHAR2" xdb:memType="1" xdb:MemInline="true" xdb:SQLInline="true" xdb:JavaInline="true"/>
+      <xs:element name="Date" type="DateType" minOccurs="0" xdb:SQLName="DATE_REJECTED" xdb:propNumber="3981" xdb:global="false" xdb:SQLType="DATE" xdb:memType="12" xdb:MemInline="true" xdb:SQLInline="true" xdb:JavaInline="true"/>
+      <xs:element name="Comments" type="CommentsType" minOccurs="0" xdb:SQLName="REASON_REJECTED" xdb:propNumber="3982" xdb:global="false" xdb:SQLType="VARCHAR2" xdb:memType="1" xdb:MemInline="true" xdb:SQLInline="true" xdb:JavaInline="true"/>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="ShippingInstructionsType" xdb:SQLType="SHIPPING_INSTRUCTIONS_T" xdb:SQLSchema="OE">
+    <xs:sequence>
+      <xs:element name="name" type="NameType" minOccurs="0" xdb:SQLName="SHIP_TO_NAME" xdb:propNumber="3983" xdb:global="false" xdb:SQLType="VARCHAR2" xdb:memType="1" xdb:MemInline="true" xdb:SQLInline="true" xdb:JavaInline="true"/>
+      <xs:element name="address" type="AddressType" minOccurs="0" xdb:SQLName="SHIP_TO_ADDRESS" xdb:propNumber="3984" xdb:global="false" xdb:SQLType="VARCHAR2" xdb:memType="1" xdb:MemInline="true" xdb:SQLInline="true" xdb:JavaInline="true"/>
+      <xs:element name="telephone" type="TelephoneType" minOccurs="0" xdb:SQLName="SHIP_TO_PHONE" xdb:propNumber="3985" xdb:global="false" xdb:SQLType="VARCHAR2" xdb:memType="1" xdb:MemInline="true" xdb:SQLInline="true" xdb:JavaInline="true"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="moneyType">
+    <xs:restriction base="xs:decimal">
+      <xs:fractionDigits value="2"/>
+      <xs:totalDigits value="12"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="quantityType">
+    <xs:restriction base="xs:decimal">
+      <xs:fractionDigits value="4"/>
+      <xs:totalDigits value="8"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="UserType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="RequestorType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="128"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CostCenterType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="4"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="VendorType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PurchaseOrderNumberType">
+    <xs:restriction base="xs:integer"/>
+  </xs:simpleType>
+  <xs:simpleType name="SpecialInstructionsType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="2048"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="NameType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AddressType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="256"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TelephoneType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="24"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="DateType">
+    <xs:restriction base="xs:date"/>
+  </xs:simpleType>
+  <xs:simpleType name="CommentsType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="2048"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="DescriptionType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="256"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
