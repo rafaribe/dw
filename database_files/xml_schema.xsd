@@ -3,12 +3,12 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element name="item" maxOccurs="unbounded" minOccurs="0">
-          <xs:complexType>
+          <xs:complexType mixed="true">
             <xs:sequence>
-              <xs:element type="xs:byte" name="USER_ID"/>
-              <xs:element type="xs:string" name="USER_NAME"/>
-              <xs:element type="xs:string" name="USER_PASSWORD"/>
-              <xs:element type="xs:string" name="USER_CREATIONDATE"/>
+              <xs:element type="xs:byte" name="DISH_ID" minOccurs="0"/>
+              <xs:element type="xs:string" name="DISH_NAME" minOccurs="0"/>
+              <xs:element type="xs:string" name="DISH_TYPE" minOccurs="0"/>
+              <xs:element type="xs:string" name="DISH_IMAGE" minOccurs="0"/>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

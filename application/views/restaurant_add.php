@@ -9,23 +9,28 @@
           <input class="form-control" type="text"  id="RestaurantName" name="RestaurantName" placeholder="Restaurant Name"><br>
           <label for="RestaurantAddress">Address</label>
           <input class="form-control"type="text" id="RestaurantAddress"name="RestaurantAddress" placeholder="Restaurant Address"><br>
-          <label for="RestaurantReservations">Reservations</label>
-          <input class="form-control"type="number"  id="RestaurantReservations"name="RestaurantReservations" min="0" max="1" placeholder="Restaurant Rerservations"><br>
           <label for="RestaurantOpenHours">Open Hours</label>
-          <input class="form-control input-sm"type="text"  id="RestaurantOpenHours"  name="RestaurantOpenHours"> <br>
-          <input class="form-control input-sm"type="text"  id="RestaurantOpenHours2" name="RestaurantOpenHours2"><br>
-          <input class="form-control input-sm"type="text"  id="RestaurantOpenHours3" name="RestaurantOpenHours3"><br>
-          <input class="form-control input-sm"type="text"  id="RestaurantOpenHours4" name="RestaurantOpenHours4"><br>
-          <input class="form-control input-sm"type="text"  id="RestaurantOpenHours5" name="RestaurantOpenHours5"><br>
-          <input class="form-control input-sm"type="text"  id="RestaurantOpenHours6" name="RestaurantOpenHours6"><br>
+          <input class="form-control input-sm"type="text"  id="RestaurantOpenHours"  name="RestaurantOpenHours">
+          <input class="form-control input-sm"type="text"  id="RestaurantOpenHours2" name="RestaurantOpenHours2">
+          <input class="form-control input-sm"type="text"  id="RestaurantOpenHours3" name="RestaurantOpenHours3">
+          <input class="form-control input-sm"type="text"  id="RestaurantOpenHours4" name="RestaurantOpenHours4">
+          <input class="form-control input-sm"type="text"  id="RestaurantOpenHours5" name="RestaurantOpenHours5">
+          <input class="form-control input-sm"type="text"  id="RestaurantOpenHours6" name="RestaurantOpenHours6"><br />
+          <label for="RestaurantReservations">Reservations</label>
+          <input type="radio" id="RestaurantReservations"name="RestaurantReservations" value="1" checked> Yes
+          <input type="radio" id="RestaurantReservations"name="RestaurantReservations" value="0"> No<br>
           <label for="RestaurantWifi">Have Wifi</label>
-          <input class="form-control"type="number"  id="RestaurantWifi"name="RestaurantWifi" min="0" max="1" placeholder="Wi-Fi"><br>
+          <input type="radio" id="RestaurantWifi"name="RestaurantWifi" value="1" checked> Yes
+          <input type="radio" id="RestaurantWifi"name="RestaurantWifi" value="0"> No<br>
           <label for="RestaurantDelivery">Home Delivery</label>
-          <input class="form-control"type="number" id="RestaurantDelivery"name="RestaurantDelivery"  min="0" max="1" placeholder="Home Deliveries"><br>
-          <label for="RestaurantMultibanconame">Have Multibanco</label>
-          <input class="form-control"type="number"  id="RestaurantMultibanconame"name="RestaurantMultibanco"  min="0" max="1" placeholder="Have Multibanco?"><br>
+          <input type="radio" id="RestaurantDelivery"name="RestaurantDelivery" value="1" checked> Yes
+          <input type="radio" id="RestaurantDelivery"name="RestaurantDelivery" value="0"> No<br>
+          <label for="RestaurantMultibanco">Have Multibanco</label>
+          <input type="radio" id="RestaurantMultibanco"name="RestaurantMultibanco" value="1" checked> Yes
+          <input type="radio" id="RestaurantMultibanco"name="RestaurantMultibanco" value="0"> No<br>
           <label for="RestaurantOutdoorSeating">Have Outdoor Siting</label>
-          <input class="form-control"type="text"  id="RestaurantOutdoorSeating" name="RestaurantOutdoorSeating" min="0" max="1"  placeholder="Have Outdoor Siting"><br>
+          <input type="radio" id="RestaurantOutdoorSeating"name="RestaurantOutdoorSeating" value="1" checked> Yes
+          <input type="radio" id="RestaurantOutdoorSeating"name="RestaurantOutdoorSeating" value="0"> No<br>
           <label for="Latitude">Latitude</label>
           <input class="form-control"type="text"  id="Latitude" name="Latitude" placeholder="Latitude"><br>
           <label for="Longitude">Longitude</label>

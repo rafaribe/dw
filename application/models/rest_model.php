@@ -82,4 +82,11 @@ class rest_model extends CI_Model {
           $result = $qr->result_array();
           return $result;
         }
+        function dishes()
+        {
+          $query = "SELECT * FROM DISHES";
+          $qr = $this->db->query($query);
+          $result = $qr->result();
+          return $result;
+        }
 }

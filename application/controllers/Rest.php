@@ -231,4 +231,19 @@ public function varray_get()
 
 
 		}
+
+		public function dishes_get()
+		{
+		$this->load->model('rest_model');
+		$data= $this->rest_model->dishes();
+
+					if($data)
+					{
+						$this->response($data, 200); // 200 being the HTTP response code
+					}
+					else {
+						$this->response([], 404);
+					}
+
+		}
 }

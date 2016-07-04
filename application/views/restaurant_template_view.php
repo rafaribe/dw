@@ -52,7 +52,7 @@
       <div class="panel panel-success">
         <div class="panel-heading"><strong>Open Hours: <?php for ($i=0 ; $i<6; $i++){
           if (isset($openhours[$i]))
-          echo $openhours[$i]->RESTAURANT_OPEN_HOURS." ";
+          echo $openhours[$i]->RESTAURANT_OPEN_HOURS." - ";
           else break;
         } ?></strong></div>
       </div>
