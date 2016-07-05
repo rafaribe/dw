@@ -80,9 +80,9 @@ xmltype(
 ' '<xml>'<xml>
 <item>
 <DISH_ID>$dishid</DISH_ID>
-<DISH_NAME>'".$dishname."'</DISH_NAME>
-<DISH_TYPE>'".$dishtype."'</DISH_TYPE>
-<DISH_IMAGE>'".$filename."'</DISH_IMAGE>
+<DISH_NAME></DISH_NAME>
+<DISH_TYPE></DISH_TYPE>
+<DISH_IMAGE></DISH_IMAGE>
 </item></xml>' ));
        ";
        echo $query;
