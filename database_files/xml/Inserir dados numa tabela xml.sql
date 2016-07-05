@@ -107,10 +107,20 @@ insert into xml_tab (XML_DATA) values (
 xmltype(
 '<xml>
 <item>
-<DISH_ID>52</DISH_ID>
-<DISH_NAME>Prato do Rafa2</DISH_NAME>
-<DISH_TYPE>Peixe</DISH_TYPE>
-<DISH_IMAGE>bacalhau_bras.jpg</DISH_IMAGE>
+        <DISH_ID>1</DISH_ID>
+        <DISH_NAME>Bacalhau a Bras</DISH_NAME>
+        <DISH_TYPE>Peixe</DISH_TYPE>
+        <DISH_IMAGE>bacalhau_bras.jpg</DISH_IMAGE>
+</item></xml>' ));
+
+insert into xml_tab (XML_DATA) values (
+xmltype(
+'<xml>
+<item>
+        <DISH_ID>1</DISH_ID>
+        <DISH_NAME>Bacalhau a Bras</DISH_NAME>
+        <DISH_TYPE>Peixe</DISH_TYPE>
+        <DISH_IMAGE>bacalhau_bras.jpg</DISH_IMAGE>
 </item></xml>' ));
 
 

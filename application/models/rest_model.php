@@ -89,4 +89,12 @@ class rest_model extends CI_Model {
           $result = $qr->result();
           return $result;
         }
+
+        function testxml()
+        {
+          $query = "SELECT * FROM XML_VIEW WHERE DISH_ID = '1'";
+          $qr = $this->db->query($query);
+          $result = $qr->result();
+          return $result;
+        }
 }
