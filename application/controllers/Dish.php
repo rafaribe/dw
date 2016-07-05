@@ -238,16 +238,27 @@ class Dish extends CI_Controller
 						$file_name = $this->do_upload();
 		//			echo 'file_name';
 					//	echo $file_name;
-
+					$data = array(
+		 'DISH_NAME' => $this->input->post('DishName'),
+		 'DISH_TYPE' => $this->input->  post('DishType'),
+		 'DISH_IMAGE'=> $file_name
+	 );
 
 				$this->load->model('dish_model');
-				$this->dish_model->dish_add_xml($file_name);
+				$this->dish_model->dish_add_xml($data);
+
+
+
+ print_r($data);
+
+// CODIGO PARA INSERIR NO PROCEDIMENTO O XML
+
 
 						return TRUE;
 					}
 				}
 
 			}
-			
+
 
 ?>

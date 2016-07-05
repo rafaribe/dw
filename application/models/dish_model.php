@@ -69,24 +69,35 @@ class Dish_Model extends CI_Model
        return $row;
      }
 
-     function dish_add_xml($filename)
+     function dish_add_xml($data)
      {
-       $dishid = $this->dish_model->dish_get_lastid();
-       $dishname = $this->input->post('DISH_NAME');
-       $dishtype = $this->input->post('Dish_Type');
-       $subquery = "";
-       $query = "insert into XML_TAB (XML_DATA) values (
-xmltype(
-' '<xml>'x<xml>
-<item>
-<DISH_ID>$dishid</DISH_ID>
-<DISH_NAME></DISH_NAME>
-<DISH_TYPE></DISH_TYPE>
-<DISH_IMAGE></DISH_IMAGE>
-</item></xml>' ));
-       ";
-       echo $query;
+       $query = "DECLARE
+  DISH_NAME VARCHAR2(200);
+  DISH_TYPE VARCHAR2(200);
+  DISH_IMAGE VARCHAR2(200);
+BEGIN
+  DISH_NAME := '".$data['DISH_NAME']."';
+  DISH_TYPE := '".$data['DISH_TYPE']."';
+  DISH_IMAGE :='".$data['DISH_IMAGE']."'';
 
+  INSERT_XML_PROC(
+    DISH_NAME => DISH_NAME,
+    DISH_TYPE => DISH_TYPE,
+    DISH_IMAGE => DISH_IMAGE
+  );
+--rollback;
+END;
+";
+
+$conn = oci_connect('trabalho', '1234', '192.168.242.175:1521/orcl');
+$query2 = " begin INSERT_XML_PROC('".$data['DISH_NAME']."','".$data['DISH_TYPE']."','".$data['DISH_IMAGE']."');END;";
+$exec = OCIPARSE($conn,$query2);
+OCIEXECUTE($exec);
+echo $query2;
+    //   echo $query;
+//      $result =  $this->db->query($query);
+//       $row = $result->row();
+  //     return $row;
      }
 
 

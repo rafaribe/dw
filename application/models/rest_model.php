@@ -89,21 +89,4 @@ class rest_model extends CI_Model {
           $result = $qr->result();
           return $result;
         }
-
-        function testxml()
-        {
-          $query = "SELECT xt.*
-            FROM   xml_tab x,
-       XMLTABLE('/xml/item'
-         PASSING x.xml_data
-         COLUMNS
-          'DISH_ID'    INT  PATH 'DISH_ID',
-           'DISH_NAME'    VARCHAR2(200) PATH 'DISH_NAME',
-           'DISH_TYPE'    VARCHAR2(200) PATH 'DISH_TYPE',
-           'DISH_IMAGE' VARCHAR2(4000) PATH 'DISH_IMAGE'
-         ) xt";
-        $qr= $this->db->query($query);
-         $result = $qr->result();
-         return $result;
-        }
 }
