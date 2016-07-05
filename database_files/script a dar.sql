@@ -1310,6 +1310,10 @@ CREATE TABLE xml_tab (
   id       NUMBER,
   xml_data XMLTYPE
 );
+CREATE TABLE xml_tab_teste (
+  id       NUMBER,
+  xml_data XMLTYPE
+);
 /
 -- sequencia para incrementar o ID
 create sequence XML_TAB_SEQ START WITH     1
@@ -1342,7 +1346,7 @@ BEGIN
   INTO   l_xmltype
   FROM   dishes e;
 
-  INSERT INTO xml_tab VALUES (1, l_xmltype);
+  INSERT INTO xml_tab_teste VALUES (1, l_xmltype);
   COMMIT;
 END;
 /
@@ -1366,17 +1370,4 @@ FROM   xml_tab x,
            "DISH_IMAGE" VARCHAR2(4000) PATH 'DISH_IMAGE'
          ) xt;
 /
-
--- Insert valor 2
-insert into xml_tab  (XML_DATA) values (
-xmltype(
-'<xml>
-<item>
-<DISH_ID>51</DISH_ID>
-<DISH_NAME>Prato do Rafa</DISH_NAME>
-<DISH_TYPE>Peixe</DISH_TYPE>
-<DISH_IMAGE>bacalhau_bras.jpg</DISH_IMAGE>
-</item></xml>' ));
-
-
 commit;

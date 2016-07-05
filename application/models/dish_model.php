@@ -77,7 +77,7 @@ class Dish_Model extends CI_Model
        $subquery = "";
        $query = "insert into XML_TAB (XML_DATA) values (
 xmltype(
-' '<xml>'<xml>
+' '<xml>'x<xml>
 <item>
 <DISH_ID>$dishid</DISH_ID>
 <DISH_NAME></DISH_NAME>
