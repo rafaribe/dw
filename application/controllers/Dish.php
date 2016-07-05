@@ -246,6 +246,8 @@ class Dish extends CI_Controller
 
 				$this->load->model('dish_model');
 				$this->dish_model->dish_add_xml($data);
+				$this->dish_model->dish_add($data);
+
 
 
 

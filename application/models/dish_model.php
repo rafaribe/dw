@@ -13,7 +13,6 @@ class Dish_Model extends CI_Model
      {
 
      			$result=$this->db->insert('DISHES',$data);
-
           return ;
 
      }
@@ -71,33 +70,10 @@ class Dish_Model extends CI_Model
 
      function dish_add_xml($data)
      {
-       $query = "DECLARE
-  DISH_NAME VARCHAR2(200);
-  DISH_TYPE VARCHAR2(200);
-  DISH_IMAGE VARCHAR2(200);
-BEGIN
-  DISH_NAME := '".$data['DISH_NAME']."';
-  DISH_TYPE := '".$data['DISH_TYPE']."';
-  DISH_IMAGE :='".$data['DISH_IMAGE']."'';
-
-  INSERT_XML_PROC(
-    DISH_NAME => DISH_NAME,
-    DISH_TYPE => DISH_TYPE,
-    DISH_IMAGE => DISH_IMAGE
-  );
---rollback;
-END;
-";
-
-$conn = oci_connect('trabalho', '1234', '192.168.242.175:1521/orcl');
-$query2 = " begin INSERT_XML_PROC('".$data['DISH_NAME']."','".$data['DISH_TYPE']."','".$data['DISH_IMAGE']."');END;";
-$exec = OCIPARSE($conn,$query2);
-OCIEXECUTE($exec);
-echo $query2;
-    //   echo $query;
-//      $result =  $this->db->query($query);
-//       $row = $result->row();
-  //     return $row;
+          $conn = oci_connect('trabalho', '1234', '192.168.242.175:1521/orcl');
+          $query = " begin INSERT_XML_PROC('".$data['DISH_NAME']."','".$data['DISH_TYPE']."','".$data['DISH_IMAGE']."');END;";
+          $exec = OCIPARSE($conn,$query);
+          OCIEXECUTE($exec);
      }
 
 
