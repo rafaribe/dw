@@ -2,7 +2,7 @@
 <div class="container">
 <div class="row">
 <div class="col-md-4 col-md-offset-4">
-    <?php echo form_open_multipart('dish/dish_add');?>
+    <?php echo form_open_multipart('dish/dish_add_xml');?>
     <form name="dish_add" method="post" action="<?php echo site_url().'Dish/dish_add'; ?>">
           <h2>Register your Dish</h2><br><hr>
           <label for="DishName">Dish Name</label>

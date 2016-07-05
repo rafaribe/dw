@@ -22,8 +22,11 @@ drop type prices_type force;
 drop type dishes_type force;
 /
 drop type dishes_prices_type force;
-
+/
 -- DROP TABLES
+
+DROP TABLE XML_TAB;
+/
 
 DROP TABLE DISHES_PRICES;
 /
@@ -55,6 +58,8 @@ DROP SEQUENCE PRICES_SEQ;
 DROP SEQUENCE DISHES_SEQ;
 /
 DROP SEQUENCE COMMENTS_RESTAURANT_SEQ;
+/
+DROP SEQUENCE XML_TAB_SEQ;
 /
 -- Create Types --
 
@@ -1297,5 +1302,81 @@ values(
 sysdate,
 Email_list_type('rafael.ntw@gmail.com','rafael.fsk@live.com.pt'),
 phone_list_type('935136300'));
+
+-- XML
+
+-- Tabela para receber valores XML
+CREATE TABLE xml_tab (
+  id       NUMBER,
+  xml_data XMLTYPE
+);
+/
+-- sequencia para incrementar o ID
+create sequence XML_TAB_SEQ START WITH     1
+ INCREMENT BY   1
+ NOCACHE
+ NOCYCLE;
+ /
+ -- colocar a sequencia para incrementar o ID como default.
+ ALTER TABLE XML_TAB
+ MODIFY (ID DEFAULT XML_TAB_SEQ.NEXTVAL );
+/
+
+
+-- Procedimento para inserir todos os dishes em formato XML, na tabela XML_TAB
+DECLARE
+  l_xmltype XMLTYPE;
+BEGIN
+  SELECT XMLELEMENT("xml",
+           XMLAGG(
+             XMLELEMENT("item",
+               XMLFOREST(
+                 e.DISH_ID AS "DISH_ID",
+                 e.DISH_NAME AS "DISH_NAME",
+                e.DISH_TYPE AS "DISH_TYPE",
+                e.DISH_IMAGE AS "DISH_IMAGE"
+               )
+             )
+           )
+         )
+  INTO   l_xmltype
+  FROM   dishes e;
+
+  INSERT INTO xml_tab VALUES (1, l_xmltype);
+  COMMIT;
+END;
+/
+
+-- Select para ver os dados XML que estão guardados em CLOB
+SET LONG 5000
+SELECT x.xml_data.getClobVal()
+FROM   xml_tab x;
+/
+-- View com o  QUERY que vai buscar dados xml à tabela e coloca em colunas normais
+
+Create or replace view xml_view AS
+SELECT xt.*
+FROM   xml_tab x,
+       XMLTABLE('/xml/item'
+         PASSING x.xml_data
+         COLUMNS
+           "DISH_ID"    INT  PATH 'DISH_ID',
+           "DISH_NAME"    VARCHAR2(200) PATH 'DISH_NAME',
+           "DISH_TYPE"    VARCHAR2(200) PATH 'DISH_TYPE',
+           "DISH_IMAGE" VARCHAR2(4000) PATH 'DISH_IMAGE'
+         ) xt;
+/
+
+-- Insert valor 2
+insert into xml_tab  (XML_DATA) values (
+xmltype(
+'<xml>
+<item>
+<DISH_ID>51</DISH_ID>
+<DISH_NAME>Prato do Rafa</DISH_NAME>
+<DISH_TYPE>Peixe</DISH_TYPE>
+<DISH_IMAGE>bacalhau_bras.jpg</DISH_IMAGE>
+</item></xml>' ));
+
 
 commit;

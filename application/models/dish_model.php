@@ -60,4 +60,37 @@ class Dish_Model extends CI_Model
 
      }
 
+     function dish_get_lastid()
+     {
+       $query = "select MAX(DISH_ID) from xml_view";
+       $max = "MAX(DISH_ID)";
+       $result =  $this->db->query($query);
+       $row = $result->row()->$max;
+       return $row;
+     }
+
+     function dish_add_xml($filename)
+     {
+       $dishid = $this->dish_model->dish_get_lastid();
+       $dishname = $this->input->post('DISH_NAME');
+       $dishtype = $this->input->post('Dish_Type');
+       $subquery = "";
+       $query = "insert into XML_TAB (XML_DATA) values (
+xmltype(
+' '<xml>'<xml>
+<item>
+<DISH_ID>$dishid</DISH_ID>
+<DISH_NAME>'".$dishname."'</DISH_NAME>
+<DISH_TYPE>'".$dishtype."'</DISH_TYPE>
+<DISH_IMAGE>'".$filename."'</DISH_IMAGE>
+</item></xml>' ));
+       ";
+       echo $query;
+
+     }
+
+
+
+
+
 }

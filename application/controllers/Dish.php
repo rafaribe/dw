@@ -199,8 +199,55 @@ class Dish extends CI_Controller
 					$this->load->view('success_view');
 
 			}
-		}
+
+		function dish_add_xml()
+		{
+			$this->load->helper(array('form', 'url'));
+
+			$this->load->library('form_validation');
+
+			$config = array(
+												array(
+												 'field'   => 'DishName',
+												 'label'   => 'Dish Name',
+												 'rules'   => 'required|callback_dish_check'
+												),
+												array(
+												 'field'   => 'DishType',
+												 'label'   => 'Dish Type',
+												 'rules'   => 'required'
+												),
+												array(
+														'field'   => 'DishImage',
+														'label'   => 'DishImage',
+														'rules'   => ''
+														 )
+												);
+
+					$this->form_validation->set_rules($config);
+
+					if ($this->form_validation->run() == FALSE)
+					{
+						$this->load->view('sample_navbar_view');
+						$this->load->view('dish_add');
+						return FALSE;
+					}
+					else
+					{
+
+						$file_name = $this->do_upload();
+		//			echo 'file_name';
+					//	echo $file_name;
 
 
+				$this->load->model('dish_model');
+				$this->dish_model->dish_add_xml($file_name);
+
+						return TRUE;
+					}
+				}
+
+			}
+			
 
 ?>

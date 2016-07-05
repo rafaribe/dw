@@ -1,0 +1,5235 @@
+Type ADDRESS_TYPE dropped.
+
+
+Type COMMENT_RESTAURANT_TYPE dropped.
+
+
+Type COMMENTS_TYPE dropped.
+
+
+Type EMAIL_LIST_TYPE dropped.
+
+Type OPEN_HOURS_TYPE dropped.
+
+
+Type PHONE_LIST_TYPE dropped.
+
+
+Type USERS_TYPE dropped.
+
+
+Type RESTAURANTS_TYPE dropped.
+
+
+Type MENUS_TYPE dropped.
+
+
+Type PRICES_TYPE dropped.
+
+Type DISHES_TYPE dropped.
+
+
+Type DISHES_PRICES_TYPE dropped.
+
+Table DISHES_PRICES dropped.
+
+
+Table COMMENTS_RESTAURANT dropped.
+
+
+Table DISHES dropped.
+
+
+Table PRICES dropped.
+
+Table MENUS dropped.
+
+
+Table RESTAURANTS dropped.
+
+
+Table COMMENTS dropped.
+
+Table USERS dropped.
+
+
+Sequence USERS_SEQ dropped.
+
+
+Sequence RESTAURANTS_SEQ dropped.
+
+
+Sequence MENUS_SEQ dropped.
+
+
+Sequence PRICES_SEQ dropped.
+
+
+Sequence DISHES_SEQ dropped.
+
+
+Sequence COMMENTS_RESTAURANT_SEQ dropped.
+
+
+Type ADDRESS_TYPE compiled
+
+
+Type PHONE_LIST_TYPE compiled
+
+
+Type EMAIL_LIST_TYPE compiled
+
+Type OPEN_HOURS_TYPE compiled
+
+
+Type COMMENTS_TYPE compiled
+
+
+Type COMMENT_RESTAURANT_TYPE compiled
+
+
+Type USERS_TYPE compiled
+
+
+Type RESTAURANTS_TYPE compiled
+
+Type MENUS_TYPE compiled
+
+
+Type PRICES_TYPE compiled
+
+
+Type DISHES_TYPE compiled
+
+
+Type DISHES_PRICES_TYPE compiled
+
+
+Sequence USERS_SEQ created.
+
+Table USERS created.
+
+
+Table USERS altered.
+
+
+Table USERS altered.
+
+
+Table USERS altered.
+
+
+Sequence RESTAURANTS_SEQ created.
+
+Table RESTAURANTS created.
+
+
+Table RESTAURANTS altered.
+
+
+Table RESTAURANTS altered.
+
+
+Table RESTAURANTS altered.
+
+
+Table RESTAURANTS altered.
+
+
+Table COMMENTS created.
+
+
+Sequence MENUS_SEQ created.
+
+Table MENUS created.
+
+
+Table MENUS altered.
+
+
+Table MENUS altered.
+
+
+Table MENUS altered.
+
+
+Sequence PRICES_SEQ created.
+
+
+Table PRICES created.
+
+
+Table PRICES altered.
+
+Table PRICES altered.
+
+
+Table PRICES altered.
+
+
+Sequence DISHES_SEQ created.
+
+
+Table DISHES created.
+
+
+Table DISHES altered.
+
+
+Table DISHES altered.
+
+
+Sequence COMMENTS_RESTAURANT_SEQ created.
+
+Table COMMENTS_RESTAURANT created.
+
+
+Table COMMENTS_RESTAURANT altered.
+
+
+Table COMMENTS_RESTAURANT altered.
+
+
+Table DISHES_PRICES created.
+
+
+Table DISHES_PRICES altered.
+
+Table DISHES_PRICES altered.
+
+
+Table DISHES_PRICES altered.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+Error starting at line : 1.304 in command -
+CREATE TABLE xml_tab (
+  id       NUMBER,
+  xml_data XMLTYPE
+)
+Error report -
+SQL Error: ORA-00955: o nome já está a ser utilizado por um objeto existente
+00955. 00000 -  "name is already used by an existing object"
+*Cause:    
+*Action:
+
+Error starting at line : 1.310 in command -
+create sequence XML_TAB_SEQ START WITH     1
+ INCREMENT BY   1
+ NOCACHE
+ NOCYCLE
+Error report -
+SQL Error: ORA-00955: o nome já está a ser utilizado por um objeto existente
+00955. 00000 -  "name is already used by an existing object"
+*Cause:    
+*Action:
+
+Table XML_TAB altered.
+
+PL/SQL procedure successfully completed.
+
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+<xml>
+  <item>
+    <DISH_ID>1</DISH_ID>
+    <DISH_NAME>Bacalhau a Bras</DISH_NAME>
+    <DISH_TYPE>Peixe</DISH_TYPE>
+    <DISH_IMAGE>bacalhau_bras.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>2</DISH_ID>
+    <DISH_NAME>Cozido a Potuguesa</DISH_NAME>
+    <DISH_TYPE>Carne</DISH_TYPE>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_IMAGE>cozido.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>3</DISH_ID>
+    <DISH_NAME>Sardinha Assada com Batata Cozida e Pimentos</DISH_NAME>
+    <DISH_TYPE>Peixe</DISH_TYPE>
+    <DISH_IMAGE>sardinha.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>4</DISH_ID>
+    <DISH_NAME>Creme de Legumes</DISH_NAME>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_TYPE>Sopa</DISH_TYPE>
+    <DISH_IMAGE>creme_legumes.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>5</DISH_ID>
+    <DISH_NAME>Bitoque</DISH_NAME>
+    <DISH_TYPE>Carne</DISH_TYPE>
+    <DISH_IMAGE>bitoque.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>6</DISH_ID>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_NAME>CheeseCake</DISH_NAME>
+    <DISH_TYPE>Sobremesa</DISH_TYPE>
+    <DISH_IMAGE>chesse.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>7</DISH_ID>
+    <DISH_NAME>Caldo Verde</DISH_NAME>
+    <DISH_TYPE>Sopa</DISH_TYPE>
+    <DISH_IMAGE>caldo_verde.jpg</DISH_IMAGE>
+  </item>
+  <item>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_ID>8</DISH_ID>
+    <DISH_NAME>Mousse de Chocolate</DISH_NAME>
+    <DISH_TYPE>Sobremesa</DISH_TYPE>
+    <DISH_IMAGE>mousse.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>9</DISH_ID>
+    <DISH_NAME>Pao e Azeitonas</DISH_NAME>
+    <DISH_TYPE>Entrada</DISH_TYPE>
+    <DISH_IMAGE>azeitonas.jpg</DISH_IMAGE>
+  </item>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+  <item>
+    <DISH_ID>10</DISH_ID>
+    <DISH_NAME>Vinho Tinto</DISH_NAME>
+    <DISH_TYPE>Bebida</DISH_TYPE>
+    <DISH_IMAGE>tinto.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>11</DISH_ID>
+    <DISH_NAME>Tabuleiro de Queijos</DISH_NAME>
+    <DISH_TYPE>Entrada</DISH_TYPE>
+    <DISH_IMAGE>queijos.jpg</DISH_IMAGE>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+  </item>
+  <item>
+    <DISH_ID>12</DISH_ID>
+    <DISH_NAME>Vinho Branco</DISH_NAME>
+    <DISH_TYPE>Bebida</DISH_TYPE>
+    <DISH_IMAGE>branco.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>13</DISH_ID>
+    <DISH_NAME>Agua</DISH_NAME>
+    <DISH_TYPE>Bebida</DISH_TYPE>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_IMAGE>agua.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>14</DISH_ID>
+    <DISH_NAME>Sumo de Laranja</DISH_NAME>
+    <DISH_TYPE>Bebida</DISH_TYPE>
+    <DISH_IMAGE>sumo.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>15</DISH_ID>
+    <DISH_NAME>Cafe</DISH_NAME>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_TYPE>Bebida</DISH_TYPE>
+    <DISH_IMAGE>cafe.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>16</DISH_ID>
+    <DISH_NAME>Morangos</DISH_NAME>
+    <DISH_TYPE>Fruta</DISH_TYPE>
+    <DISH_IMAGE>morango.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>17</DISH_ID>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_NAME>Hambuger com carne e salada</DISH_NAME>
+    <DISH_TYPE>Fast-Food</DISH_TYPE>
+    <DISH_IMAGE>fast.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>18</DISH_ID>
+    <DISH_NAME>Francesinha</DISH_NAME>
+    <DISH_TYPE>Fast-Food</DISH_TYPE>
+    <DISH_IMAGE>francesinha.jpg</DISH_IMAGE>
+  </item>
+  <item>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_ID>19</DISH_ID>
+    <DISH_NAME>Grelhada Mista</DISH_NAME>
+    <DISH_TYPE>Carne</DISH_TYPE>
+    <DISH_IMAGE>mista.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>20</DISH_ID>
+    <DISH_NAME>Martini</DISH_NAME>
+    <DISH_TYPE>Aperitivo</DISH_TYPE>
+    <DISH_IMAGE>drink.jpg</DISH_IMAGE>
+  </item>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+  <item>
+    <DISH_ID>21</DISH_ID>
+    <DISH_NAME>Banana</DISH_NAME>
+    <DISH_TYPE>Fruta</DISH_TYPE>
+    <DISH_IMAGE>banana.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>22</DISH_ID>
+    <DISH_NAME>Salada Mista</DISH_NAME>
+    <DISH_TYPE>Salada</DISH_TYPE>
+    <DISH_IMAGE>salada_mista.jpg</DISH_IMAGE>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+  </item>
+  <item>
+    <DISH_ID>23</DISH_ID>
+    <DISH_NAME>Salada de Fruta</DISH_NAME>
+    <DISH_TYPE>Sobremesa</DISH_TYPE>
+    <DISH_IMAGE>salada_fruta.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>24</DISH_ID>
+    <DISH_NAME>Cafe com Maceira</DISH_NAME>
+    <DISH_TYPE>Bebida</DISH_TYPE>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_IMAGE>bagacu.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>25</DISH_ID>
+    <DISH_NAME>Salada de Alface</DISH_NAME>
+    <DISH_TYPE>Salada</DISH_TYPE>
+    <DISH_IMAGE>alface.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>26</DISH_ID>
+    <DISH_NAME>Salada de Cenoura</DISH_NAME>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_TYPE>Salada</DISH_TYPE>
+    <DISH_IMAGE>cenoura.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>27</DISH_ID>
+    <DISH_NAME>Salada de Tomate</DISH_NAME>
+    <DISH_TYPE>Salada</DISH_TYPE>
+    <DISH_IMAGE>tomate.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>28</DISH_ID>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_NAME>Salada de Tomate e Alface</DISH_NAME>
+    <DISH_TYPE>Salada</DISH_TYPE>
+    <DISH_IMAGE>al_to.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>29</DISH_ID>
+    <DISH_NAME>Salada de Pepino</DISH_NAME>
+    <DISH_TYPE>Salada</DISH_TYPE>
+    <DISH_IMAGE>pepino.jpg</DISH_IMAGE>
+  </item>
+  <item>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_ID>30</DISH_ID>
+    <DISH_NAME>Bola de Gelado</DISH_NAME>
+    <DISH_TYPE>Sobremesa</DISH_TYPE>
+    <DISH_IMAGE>gelado.png</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>31</DISH_ID>
+    <DISH_NAME>Carbonara</DISH_NAME>
+    <DISH_TYPE>Carne</DISH_TYPE>
+  
+
+<xml>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+  <item>
+    <DISH_ID>51</DISH_ID>
+    <DISH_NAME>Prato do Rafa</DISH_NAME>
+    <DISH_TYPE>Peixe</DISH_TYPE>
+    <DISH_IMAGE>bacalhau_bras.jpg</DISH_IMAGE>
+  </item>
+</xml>
+
+<xml>
+  <item>
+    <DISH_ID>52</DISH_ID>
+    <DISH_NAME>Prato do Rafa2</DISH_NAME>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_TYPE>Peixe</DISH_TYPE>
+    <DISH_IMAGE>bacalhau_bras.jpg</DISH_IMAGE>
+  </item>
+</xml>
+
+<xml>
+  <item>
+    <DISH_ID>1</DISH_ID>
+    <DISH_NAME>Bacalhau a Bras</DISH_NAME>
+    <DISH_TYPE>Peixe</DISH_TYPE>
+    <DISH_IMAGE>bacalhau_bras.jpg</DISH_IMAGE>
+  </item>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+  <item>
+    <DISH_ID>2</DISH_ID>
+    <DISH_NAME>Cozido a Potuguesa</DISH_NAME>
+    <DISH_TYPE>Carne</DISH_TYPE>
+    <DISH_IMAGE>cozido.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>3</DISH_ID>
+    <DISH_NAME>Sardinha Assada com Batata Cozida e Pimentos</DISH_NAME>
+    <DISH_TYPE>Peixe</DISH_TYPE>
+    <DISH_IMAGE>sardinha.jpg</DISH_IMAGE>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+  </item>
+  <item>
+    <DISH_ID>4</DISH_ID>
+    <DISH_NAME>Creme de Legumes</DISH_NAME>
+    <DISH_TYPE>Sopa</DISH_TYPE>
+    <DISH_IMAGE>creme_legumes.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>5</DISH_ID>
+    <DISH_NAME>Bitoque</DISH_NAME>
+    <DISH_TYPE>Carne</DISH_TYPE>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_IMAGE>bitoque.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>6</DISH_ID>
+    <DISH_NAME>CheeseCake</DISH_NAME>
+    <DISH_TYPE>Sobremesa</DISH_TYPE>
+    <DISH_IMAGE>chesse.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>7</DISH_ID>
+    <DISH_NAME>Caldo Verde</DISH_NAME>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_TYPE>Sopa</DISH_TYPE>
+    <DISH_IMAGE>caldo_verde.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>8</DISH_ID>
+    <DISH_NAME>Mousse de Chocolate</DISH_NAME>
+    <DISH_TYPE>Sobremesa</DISH_TYPE>
+    <DISH_IMAGE>mousse.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>9</DISH_ID>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_NAME>Pao e Azeitonas</DISH_NAME>
+    <DISH_TYPE>Entrada</DISH_TYPE>
+    <DISH_IMAGE>azeitonas.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>10</DISH_ID>
+    <DISH_NAME>Vinho Tinto</DISH_NAME>
+    <DISH_TYPE>Bebida</DISH_TYPE>
+    <DISH_IMAGE>tinto.jpg</DISH_IMAGE>
+  </item>
+  <item>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_ID>11</DISH_ID>
+    <DISH_NAME>Tabuleiro de Queijos</DISH_NAME>
+    <DISH_TYPE>Entrada</DISH_TYPE>
+    <DISH_IMAGE>queijos.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>12</DISH_ID>
+    <DISH_NAME>Vinho Branco</DISH_NAME>
+    <DISH_TYPE>Bebida</DISH_TYPE>
+    <DISH_IMAGE>branco.jpg</DISH_IMAGE>
+  </item>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+  <item>
+    <DISH_ID>13</DISH_ID>
+    <DISH_NAME>Agua</DISH_NAME>
+    <DISH_TYPE>Bebida</DISH_TYPE>
+    <DISH_IMAGE>agua.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>14</DISH_ID>
+    <DISH_NAME>Sumo de Laranja</DISH_NAME>
+    <DISH_TYPE>Bebida</DISH_TYPE>
+    <DISH_IMAGE>sumo.jpg</DISH_IMAGE>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+  </item>
+  <item>
+    <DISH_ID>15</DISH_ID>
+    <DISH_NAME>Cafe</DISH_NAME>
+    <DISH_TYPE>Bebida</DISH_TYPE>
+    <DISH_IMAGE>cafe.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>16</DISH_ID>
+    <DISH_NAME>Morangos</DISH_NAME>
+    <DISH_TYPE>Fruta</DISH_TYPE>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_IMAGE>morango.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>17</DISH_ID>
+    <DISH_NAME>Hambuger com carne e salada</DISH_NAME>
+    <DISH_TYPE>Fast-Food</DISH_TYPE>
+    <DISH_IMAGE>fast.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>18</DISH_ID>
+    <DISH_NAME>Francesinha</DISH_NAME>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_TYPE>Fast-Food</DISH_TYPE>
+    <DISH_IMAGE>francesinha.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>19</DISH_ID>
+    <DISH_NAME>Grelhada Mista</DISH_NAME>
+    <DISH_TYPE>Carne</DISH_TYPE>
+    <DISH_IMAGE>mista.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>20</DISH_ID>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_NAME>Martini</DISH_NAME>
+    <DISH_TYPE>Aperitivo</DISH_TYPE>
+    <DISH_IMAGE>drink.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>21</DISH_ID>
+    <DISH_NAME>Banana</DISH_NAME>
+    <DISH_TYPE>Fruta</DISH_TYPE>
+    <DISH_IMAGE>banana.jpg</DISH_IMAGE>
+  </item>
+  <item>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_ID>22</DISH_ID>
+    <DISH_NAME>Salada Mista</DISH_NAME>
+    <DISH_TYPE>Salada</DISH_TYPE>
+    <DISH_IMAGE>salada_mista.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>23</DISH_ID>
+    <DISH_NAME>Salada de Fruta</DISH_NAME>
+    <DISH_TYPE>Sobremesa</DISH_TYPE>
+    <DISH_IMAGE>salada_fruta.jpg</DISH_IMAGE>
+  </item>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+  <item>
+    <DISH_ID>24</DISH_ID>
+    <DISH_NAME>Cafe com Maceira</DISH_NAME>
+    <DISH_TYPE>Bebida</DISH_TYPE>
+    <DISH_IMAGE>bagacu.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>25</DISH_ID>
+    <DISH_NAME>Salada de Alface</DISH_NAME>
+    <DISH_TYPE>Salada</DISH_TYPE>
+    <DISH_IMAGE>alface.jpg</DISH_IMAGE>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+  </item>
+  <item>
+    <DISH_ID>26</DISH_ID>
+    <DISH_NAME>Salada de Cenoura</DISH_NAME>
+    <DISH_TYPE>Salada</DISH_TYPE>
+    <DISH_IMAGE>cenoura.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>27</DISH_ID>
+    <DISH_NAME>Salada de Tomate</DISH_NAME>
+    <DISH_TYPE>Salada</DISH_TYPE>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_IMAGE>tomate.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>28</DISH_ID>
+    <DISH_NAME>Salada de Tomate e Alface</DISH_NAME>
+    <DISH_TYPE>Salada</DISH_TYPE>
+    <DISH_IMAGE>al_to.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>29</DISH_ID>
+    <DISH_NAME>Salada de Pepino</DISH_NAME>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_TYPE>Salada</DISH_TYPE>
+    <DISH_IMAGE>pepino.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>30</DISH_ID>
+    <DISH_NAME>Bola de Gelado</DISH_NAME>
+    <DISH_TYPE>Sobremesa</DISH_TYPE>
+    <DISH_IMAGE>gelado.png</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>31</DISH_ID>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_NAME>Carbonara</DISH_NAME>
+    <DISH_TYPE>Carne</DISH_TYPE>
+  
+
+
+View XML_VIEW created.
+
+
+1 row inserted.
+
+
+Commit complete.
+
+Type ADDRESS_TYPE dropped.
+
+
+Type COMMENT_RESTAURANT_TYPE dropped.
+
+
+Type COMMENTS_TYPE dropped.
+
+
+Type EMAIL_LIST_TYPE dropped.
+
+
+Type OPEN_HOURS_TYPE dropped.
+
+
+Type PHONE_LIST_TYPE dropped.
+
+Type USERS_TYPE dropped.
+
+
+Type RESTAURANTS_TYPE dropped.
+
+
+Type MENUS_TYPE dropped.
+
+
+Type PRICES_TYPE dropped.
+
+
+Type DISHES_TYPE dropped.
+
+Type DISHES_PRICES_TYPE dropped.
+
+
+Table XML_TAB dropped.
+
+
+Table DISHES_PRICES dropped.
+
+Table COMMENTS_RESTAURANT dropped.
+
+
+Table DISHES dropped.
+
+
+Table PRICES dropped.
+
+
+Table MENUS dropped.
+
+Table RESTAURANTS dropped.
+
+
+Table COMMENTS dropped.
+
+
+Table USERS dropped.
+
+
+Sequence USERS_SEQ dropped.
+
+
+Sequence RESTAURANTS_SEQ dropped.
+
+
+Sequence MENUS_SEQ dropped.
+
+Sequence PRICES_SEQ dropped.
+
+
+Sequence DISHES_SEQ dropped.
+
+
+Sequence COMMENTS_RESTAURANT_SEQ dropped.
+
+
+Type ADDRESS_TYPE compiled
+
+
+Type PHONE_LIST_TYPE compiled
+
+
+Type EMAIL_LIST_TYPE compiled
+
+
+Type OPEN_HOURS_TYPE compiled
+
+Type COMMENTS_TYPE compiled
+
+
+Type COMMENT_RESTAURANT_TYPE compiled
+
+
+Type USERS_TYPE compiled
+
+
+Type RESTAURANTS_TYPE compiled
+
+
+Type MENUS_TYPE compiled
+
+
+Type PRICES_TYPE compiled
+
+Type DISHES_TYPE compiled
+
+
+Type DISHES_PRICES_TYPE compiled
+
+
+Sequence USERS_SEQ created.
+
+
+Table USERS created.
+
+
+Table USERS altered.
+
+
+Table USERS altered.
+
+Table USERS altered.
+
+
+Sequence RESTAURANTS_SEQ created.
+
+
+Table RESTAURANTS created.
+
+
+Table RESTAURANTS altered.
+
+
+Table RESTAURANTS altered.
+
+Table RESTAURANTS altered.
+
+
+Table RESTAURANTS altered.
+
+
+Table COMMENTS created.
+
+
+Sequence MENUS_SEQ created.
+
+
+Table MENUS created.
+
+
+Table MENUS altered.
+
+Table MENUS altered.
+
+
+Table MENUS altered.
+
+
+Sequence PRICES_SEQ created.
+
+
+Table PRICES created.
+
+
+Table PRICES altered.
+
+
+Table PRICES altered.
+
+Table PRICES altered.
+
+
+Sequence DISHES_SEQ created.
+
+
+Table DISHES created.
+
+
+Table DISHES altered.
+
+
+Table DISHES altered.
+
+
+Sequence COMMENTS_RESTAURANT_SEQ created.
+
+Table COMMENTS_RESTAURANT created.
+
+
+Table COMMENTS_RESTAURANT altered.
+
+
+Table COMMENTS_RESTAURANT altered.
+
+
+Table DISHES_PRICES created.
+
+
+Table DISHES_PRICES altered.
+
+
+Table DISHES_PRICES altered.
+
+Table DISHES_PRICES altered.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+Table XML_TAB created.
+
+
+Error starting at line : 1.312 in command -
+create sequence XML_TAB_SEQ START WITH     1
+ INCREMENT BY   1
+ NOCACHE
+ NOCYCLE
+Error report -
+SQL Error: ORA-00955: o nome já está a ser utilizado por um objeto existente
+00955. 00000 -  "name is already used by an existing object"
+*Cause:    
+*Action:
+
+Table XML_TAB altered.
+
+
+PL/SQL procedure successfully completed.
+
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+<xml>
+  <item>
+    <DISH_ID>1</DISH_ID>
+    <DISH_NAME>Bacalhau a Bras</DISH_NAME>
+    <DISH_TYPE>Peixe</DISH_TYPE>
+    <DISH_IMAGE>bacalhau_bras.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>2</DISH_ID>
+    <DISH_NAME>Cozido a Potuguesa</DISH_NAME>
+    <DISH_TYPE>Carne</DISH_TYPE>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_IMAGE>cozido.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>3</DISH_ID>
+    <DISH_NAME>Sardinha Assada com Batata Cozida e Pimentos</DISH_NAME>
+    <DISH_TYPE>Peixe</DISH_TYPE>
+    <DISH_IMAGE>sardinha.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>4</DISH_ID>
+    <DISH_NAME>Creme de Legumes</DISH_NAME>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_TYPE>Sopa</DISH_TYPE>
+    <DISH_IMAGE>creme_legumes.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>5</DISH_ID>
+    <DISH_NAME>Bitoque</DISH_NAME>
+    <DISH_TYPE>Carne</DISH_TYPE>
+    <DISH_IMAGE>bitoque.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>6</DISH_ID>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_NAME>CheeseCake</DISH_NAME>
+    <DISH_TYPE>Sobremesa</DISH_TYPE>
+    <DISH_IMAGE>chesse.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>7</DISH_ID>
+    <DISH_NAME>Caldo Verde</DISH_NAME>
+    <DISH_TYPE>Sopa</DISH_TYPE>
+    <DISH_IMAGE>caldo_verde.jpg</DISH_IMAGE>
+  </item>
+  <item>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_ID>8</DISH_ID>
+    <DISH_NAME>Mousse de Chocolate</DISH_NAME>
+    <DISH_TYPE>Sobremesa</DISH_TYPE>
+    <DISH_IMAGE>mousse.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>9</DISH_ID>
+    <DISH_NAME>Pao e Azeitonas</DISH_NAME>
+    <DISH_TYPE>Entrada</DISH_TYPE>
+    <DISH_IMAGE>azeitonas.jpg</DISH_IMAGE>
+  </item>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+  <item>
+    <DISH_ID>10</DISH_ID>
+    <DISH_NAME>Vinho Tinto</DISH_NAME>
+    <DISH_TYPE>Bebida</DISH_TYPE>
+    <DISH_IMAGE>tinto.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>11</DISH_ID>
+    <DISH_NAME>Tabuleiro de Queijos</DISH_NAME>
+    <DISH_TYPE>Entrada</DISH_TYPE>
+    <DISH_IMAGE>queijos.jpg</DISH_IMAGE>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+  </item>
+  <item>
+    <DISH_ID>12</DISH_ID>
+    <DISH_NAME>Vinho Branco</DISH_NAME>
+    <DISH_TYPE>Bebida</DISH_TYPE>
+    <DISH_IMAGE>branco.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>13</DISH_ID>
+    <DISH_NAME>Agua</DISH_NAME>
+    <DISH_TYPE>Bebida</DISH_TYPE>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_IMAGE>agua.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>14</DISH_ID>
+    <DISH_NAME>Sumo de Laranja</DISH_NAME>
+    <DISH_TYPE>Bebida</DISH_TYPE>
+    <DISH_IMAGE>sumo.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>15</DISH_ID>
+    <DISH_NAME>Cafe</DISH_NAME>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_TYPE>Bebida</DISH_TYPE>
+    <DISH_IMAGE>cafe.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>16</DISH_ID>
+    <DISH_NAME>Morangos</DISH_NAME>
+    <DISH_TYPE>Fruta</DISH_TYPE>
+    <DISH_IMAGE>morango.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>17</DISH_ID>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_NAME>Hambuger com carne e salada</DISH_NAME>
+    <DISH_TYPE>Fast-Food</DISH_TYPE>
+    <DISH_IMAGE>fast.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>18</DISH_ID>
+    <DISH_NAME>Francesinha</DISH_NAME>
+    <DISH_TYPE>Fast-Food</DISH_TYPE>
+    <DISH_IMAGE>francesinha.jpg</DISH_IMAGE>
+  </item>
+  <item>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_ID>19</DISH_ID>
+    <DISH_NAME>Grelhada Mista</DISH_NAME>
+    <DISH_TYPE>Carne</DISH_TYPE>
+    <DISH_IMAGE>mista.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>20</DISH_ID>
+    <DISH_NAME>Martini</DISH_NAME>
+    <DISH_TYPE>Aperitivo</DISH_TYPE>
+    <DISH_IMAGE>drink.jpg</DISH_IMAGE>
+  </item>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+  <item>
+    <DISH_ID>21</DISH_ID>
+    <DISH_NAME>Banana</DISH_NAME>
+    <DISH_TYPE>Fruta</DISH_TYPE>
+    <DISH_IMAGE>banana.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>22</DISH_ID>
+    <DISH_NAME>Salada Mista</DISH_NAME>
+    <DISH_TYPE>Salada</DISH_TYPE>
+    <DISH_IMAGE>salada_mista.jpg</DISH_IMAGE>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+  </item>
+  <item>
+    <DISH_ID>23</DISH_ID>
+    <DISH_NAME>Salada de Fruta</DISH_NAME>
+    <DISH_TYPE>Sobremesa</DISH_TYPE>
+    <DISH_IMAGE>salada_fruta.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>24</DISH_ID>
+    <DISH_NAME>Cafe com Maceira</DISH_NAME>
+    <DISH_TYPE>Bebida</DISH_TYPE>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_IMAGE>bagacu.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>25</DISH_ID>
+    <DISH_NAME>Salada de Alface</DISH_NAME>
+    <DISH_TYPE>Salada</DISH_TYPE>
+    <DISH_IMAGE>alface.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>26</DISH_ID>
+    <DISH_NAME>Salada de Cenoura</DISH_NAME>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_TYPE>Salada</DISH_TYPE>
+    <DISH_IMAGE>cenoura.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>27</DISH_ID>
+    <DISH_NAME>Salada de Tomate</DISH_NAME>
+    <DISH_TYPE>Salada</DISH_TYPE>
+    <DISH_IMAGE>tomate.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>28</DISH_ID>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_NAME>Salada de Tomate e Alface</DISH_NAME>
+    <DISH_TYPE>Salada</DISH_TYPE>
+    <DISH_IMAGE>al_to.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>29</DISH_ID>
+    <DISH_NAME>Salada de Pepino</DISH_NAME>
+    <DISH_TYPE>Salada</DISH_TYPE>
+    <DISH_IMAGE>pepino.jpg</DISH_IMAGE>
+  </item>
+  <item>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_ID>30</DISH_ID>
+    <DISH_NAME>Bola de Gelado</DISH_NAME>
+    <DISH_TYPE>Sobremesa</DISH_TYPE>
+    <DISH_IMAGE>gelado.png</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>31</DISH_ID>
+    <DISH_NAME>Carbonara</DISH_NAME>
+    <DISH_TYPE>Carne</DISH_TYPE>
+  
+
+
+
+View XML_VIEW created.
+
+
+1 row inserted.
+
+
+Commit complete.
+
+Type ADDRESS_TYPE dropped.
+
+
+Type COMMENT_RESTAURANT_TYPE dropped.
+
+
+Type COMMENTS_TYPE dropped.
+
+
+Type EMAIL_LIST_TYPE dropped.
+
+
+Type OPEN_HOURS_TYPE dropped.
+
+
+Type PHONE_LIST_TYPE dropped.
+
+
+Type USERS_TYPE dropped.
+
+Type RESTAURANTS_TYPE dropped.
+
+
+Type MENUS_TYPE dropped.
+
+
+Type PRICES_TYPE dropped.
+
+
+Type DISHES_TYPE dropped.
+
+
+Type DISHES_PRICES_TYPE dropped.
+
+
+Table XML_TAB dropped.
+
+Table DISHES_PRICES dropped.
+
+
+Table COMMENTS_RESTAURANT dropped.
+
+
+Table DISHES dropped.
+
+Table PRICES dropped.
+
+
+Table MENUS dropped.
+
+Table RESTAURANTS dropped.
+
+
+Table COMMENTS dropped.
+
+
+Table USERS dropped.
+
+
+Sequence USERS_SEQ dropped.
+
+
+Sequence RESTAURANTS_SEQ dropped.
+
+Sequence MENUS_SEQ dropped.
+
+
+Sequence PRICES_SEQ dropped.
+
+
+Sequence DISHES_SEQ dropped.
+
+
+Sequence COMMENTS_RESTAURANT_SEQ dropped.
+
+
+Sequence XML_TAB_SEQ dropped.
+
+
+Type ADDRESS_TYPE compiled
+
+
+Type PHONE_LIST_TYPE compiled
+
+
+Type EMAIL_LIST_TYPE compiled
+
+
+Type OPEN_HOURS_TYPE compiled
+
+Type COMMENTS_TYPE compiled
+
+
+Type COMMENT_RESTAURANT_TYPE compiled
+
+
+Type USERS_TYPE compiled
+
+
+Type RESTAURANTS_TYPE compiled
+
+
+Type MENUS_TYPE compiled
+
+Type PRICES_TYPE compiled
+
+
+Type DISHES_TYPE compiled
+
+
+Type DISHES_PRICES_TYPE compiled
+
+
+Sequence USERS_SEQ created.
+
+
+Table USERS created.
+
+
+Table USERS altered.
+
+
+Table USERS altered.
+
+Table USERS altered.
+
+
+Sequence RESTAURANTS_SEQ created.
+
+
+Table RESTAURANTS created.
+
+
+Table RESTAURANTS altered.
+
+
+Table RESTAURANTS altered.
+
+
+Table RESTAURANTS altered.
+
+Table RESTAURANTS altered.
+
+
+Table COMMENTS created.
+
+
+Sequence MENUS_SEQ created.
+
+
+Table MENUS created.
+
+
+Table MENUS altered.
+
+
+Table MENUS altered.
+
+
+Table MENUS altered.
+
+Sequence PRICES_SEQ created.
+
+
+Table PRICES created.
+
+
+Table PRICES altered.
+
+
+Table PRICES altered.
+
+
+Table PRICES altered.
+
+
+Sequence DISHES_SEQ created.
+
+
+Table DISHES created.
+
+Table DISHES altered.
+
+
+Table DISHES altered.
+
+
+Sequence COMMENTS_RESTAURANT_SEQ created.
+
+
+Table COMMENTS_RESTAURANT created.
+
+
+Table COMMENTS_RESTAURANT altered.
+
+
+Table COMMENTS_RESTAURANT altered.
+
+
+Table DISHES_PRICES created.
+
+Table DISHES_PRICES altered.
+
+
+Table DISHES_PRICES altered.
+
+
+Table DISHES_PRICES altered.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+Table XML_TAB created.
+
+
+Sequence XML_TAB_SEQ created.
+
+
+Table XML_TAB altered.
+
+
+PL/SQL procedure successfully completed.
+
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+<xml>
+  <item>
+    <DISH_ID>1</DISH_ID>
+    <DISH_NAME>Bacalhau a Bras</DISH_NAME>
+    <DISH_TYPE>Peixe</DISH_TYPE>
+    <DISH_IMAGE>bacalhau_bras.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>2</DISH_ID>
+    <DISH_NAME>Cozido a Potuguesa</DISH_NAME>
+    <DISH_TYPE>Carne</DISH_TYPE>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_IMAGE>cozido.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>3</DISH_ID>
+    <DISH_NAME>Sardinha Assada com Batata Cozida e Pimentos</DISH_NAME>
+    <DISH_TYPE>Peixe</DISH_TYPE>
+    <DISH_IMAGE>sardinha.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>4</DISH_ID>
+    <DISH_NAME>Creme de Legumes</DISH_NAME>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_TYPE>Sopa</DISH_TYPE>
+    <DISH_IMAGE>creme_legumes.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>5</DISH_ID>
+    <DISH_NAME>Bitoque</DISH_NAME>
+    <DISH_TYPE>Carne</DISH_TYPE>
+    <DISH_IMAGE>bitoque.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>6</DISH_ID>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_NAME>CheeseCake</DISH_NAME>
+    <DISH_TYPE>Sobremesa</DISH_TYPE>
+    <DISH_IMAGE>chesse.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>7</DISH_ID>
+    <DISH_NAME>Caldo Verde</DISH_NAME>
+    <DISH_TYPE>Sopa</DISH_TYPE>
+    <DISH_IMAGE>caldo_verde.jpg</DISH_IMAGE>
+  </item>
+  <item>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_ID>8</DISH_ID>
+    <DISH_NAME>Mousse de Chocolate</DISH_NAME>
+    <DISH_TYPE>Sobremesa</DISH_TYPE>
+    <DISH_IMAGE>mousse.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>9</DISH_ID>
+    <DISH_NAME>Pao e Azeitonas</DISH_NAME>
+    <DISH_TYPE>Entrada</DISH_TYPE>
+    <DISH_IMAGE>azeitonas.jpg</DISH_IMAGE>
+  </item>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+  <item>
+    <DISH_ID>10</DISH_ID>
+    <DISH_NAME>Vinho Tinto</DISH_NAME>
+    <DISH_TYPE>Bebida</DISH_TYPE>
+    <DISH_IMAGE>tinto.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>11</DISH_ID>
+    <DISH_NAME>Tabuleiro de Queijos</DISH_NAME>
+    <DISH_TYPE>Entrada</DISH_TYPE>
+    <DISH_IMAGE>queijos.jpg</DISH_IMAGE>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+  </item>
+  <item>
+    <DISH_ID>12</DISH_ID>
+    <DISH_NAME>Vinho Branco</DISH_NAME>
+    <DISH_TYPE>Bebida</DISH_TYPE>
+    <DISH_IMAGE>branco.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>13</DISH_ID>
+    <DISH_NAME>Agua</DISH_NAME>
+    <DISH_TYPE>Bebida</DISH_TYPE>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_IMAGE>agua.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>14</DISH_ID>
+    <DISH_NAME>Sumo de Laranja</DISH_NAME>
+    <DISH_TYPE>Bebida</DISH_TYPE>
+    <DISH_IMAGE>sumo.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>15</DISH_ID>
+    <DISH_NAME>Cafe</DISH_NAME>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_TYPE>Bebida</DISH_TYPE>
+    <DISH_IMAGE>cafe.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>16</DISH_ID>
+    <DISH_NAME>Morangos</DISH_NAME>
+    <DISH_TYPE>Fruta</DISH_TYPE>
+    <DISH_IMAGE>morango.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>17</DISH_ID>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_NAME>Hambuger com carne e salada</DISH_NAME>
+    <DISH_TYPE>Fast-Food</DISH_TYPE>
+    <DISH_IMAGE>fast.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>18</DISH_ID>
+    <DISH_NAME>Francesinha</DISH_NAME>
+    <DISH_TYPE>Fast-Food</DISH_TYPE>
+    <DISH_IMAGE>francesinha.jpg</DISH_IMAGE>
+  </item>
+  <item>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_ID>19</DISH_ID>
+    <DISH_NAME>Grelhada Mista</DISH_NAME>
+    <DISH_TYPE>Carne</DISH_TYPE>
+    <DISH_IMAGE>mista.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>20</DISH_ID>
+    <DISH_NAME>Martini</DISH_NAME>
+    <DISH_TYPE>Aperitivo</DISH_TYPE>
+    <DISH_IMAGE>drink.jpg</DISH_IMAGE>
+  </item>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+  <item>
+    <DISH_ID>21</DISH_ID>
+    <DISH_NAME>Banana</DISH_NAME>
+    <DISH_TYPE>Fruta</DISH_TYPE>
+    <DISH_IMAGE>banana.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>22</DISH_ID>
+    <DISH_NAME>Salada Mista</DISH_NAME>
+    <DISH_TYPE>Salada</DISH_TYPE>
+    <DISH_IMAGE>salada_mista.jpg</DISH_IMAGE>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+  </item>
+  <item>
+    <DISH_ID>23</DISH_ID>
+    <DISH_NAME>Salada de Fruta</DISH_NAME>
+    <DISH_TYPE>Sobremesa</DISH_TYPE>
+    <DISH_IMAGE>salada_fruta.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>24</DISH_ID>
+    <DISH_NAME>Cafe com Maceira</DISH_NAME>
+    <DISH_TYPE>Bebida</DISH_TYPE>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_IMAGE>bagacu.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>25</DISH_ID>
+    <DISH_NAME>Salada de Alface</DISH_NAME>
+    <DISH_TYPE>Salada</DISH_TYPE>
+    <DISH_IMAGE>alface.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>26</DISH_ID>
+    <DISH_NAME>Salada de Cenoura</DISH_NAME>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_TYPE>Salada</DISH_TYPE>
+    <DISH_IMAGE>cenoura.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>27</DISH_ID>
+    <DISH_NAME>Salada de Tomate</DISH_NAME>
+    <DISH_TYPE>Salada</DISH_TYPE>
+    <DISH_IMAGE>tomate.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>28</DISH_ID>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_NAME>Salada de Tomate e Alface</DISH_NAME>
+    <DISH_TYPE>Salada</DISH_TYPE>
+    <DISH_IMAGE>al_to.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>29</DISH_ID>
+    <DISH_NAME>Salada de Pepino</DISH_NAME>
+    <DISH_TYPE>Salada</DISH_TYPE>
+    <DISH_IMAGE>pepino.jpg</DISH_IMAGE>
+  </item>
+  <item>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_ID>30</DISH_ID>
+    <DISH_NAME>Bola de Gelado</DISH_NAME>
+    <DISH_TYPE>Sobremesa</DISH_TYPE>
+    <DISH_IMAGE>gelado.png</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>31</DISH_ID>
+    <DISH_NAME>Carbonara</DISH_NAME>
+    <DISH_TYPE>Carne</DISH_TYPE>
+  
+
+
+
+View XML_VIEW created.
+
+
+1 row inserted.
+
+
+Commit complete.
+
+Type ADDRESS_TYPE dropped.
+
+
+Type COMMENT_RESTAURANT_TYPE dropped.
+
+
+Type COMMENTS_TYPE dropped.
+
+Type EMAIL_LIST_TYPE dropped.
+
+
+Type OPEN_HOURS_TYPE dropped.
+
+
+Type PHONE_LIST_TYPE dropped.
+
+
+Type USERS_TYPE dropped.
+
+
+Type RESTAURANTS_TYPE dropped.
+
+
+Type MENUS_TYPE dropped.
+
+Type PRICES_TYPE dropped.
+
+
+Type DISHES_TYPE dropped.
+
+
+Type DISHES_PRICES_TYPE dropped.
+
+
+Error starting at line : 27 in command -
+DROP TABLE XML_TAB
+Error report -
+SQL Error: ORA-00942: tabela ou visualização não existe
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+Table DISHES_PRICES dropped.
+
+
+Table COMMENTS_RESTAURANT dropped.
+
+
+Table DISHES dropped.
+
+Table PRICES dropped.
+
+Table MENUS dropped.
+
+
+Table RESTAURANTS dropped.
+
+
+Table COMMENTS dropped.
+
+Table USERS dropped.
+
+
+Sequence USERS_SEQ dropped.
+
+
+Sequence RESTAURANTS_SEQ dropped.
+
+
+Sequence MENUS_SEQ dropped.
+
+
+Sequence PRICES_SEQ dropped.
+
+
+Sequence DISHES_SEQ dropped.
+
+
+Sequence COMMENTS_RESTAURANT_SEQ dropped.
+
+
+Error starting at line : 61 in command -
+DROP SEQUENCE XML_TAB_SEQ
+Error report -
+SQL Error: ORA-02289: sequência não existe
+02289. 00000 -  "sequence does not exist"
+*Cause:    The specified sequence does not exist, or the user does
+           not have the required privilege to perform this operation.
+*Action:   Make sure the sequence name is correct, and that you have
+           the right to perform the desired operation on this sequence.
+Type ADDRESS_TYPE compiled
+
+
+Type PHONE_LIST_TYPE compiled
+
+
+Type EMAIL_LIST_TYPE compiled
+
+
+Type OPEN_HOURS_TYPE compiled
+
+
+Type COMMENTS_TYPE compiled
+
+
+Type COMMENT_RESTAURANT_TYPE compiled
+
+Type USERS_TYPE compiled
+
+
+Type RESTAURANTS_TYPE compiled
+
+
+Type MENUS_TYPE compiled
+
+
+Type PRICES_TYPE compiled
+
+
+Type DISHES_TYPE compiled
+
+
+Type DISHES_PRICES_TYPE compiled
+
+
+Sequence USERS_SEQ created.
+
+Table USERS created.
+
+
+Table USERS altered.
+
+
+Table USERS altered.
+
+
+Table USERS altered.
+
+
+Sequence RESTAURANTS_SEQ created.
+
+
+Table RESTAURANTS created.
+
+
+Table RESTAURANTS altered.
+
+Table RESTAURANTS altered.
+
+
+Table RESTAURANTS altered.
+
+
+Table RESTAURANTS altered.
+
+
+Table COMMENTS created.
+
+
+Sequence MENUS_SEQ created.
+
+
+Table MENUS created.
+
+
+Table MENUS altered.
+
+Table MENUS altered.
+
+
+Table MENUS altered.
+
+
+Sequence PRICES_SEQ created.
+
+
+Table PRICES created.
+
+
+Table PRICES altered.
+
+
+Table PRICES altered.
+
+Table PRICES altered.
+
+
+Sequence DISHES_SEQ created.
+
+
+Table DISHES created.
+
+
+Table DISHES altered.
+
+
+Table DISHES altered.
+
+
+Sequence COMMENTS_RESTAURANT_SEQ created.
+
+
+Table COMMENTS_RESTAURANT created.
+
+
+Table COMMENTS_RESTAURANT altered.
+
+
+Table COMMENTS_RESTAURANT altered.
+
+Table DISHES_PRICES created.
+
+
+Table DISHES_PRICES altered.
+
+
+Table DISHES_PRICES altered.
+
+
+Table DISHES_PRICES altered.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+Table XML_TAB created.
+
+
+Sequence XML_TAB_SEQ created.
+
+
+Table XML_TAB altered.
+
+PL/SQL procedure successfully completed.
+
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+<xml>
+  <item>
+    <DISH_ID>1</DISH_ID>
+    <DISH_NAME>Bacalhau a Bras</DISH_NAME>
+    <DISH_TYPE>Peixe</DISH_TYPE>
+    <DISH_IMAGE>bacalhau_bras.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>2</DISH_ID>
+    <DISH_NAME>Cozido a Potuguesa</DISH_NAME>
+    <DISH_TYPE>Carne</DISH_TYPE>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_IMAGE>cozido.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>3</DISH_ID>
+    <DISH_NAME>Sardinha Assada com Batata Cozida e Pimentos</DISH_NAME>
+    <DISH_TYPE>Peixe</DISH_TYPE>
+    <DISH_IMAGE>sardinha.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>4</DISH_ID>
+    <DISH_NAME>Creme de Legumes</DISH_NAME>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_TYPE>Sopa</DISH_TYPE>
+    <DISH_IMAGE>creme_legumes.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>5</DISH_ID>
+    <DISH_NAME>Bitoque</DISH_NAME>
+    <DISH_TYPE>Carne</DISH_TYPE>
+    <DISH_IMAGE>bitoque.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>6</DISH_ID>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_NAME>CheeseCake</DISH_NAME>
+    <DISH_TYPE>Sobremesa</DISH_TYPE>
+    <DISH_IMAGE>chesse.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>7</DISH_ID>
+    <DISH_NAME>Caldo Verde</DISH_NAME>
+    <DISH_TYPE>Sopa</DISH_TYPE>
+    <DISH_IMAGE>caldo_verde.jpg</DISH_IMAGE>
+  </item>
+  <item>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_ID>8</DISH_ID>
+    <DISH_NAME>Mousse de Chocolate</DISH_NAME>
+    <DISH_TYPE>Sobremesa</DISH_TYPE>
+    <DISH_IMAGE>mousse.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>9</DISH_ID>
+    <DISH_NAME>Pao e Azeitonas</DISH_NAME>
+    <DISH_TYPE>Entrada</DISH_TYPE>
+    <DISH_IMAGE>azeitonas.jpg</DISH_IMAGE>
+  </item>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+  <item>
+    <DISH_ID>10</DISH_ID>
+    <DISH_NAME>Vinho Tinto</DISH_NAME>
+    <DISH_TYPE>Bebida</DISH_TYPE>
+    <DISH_IMAGE>tinto.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>11</DISH_ID>
+    <DISH_NAME>Tabuleiro de Queijos</DISH_NAME>
+    <DISH_TYPE>Entrada</DISH_TYPE>
+    <DISH_IMAGE>queijos.jpg</DISH_IMAGE>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+  </item>
+  <item>
+    <DISH_ID>12</DISH_ID>
+    <DISH_NAME>Vinho Branco</DISH_NAME>
+    <DISH_TYPE>Bebida</DISH_TYPE>
+    <DISH_IMAGE>branco.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>13</DISH_ID>
+    <DISH_NAME>Agua</DISH_NAME>
+    <DISH_TYPE>Bebida</DISH_TYPE>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_IMAGE>agua.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>14</DISH_ID>
+    <DISH_NAME>Sumo de Laranja</DISH_NAME>
+    <DISH_TYPE>Bebida</DISH_TYPE>
+    <DISH_IMAGE>sumo.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>15</DISH_ID>
+    <DISH_NAME>Cafe</DISH_NAME>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_TYPE>Bebida</DISH_TYPE>
+    <DISH_IMAGE>cafe.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>16</DISH_ID>
+    <DISH_NAME>Morangos</DISH_NAME>
+    <DISH_TYPE>Fruta</DISH_TYPE>
+    <DISH_IMAGE>morango.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>17</DISH_ID>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_NAME>Hambuger com carne e salada</DISH_NAME>
+    <DISH_TYPE>Fast-Food</DISH_TYPE>
+    <DISH_IMAGE>fast.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>18</DISH_ID>
+    <DISH_NAME>Francesinha</DISH_NAME>
+    <DISH_TYPE>Fast-Food</DISH_TYPE>
+    <DISH_IMAGE>francesinha.jpg</DISH_IMAGE>
+  </item>
+  <item>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_ID>19</DISH_ID>
+    <DISH_NAME>Grelhada Mista</DISH_NAME>
+    <DISH_TYPE>Carne</DISH_TYPE>
+    <DISH_IMAGE>mista.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>20</DISH_ID>
+    <DISH_NAME>Martini</DISH_NAME>
+    <DISH_TYPE>Aperitivo</DISH_TYPE>
+    <DISH_IMAGE>drink.jpg</DISH_IMAGE>
+  </item>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+  <item>
+    <DISH_ID>21</DISH_ID>
+    <DISH_NAME>Banana</DISH_NAME>
+    <DISH_TYPE>Fruta</DISH_TYPE>
+    <DISH_IMAGE>banana.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>22</DISH_ID>
+    <DISH_NAME>Salada Mista</DISH_NAME>
+    <DISH_TYPE>Salada</DISH_TYPE>
+    <DISH_IMAGE>salada_mista.jpg</DISH_IMAGE>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+  </item>
+  <item>
+    <DISH_ID>23</DISH_ID>
+    <DISH_NAME>Salada de Fruta</DISH_NAME>
+    <DISH_TYPE>Sobremesa</DISH_TYPE>
+    <DISH_IMAGE>salada_fruta.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>24</DISH_ID>
+    <DISH_NAME>Cafe com Maceira</DISH_NAME>
+    <DISH_TYPE>Bebida</DISH_TYPE>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_IMAGE>bagacu.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>25</DISH_ID>
+    <DISH_NAME>Salada de Alface</DISH_NAME>
+    <DISH_TYPE>Salada</DISH_TYPE>
+    <DISH_IMAGE>alface.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>26</DISH_ID>
+    <DISH_NAME>Salada de Cenoura</DISH_NAME>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_TYPE>Salada</DISH_TYPE>
+    <DISH_IMAGE>cenoura.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>27</DISH_ID>
+    <DISH_NAME>Salada de Tomate</DISH_NAME>
+    <DISH_TYPE>Salada</DISH_TYPE>
+    <DISH_IMAGE>tomate.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>28</DISH_ID>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_NAME>Salada de Tomate e Alface</DISH_NAME>
+    <DISH_TYPE>Salada</DISH_TYPE>
+    <DISH_IMAGE>al_to.jpg</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>29</DISH_ID>
+    <DISH_NAME>Salada de Pepino</DISH_NAME>
+    <DISH_TYPE>Salada</DISH_TYPE>
+    <DISH_IMAGE>pepino.jpg</DISH_IMAGE>
+  </item>
+  <item>
+
+X.XML_DATA.GETCLOBVAL()                                                        
+--------------------------------------------------------------------------------
+    <DISH_ID>30</DISH_ID>
+    <DISH_NAME>Bola de Gelado</DISH_NAME>
+    <DISH_TYPE>Sobremesa</DISH_TYPE>
+    <DISH_IMAGE>gelado.png</DISH_IMAGE>
+  </item>
+  <item>
+    <DISH_ID>31</DISH_ID>
+    <DISH_NAME>Carbonara</DISH_NAME>
+    <DISH_TYPE>Carne</DISH_TYPE>
+  
+
+
+View XML_VIEW created.
+
+
+1 row inserted.
+
+
+Commit complete.
+
