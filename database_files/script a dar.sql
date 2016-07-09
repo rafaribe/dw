@@ -1871,7 +1871,7 @@ INSERT INTO DISHES_XML
  values (
 xmlelement("xml",
    xmlelement("item",
-      xmlelement("DISH_ID", DISHES_XML_SEQ.nextVAL),
+      xmlelement("DISH_ID", (SELECT COUNT(*)+1 FROM DISHES_XML),
       xmlelement("DISH_NAME", dish_name),
       xmlelement("DISH_TYPE", dish_type),
       xmlelement("DISH_IMAGE", dish_image)

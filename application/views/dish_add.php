@@ -1,7 +1,9 @@
 <!--Register Page -->
+ <meta http-equiv="content-type" content="application/xml; charset=UTF-8">
 <div class="container">
 <div class="row">
 <div class="col-md-4 col-md-offset-1">
+  <script></script>
     <?php echo form_open_multipart('dish/dish_add_xml');?>
     <form name="dish_add" method="post" action="<?php echo site_url().'Dish/dish_add'; ?>">
           <h2>Register your Dish</h2><br><hr>
@@ -18,17 +20,13 @@
         </form>
 </div>
 <div class="col-md-4 col-md-offset-1">
-    <?php echo form_open('dish/dish_add_xml_direct');?>
-    <form name="dish_add" method="post" action="<?php echo site_url().'Dish/dish_add_direct'; ?>">
+    <form name="dish_add2" method="post" action="<?php echo site_url().'Dish/dish_add_xml_direct'; ?>" enctype="text/multipart/form-data">
           <h2>Insert your XML Data</h2><br><hr>
+            <textarea type="text" class="form-control input-lg" id="xmldata" rows="5"name="xmldata"  placeholder="Insert your XML Here"></textarea><br>
+            <button class="btn btn-danger"type="submit">Registar XML</button>
 
-            <textarea type="text" class="form-control input-lg" id="xmldata" rows="5"name="comment" placeholder="Insert your XML Here"></textarea><br>
-
-<div class="container">
-      <?php echo validation_errors(); ?>
-</div>
-          <button class="btn btn-danger"type="submit">Registar XML</button>
+            php
         </form>
 </div>
-
+  <script src="http://localhost/dw/assets/scripts/dishes.js"></script>
 </div>
