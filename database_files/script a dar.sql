@@ -25,8 +25,7 @@ drop type dishes_prices_type force;
 /
 -- DROP TABLES
 
-DROP TABLE DISHES_XML
-;
+DROP TABLE DISHES_XML;
 /
 
 DROP TABLE DISHES_PRICES;
@@ -60,8 +59,7 @@ DROP SEQUENCE DISHES_SEQ;
 /
 DROP SEQUENCE COMMENTS_RESTAURANT_SEQ;
 /
-DROP SEQUENCE DISHES_XML
-_SEQ;
+DROP SEQUENCE DISHES_XML_SEQ;
 /
 
 -- DROP Procedures
@@ -1318,15 +1316,15 @@ xmlschema "XML_SCHEMA1"
 Element "xml";
 /
 -- sequencia para incrementar o ID
-create sequence DISHES_XML
-_SEQ START WITH     1
+create sequence DISHES_XML_SEQ
+ START WITH     1
  INCREMENT BY   1
  NOCACHE
  NOCYCLE;
  /
 
 -- Procedimento para inserir todos os dishes em formato XML, na tabela DISHES_XML
-
+/*
 DECLARE
   l_xmltype XMLTYPE;
 BEGIN
@@ -1345,30 +1343,22 @@ BEGIN
   INTO   l_xmltype
   FROM   dishes e;
 END;
-/
+/*/
 
--- Select para ver os dados XML que estão guardados em CLOB
-SET LONG 5000
-SELECT x.xml_data.getClobVal()
-FROM   DISHES_XML
- x;
-/
 -- View com o  QUERY que vai buscar dados xml à tabela e coloca em colunas normais
 
-Create or replace view xml_view AS
-SELECT xt.*
-FROM   DISHES_XML
- x,
-       XMLTABLE('/xml/item'
-         PASSING x.xml_data
-         COLUMNS
-           "DISH_ID"    INT  PATH 'DISH_ID',
+CREATE OR REPLACE VIEW DISHES_XML_VIEW AS
+  SELECT po.*
+    FROM DISHES_XML pur,
+         XMLTable(
+           '$p/xml/item' PASSING pur.OBJECT_VALUE as "p"
+           COLUMNS
+          "DISH_ID"    INT  PATH 'DISH_ID',
            "DISH_NAME"    VARCHAR2(200) PATH 'DISH_NAME',
            "DISH_TYPE"    VARCHAR2(200) PATH 'DISH_TYPE',
-           "DISH_IMAGE" VARCHAR2(4000) PATH 'DISH_IMAGE'
-         ) xt;
+           "DISH_IMAGE" VARCHAR2(4000) PATH 'DISH_IMAGE') po
+           ORDER BY DISH_ID;
 /
-commit;
 
 insert into DISHES_XML
  values(
@@ -1850,7 +1840,7 @@ xmltype(
         <DISH_TYPE>Fast-Food</DISH_TYPE>
         <DISH_IMAGE>cachorro.jpg</DISH_IMAGE>
 </item></xml>' ));
-
+/
 -- Procedimentos Armazenados
 /* VERSAO COM CONCATENACAO
 CREATE OR REPLACE PROCEDURE insert_xml_proc (
@@ -1871,20 +1861,17 @@ _SEQ.NEXTVAL||'</DISH_ID>
 </item></xml>' ));
 INSERT INTO DISHES VALUES(DISHES_SEQ.NEXTVAL,dish_name,dish_type,dish_image);
 END;*/
-/
 
 create or replace PROCEDURE insert_xml_proc (
 dish_name IN VARCHAR,
 dish_type IN VARCHAR,
 dish_image IN VARCHAR ) AS
 BEGIN
---INSERT INTO DISHES VALUES (DISHES_SEQ.NEXTVAL,dish_name,dish_type,dish_image)
 INSERT INTO DISHES_XML
  values (
 xmlelement("xml",
    xmlelement("item",
-      xmlelement("DISH_ID", DISHES_XML
-_SEQ.nextVAL),
+      xmlelement("DISH_ID", DISHES_XML_SEQ.nextVAL),
       xmlelement("DISH_NAME", dish_name),
       xmlelement("DISH_TYPE", dish_type),
       xmlelement("DISH_IMAGE", dish_image)

@@ -9,6 +9,8 @@ class Dish_Model extends CI_Model
           $result = $this->db->get('DISHES');
           return $result->result();
       }
+
+      // Esta funcao não esta a ser usada no trabalho
       function dish_add($data)
      {
 
@@ -76,6 +78,12 @@ class Dish_Model extends CI_Model
           OCIEXECUTE($exec);
      }
 
+function dish_add_xml_direct($xml)
+{
+  $query = "INSERT INTO DISHES_XML VALUES ( XMLTYPE (' '".$xml."''))";
+  $result = $this->db->query($query);
+  return true;
+}
 
 
 

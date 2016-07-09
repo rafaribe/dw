@@ -259,6 +259,12 @@ class Dish extends CI_Controller
 						return TRUE;
 					}
 				}
+function dish_add_xml_direct()
+{
+	$xml = $this->input->post('xmldata');
+	$this->load->model('dish_model');
+	$this->dish_model->dish_add_xml_direct($xml);
+}
 
 			}
 
