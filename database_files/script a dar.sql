@@ -25,7 +25,8 @@ drop type dishes_prices_type force;
 /
 -- DROP TABLES
 
-DROP TABLE XML_TAB;
+DROP TABLE DISHES_XML
+;
 /
 
 DROP TABLE DISHES_PRICES;
@@ -45,8 +46,6 @@ DROP TABLE COMMENTS;
 /
 DROP TABLE USERS;
 /
-DROP TABLE XML_TAB_TESTE;
-/
 
 -- DROP SEQUENCES
 DROP SEQUENCE USERS_SEQ;
@@ -61,7 +60,8 @@ DROP SEQUENCE DISHES_SEQ;
 /
 DROP SEQUENCE COMMENTS_RESTAURANT_SEQ;
 /
-DROP SEQUENCE XML_TAB_SEQ;
+DROP SEQUENCE DISHES_XML
+_SEQ;
 /
 
 -- DROP Procedures
@@ -1312,28 +1312,21 @@ phone_list_type('935136300'));
 -- XML
 
 -- Tabela para receber valores XML
-CREATE TABLE xml_tab (
-  id       NUMBER,
-  xml_data XMLTYPE
-);
-CREATE TABLE xml_tab_teste (
-  id       NUMBER,
-  xml_data XMLTYPE
-);
+create table DISHES_XML
+ of xmltype
+xmlschema "XML_SCHEMA1"
+Element "xml";
 /
 -- sequencia para incrementar o ID
-create sequence XML_TAB_SEQ START WITH     1
+create sequence DISHES_XML
+_SEQ START WITH     1
  INCREMENT BY   1
  NOCACHE
  NOCYCLE;
  /
- -- colocar a sequencia para incrementar o ID como default.
- ALTER TABLE XML_TAB
- MODIFY (ID DEFAULT XML_TAB_SEQ.NEXTVAL );
-/
 
+-- Procedimento para inserir todos os dishes em formato XML, na tabela DISHES_XML
 
--- Procedimento para inserir todos os dishes em formato XML, na tabela XML_TAB
 DECLARE
   l_xmltype XMLTYPE;
 BEGIN
@@ -1351,22 +1344,21 @@ BEGIN
          )
   INTO   l_xmltype
   FROM   dishes e;
-
-  INSERT INTO xml_tab_teste VALUES (1, l_xmltype);
-  COMMIT;
 END;
 /
 
 -- Select para ver os dados XML que estão guardados em CLOB
 SET LONG 5000
 SELECT x.xml_data.getClobVal()
-FROM   xml_tab x;
+FROM   DISHES_XML
+ x;
 /
 -- View com o  QUERY que vai buscar dados xml à tabela e coloca em colunas normais
 
 Create or replace view xml_view AS
 SELECT xt.*
-FROM   xml_tab x,
+FROM   DISHES_XML
+ x,
        XMLTABLE('/xml/item'
          PASSING x.xml_data
          COLUMNS
@@ -1378,7 +1370,8 @@ FROM   xml_tab x,
 /
 commit;
 
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml>
 <item>
@@ -1387,7 +1380,8 @@ xmltype(
         <DISH_TYPE>Peixe</DISH_TYPE>
         <DISH_IMAGE>bacalhau_bras.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml>
 <item>
@@ -1396,7 +1390,8 @@ xmltype(
         <DISH_TYPE>Carne</DISH_TYPE>
         <DISH_IMAGE>cozido.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml>
 <item>
@@ -1405,7 +1400,8 @@ xmltype(
         <DISH_TYPE>Peixe</DISH_TYPE>
         <DISH_IMAGE>sardinha.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml>
 <item>
@@ -1414,7 +1410,8 @@ xmltype(
         <DISH_TYPE>Sopa</DISH_TYPE>
         <DISH_IMAGE>creme_legumes.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml>
 <item>
@@ -1423,7 +1420,8 @@ xmltype(
         <DISH_TYPE>Carne</DISH_TYPE>
         <DISH_IMAGE>bitoque.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml>
 <item>
@@ -1432,7 +1430,8 @@ xmltype(
         <DISH_TYPE>Sobremesa</DISH_TYPE>
         <DISH_IMAGE>chesse.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml>
 <item>
@@ -1441,7 +1440,8 @@ xmltype(
         <DISH_TYPE>Sopa</DISH_TYPE>
         <DISH_IMAGE>caldo_verde.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml>
 <item>
@@ -1450,7 +1450,8 @@ xmltype(
         <DISH_TYPE>Sobremesa</DISH_TYPE>
         <DISH_IMAGE>mousse.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml>
 <item>
@@ -1459,7 +1460,8 @@ xmltype(
         <DISH_TYPE>Entrada</DISH_TYPE>
         <DISH_IMAGE>azeitonas.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml>
 <item>
@@ -1468,7 +1470,8 @@ xmltype(
         <DISH_TYPE>Bebida</DISH_TYPE>
         <DISH_IMAGE>tinto.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml>
 <item>
@@ -1477,7 +1480,8 @@ xmltype(
         <DISH_TYPE>Entrada</DISH_TYPE>
         <DISH_IMAGE>queijos.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml>
 <item>
@@ -1486,7 +1490,8 @@ xmltype(
         <DISH_TYPE>Bebida</DISH_TYPE>
         <DISH_IMAGE>branco.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml>
 <item>
@@ -1495,7 +1500,8 @@ xmltype(
         <DISH_TYPE>Bebida</DISH_TYPE>
         <DISH_IMAGE>agua.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml>
 <item>
@@ -1504,7 +1510,8 @@ xmltype(
         <DISH_TYPE>Bebida</DISH_TYPE>
         <DISH_IMAGE>sumo.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml>
 <item>
@@ -1513,7 +1520,8 @@ xmltype(
         <DISH_TYPE>Bebida</DISH_TYPE>
         <DISH_IMAGE>cafe.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml>
 <item>
@@ -1522,7 +1530,8 @@ xmltype(
         <DISH_TYPE>Fruta</DISH_TYPE>
         <DISH_IMAGE>morango.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml>
 <item>
@@ -1531,7 +1540,8 @@ xmltype(
         <DISH_TYPE>Fast-Food</DISH_TYPE>
         <DISH_IMAGE>fast.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml>
 <item>
@@ -1540,7 +1550,8 @@ xmltype(
         <DISH_TYPE>Fast-Food</DISH_TYPE>
         <DISH_IMAGE>francesinha.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml>
 <item>
@@ -1549,7 +1560,8 @@ xmltype(
         <DISH_TYPE>Carne</DISH_TYPE>
         <DISH_IMAGE>mista.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml>
 <item>
@@ -1558,7 +1570,8 @@ xmltype(
         <DISH_TYPE>Aperitivo</DISH_TYPE>
         <DISH_IMAGE>drink.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml>
 <item>
@@ -1567,7 +1580,8 @@ xmltype(
         <DISH_TYPE>Fruta</DISH_TYPE>
         <DISH_IMAGE>banana.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml>
 <item>
@@ -1576,7 +1590,8 @@ xmltype(
         <DISH_TYPE>Salada</DISH_TYPE>
         <DISH_IMAGE>salada_mista.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml>
 <item>
@@ -1585,7 +1600,8 @@ xmltype(
         <DISH_TYPE>Sobremesa</DISH_TYPE>
         <DISH_IMAGE>salada_fruta.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml>
 <item>
@@ -1594,7 +1610,8 @@ xmltype(
         <DISH_TYPE>Bebida</DISH_TYPE>
         <DISH_IMAGE>bagacu.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml>
 <item>
@@ -1603,7 +1620,8 @@ xmltype(
         <DISH_TYPE>Salada</DISH_TYPE>
         <DISH_IMAGE>alface.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml>
 <item>
@@ -1611,7 +1629,8 @@ xmltype(
         <DISH_NAME>Salada de Cenoura</DISH_NAME>
         <DISH_TYPE>Salada</DISH_TYPE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml>
 <item>
@@ -1620,7 +1639,8 @@ xmltype(
         <DISH_TYPE>Salada</DISH_TYPE>
         <DISH_IMAGE>tomate.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml>
 <item>
@@ -1629,7 +1649,8 @@ xmltype(
         <DISH_TYPE>Salada</DISH_TYPE>
         <DISH_IMAGE>al_to.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml>
 <item>
@@ -1638,7 +1659,8 @@ xmltype(
         <DISH_TYPE>Salada</DISH_TYPE>
         <DISH_IMAGE>pepino.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml>
 <item>
@@ -1647,7 +1669,8 @@ xmltype(
         <DISH_TYPE>Sobremesa</DISH_TYPE>
         <DISH_IMAGE>gelado.png</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml>
 <item>
@@ -1656,7 +1679,8 @@ xmltype(
         <DISH_TYPE>Carne</DISH_TYPE>
         <DISH_IMAGE>carbonara.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml><item>
         <DISH_ID>32</DISH_ID>
@@ -1664,7 +1688,8 @@ xmltype(
         <DISH_TYPE>Peixe</DISH_TYPE>
         <DISH_IMAGE>ovo.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml><item>
         <DISH_ID>33</DISH_ID>
@@ -1672,7 +1697,8 @@ xmltype(
         <DISH_TYPE>Vegetariano</DISH_TYPE>
         <DISH_IMAGE>legumes.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml><item>
         <DISH_ID>34</DISH_ID>
@@ -1680,7 +1706,8 @@ xmltype(
         <DISH_TYPE>Vegetariano</DISH_TYPE>
         <DISH_IMAGE>leg_cozidos.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml><item>
         <DISH_ID>35</DISH_ID>
@@ -1688,7 +1715,8 @@ xmltype(
         <DISH_TYPE>Carne</DISH_TYPE>
         <DISH_IMAGE>feijoada.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml><item>
         <DISH_ID>36</DISH_ID>
@@ -1696,7 +1724,8 @@ xmltype(
         <DISH_TYPE>Carne</DISH_TYPE>
         <DISH_IMAGE>rancho.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml><item>
         <DISH_ID>37</DISH_ID>
@@ -1704,7 +1733,8 @@ xmltype(
         <DISH_TYPE>Peixe</DISH_TYPE>
         <DISH_IMAGE>bacalhau_gomes.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml><item>
         <DISH_ID>38</DISH_ID>
@@ -1712,7 +1742,8 @@ xmltype(
         <DISH_TYPE>Peixe</DISH_TYPE>
         <DISH_IMAGE>bacalhau_broa.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml><item>
         <DISH_ID>39</DISH_ID>
@@ -1720,7 +1751,8 @@ xmltype(
         <DISH_TYPE>Peixe</DISH_TYPE>
         <DISH_IMAGE>salmao.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml><item>
         <DISH_ID>40</DISH_ID>
@@ -1728,7 +1760,8 @@ xmltype(
         <DISH_TYPE>Fruta</DISH_TYPE>
         <DISH_IMAGE>maca.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml><item>
         <DISH_ID>41</DISH_ID>
@@ -1736,7 +1769,8 @@ xmltype(
         <DISH_TYPE>Fruta</DISH_TYPE>
         <DISH_IMAGE>laranja.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml><item>
         <DISH_ID>42</DISH_ID>
@@ -1744,7 +1778,8 @@ xmltype(
         <DISH_TYPE>Aperitivo</DISH_TYPE>
         <DISH_IMAGE>orto.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml><item>
         <DISH_ID>43</DISH_ID>
@@ -1752,7 +1787,8 @@ xmltype(
         <DISH_TYPE>Aperitivo</DISH_TYPE>
         <DISH_IMAGE>favaios.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml><item>
         <DISH_ID>44</DISH_ID>
@@ -1760,7 +1796,8 @@ xmltype(
         <DISH_TYPE>Aperitivo</DISH_TYPE>
         <DISH_IMAGE>ricard.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml><item>
         <DISH_ID>45</DISH_ID>
@@ -1768,7 +1805,8 @@ xmltype(
         <DISH_TYPE>Sopa</DISH_TYPE>
         <DISH_IMAGE>canja.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml><item>
         <DISH_ID>46</DISH_ID>
@@ -1776,7 +1814,8 @@ xmltype(
         <DISH_TYPE>Sopa</DISH_TYPE>
         <DISH_IMAGE>pedra.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml><item>
         <DISH_ID>47</DISH_ID>
@@ -1784,7 +1823,8 @@ xmltype(
         <DISH_TYPE>Entrada</DISH_TYPE>
         <DISH_IMAGE>pate.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml><item>
         <DISH_ID>48</DISH_ID>
@@ -1792,7 +1832,8 @@ xmltype(
         <DISH_TYPE>Entrada</DISH_TYPE>
         <DISH_IMAGE>camarao.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml><item>
         <DISH_ID>49</DISH_ID>
@@ -1800,7 +1841,8 @@ xmltype(
         <DISH_TYPE>Fast-Food</DISH_TYPE>
         <DISH_IMAGE>pizza.jpg</DISH_IMAGE>
 </item></xml>' ));
-insert into xml_tab  (XML_DATA) values (
+insert into DISHES_XML
+ values(
 xmltype(
 '<xml><item>
         <DISH_ID>50</DISH_ID>
@@ -1810,20 +1852,43 @@ xmltype(
 </item></xml>' ));
 
 -- Procedimentos Armazenados
+/* VERSAO COM CONCATENACAO
 CREATE OR REPLACE PROCEDURE insert_xml_proc (
 dish_name IN VARCHAR2,
 dish_type IN VARCHAR2,
 dish_image IN VARCHAR2 ) AS
 BEGIN
-INSERT INTO XML_TAB (XML_DATA) values(
+INSERT INTO DISHES_XML
+ (XML_DATA) values(
 xmltype(
 '<xml>
 <item>
-    <DISH_ID>'||XML_TAB_SEQ.NEXTVAL||'</DISH_ID>
+    <DISH_ID>'||DISHES_XML
+_SEQ.NEXTVAL||'</DISH_ID>
     <DISH_NAME>'||dish_name||'</DISH_NAME>
     <DISH_TYPE>'||dish_type||'</DISH_TYPE>
     <DISH_IMAGE>'||dish_image||'</DISH_IMAGE>
 </item></xml>' ));
 INSERT INTO DISHES VALUES(DISHES_SEQ.NEXTVAL,dish_name,dish_type,dish_image);
-END;
+END;*/
 /
+
+create or replace PROCEDURE insert_xml_proc (
+dish_name IN VARCHAR,
+dish_type IN VARCHAR,
+dish_image IN VARCHAR ) AS
+BEGIN
+--INSERT INTO DISHES VALUES (DISHES_SEQ.NEXTVAL,dish_name,dish_type,dish_image)
+INSERT INTO DISHES_XML
+ values (
+xmlelement("xml",
+   xmlelement("item",
+      xmlelement("DISH_ID", DISHES_XML
+_SEQ.nextVAL),
+      xmlelement("DISH_NAME", dish_name),
+      xmlelement("DISH_TYPE", dish_type),
+      xmlelement("DISH_IMAGE", dish_image)
+   )
+)
+);
+End;
