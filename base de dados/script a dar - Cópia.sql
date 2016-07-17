@@ -1,9 +1,13 @@
 -- DROP TYPES
-drop type address_type force;
+drop type Address_type force;
+/
+drop type comment_dish_type force;
 /
 drop type comment_restaurant_type force;
 /
 drop type comments_type force;
+/
+drop type coordinates_type force;
 /
 drop type email_list_type force;
 /
@@ -11,26 +15,25 @@ drop type open_hours_type force;
 /
 drop type phone_list_type force;
 /
-drop type users_type force;
-/
 drop type restaurants_type force;
 /
-drop type menus_type force;
+drop type DISHES_PRICES_TYPE force;
 /
-drop type prices_type force;
+drop type USERS_TYPE force;
 /
-drop type dishes_type force;
+drop type PRICES_TYPE force;
 /
-drop type dishes_prices_type force;
+drop type DISHES_TYPE force;
 /
--- DROP TABLES
+drop type DISHES_PRICES_TYPE force;
+/
 
-DROP TABLE DISHES_XML;
-/
+-- DROP TABLES
 
 DROP TABLE DISHES_PRICES;
 /
-
+DROP TABLE COMMENTS_DISH;
+/
 DROP TABLE COMMENTS_RESTAURANT;
 /
 DROP TABLE DISHES;
@@ -45,26 +48,6 @@ DROP TABLE COMMENTS;
 /
 DROP TABLE USERS;
 /
-
--- DROP SEQUENCES
-DROP SEQUENCE USERS_SEQ;
-/
-DROP SEQUENCE RESTAURANTS_SEQ;
-/
-DROP SEQUENCE MENUS_SEQ;
-/
-DROP SEQUENCE PRICES_SEQ;
-/
-DROP SEQUENCE DISHES_SEQ;
-/
-DROP SEQUENCE COMMENTS_RESTAURANT_SEQ;
-/
-DROP SEQUENCE DISHES_XML_SEQ;
-/
-
--- DROP Procedures
-
-
 -- Create Types --
 
 create or replace type address_Type as OBJECT(
@@ -79,6 +62,10 @@ create or replace type phone_list_type as VARRAY(3) of varchar(30);
 /
 create or replace type Email_list_type as VARRAY(3) of varchar(30);
 /
+create or replace type coordinates_type as OBJECT(
+latitude varchar(20),
+longitude varchar(20));
+/
 create or replace type open_hours_type as table of VARCHAR(5);
 /
 create or replace type COMMENTS_TYPE AS OBJECT
@@ -91,189 +78,85 @@ create or replace type COMMENTS_TYPE AS OBJECT
 /
 create or replace type COMMENT_RESTAURANT_TYPE UNDER COMMENTS_TYPE(
    RESTAURANT_ID        INTEGER,
-   RESTAURANT_RATING    INTEGER
+   RESTAURANT_RATING    INTEGER,
+   RESTAURANT_REVIEW_TYPE VARCHAR2(25)
    ) NOT FINAL;
 /
-create or replace type users_type as object
-(
-   USER_ID              INT ,
-   USER_NAME            VARCHAR2(20) ,
-   USER_PASSWORD        VARCHAR2(200) ,
-   USER_CREATIONDATE    DATE  ,
-   USER_EMAIL           Email_list_type,
-   USER_PHONE           phone_list_type
+
+create or replace type COMMENT_DISH_TYPE UNDER COMMENTS_TYPE(
+   DISH_ID        INTEGER,
+   DISH_RATING    INTEGER
+   ) NOT FINAL;
+/
+
+create or replace type USERS_TYPE AS OBJECT (
+USER_ID              INT,
+USER_NAME            VARCHAR2(20),
+USER_PASSWORD        VARCHAR2(200),
+USER_CREATIONDATE    DATE           ,
+USER_EMAIL           Email_list_type,
+USER_PHONE           phone_list_type
 );
 /
-create or replace type restaurants_type as object (
-   RESTAURANT_ID        INT,
-   RESTAURANT_NAME      VARCHAR2(200),
-   RESTAURANT_ADDRESS   VARCHAR2(200),
-   RESTAURANT_OPEN_HOURS open_hours_type,
-   RESTAURANT_RESERVATIONS smallint,
-   RESTAURANT_WIFI      smallint,
-   RESTAURANT_DELIVERY  smallint,
-   RESTAURANT_MULTIBANCO smallint,
-   RESTAURANT_OUTDOOR_SEATING smallint,
-   RESTAURANT_POINTS    FLOAT,
-   RESTAURANT_IMAGE NVARCHAR2(200) ,
-   RESTAURANT_LATITUDE VARCHAR2(20),
-   RESTAURANT_LONGITUDE VARCHAR2(20)
+create or replace type RESTAURANTS_TYPE AS OBJECT(
+RESTAURANT_ID        INT,
+RESTAURANT_NAME      VARCHAR2(200),
+RESTAURANT_ADDRESS   VARCHAR2(200),
+RESTAURANT_COORDS   coordinates_type,
+RESTAURANT_OPEN_HOURS open_hours_type,
+RESTAURANT_RESERVATIONS smallint,
+RESTAURANT_WIFI      smallint,
+RESTAURANT_DELIVERY  smallint,
+RESTAURANT_MULTIBANCO smallint,
+RESTAURANT_OUTDOOR_SEATING smallint,
+RESTAURANT_POINTS    FLOAT,
+RESTAURANT_IMAGE NVARCHAR2(200),
+RESTAURANT_LATITUDE VARCHAR2(20),
+RESTAURANT_LONGITUDE VARCHAR2(20)
+);
+/
+create or replace type PRICES_TYPE AS OBJECT(
+PRICE_ID INT,
+MENU_ID INT,
+PRICE_VALUE          NUMBER(8,2)
+);
+
+create or replace type DISHES_TYPE AS OBJECT(
+DISH_ID              INT,
+DISH_NAME            VARCHAR2(200),
+DISH_TYPE            VARCHAR2(200),
+DISH_IMAGE NVARCHAR2(200)
+);
+
+create or replace type DISHES_PRICES_TYPE AS OBJECT(
+  DISH_ID              INTEGER ,
+  PRICE_ID             INTEGER
 );
 /
 
-create or replace type MENUS_TYPE as object(
-MENU_ID              INT,
-RESTAURANT_ID        INTEGER,
-MENU_NAME            VARCHAR2(200)
-);
-
-/
-create or replace type PRICES_TYPE AS OBJECT
-(
-   PRICE_ID INT,
-   MENU_ID INT,
-   PRICE_VALUE          NUMBER(8,2)
-);
-/
-create or replace type DISHES_TYPE as object
-(
-   DISH_ID              INT,
-   DISH_NAME            VARCHAR2(200),
-   DISH_TYPE            VARCHAR2(200),
-   DISH_IMAGE NVARCHAR2(200)
-);
-/
-create or replace type dishes_prices_type as object(
-DISH_ID              INTEGER,
-PRICE_ID             INTEGER
-);
-/
 -- Create Tables --
 
+create table USERS OF USERS_TYPE;
 
--- USERS --
-CREATE SEQUENCE users_seq
- START WITH     1
- INCREMENT BY   1
- NOCACHE
- NOCYCLE;
-
-Create table users of users_type;
-
-ALTER TABLE USERS
-MODIFY (USER_ID DEFAULT USERS_SEQ.NEXTVAL );
-
-ALTER TABLE USERS
-MODIFY (USER_CREATIONDATE DEFAULT sysdate );
-
-ALTER TABLE USERS
-ADD CONSTRAINT PK_USERS PRIMARY KEY (USER_ID);
-
--- CREATE RESTAURANTS
-CREATE SEQUENCE restaurants_seq
- START WITH     1
- INCREMENT BY   1
- NOCACHE
- NOCYCLE;
-
+/
 create table RESTAURANTS of RESTAURANTS_TYPE
     NESTED TABLE RESTAURANT_OPEN_HOURS STORE AS OPEN_HOURS;
-/
-ALTER TABLE RESTAURANTS
-MODIFY (RESTAURANT_ID DEFAULT RESTAURANTS_SEQ.NEXTVAL);
-/
-ALTER TABLE RESTAURANTS
-MODIFY (RESTAURANT_POINTS DEFAULT '3' );
-/
-ALTER TABLE RESTAURANTS
-MODIFY (RESTAURANT_IMAGE DEFAULT 'placeholder.jpg' );
-/
-ALTER TABLE RESTAURANTS
-ADD CONSTRAINT PK_RESTAURANTS PRIMARY KEY (RESTAURANT_ID);
+
 /
 create table COMMENTS OF COMMENTS_TYPE;
 /
-
--- create menus
-CREATE SEQUENCE menus_seq
- START WITH     1
- INCREMENT BY   1
- NOCACHE
- NOCYCLE;
-
-create table MENUS of menus_type;
-
-ALTER TABLE MENUS
-MODIFY (MENU_ID DEFAULT MENUS_SEQ.NEXTVAL );
+create table MENUS of MENUS_TYPE;
 /
-ALTER TABLE MENUS
-ADD  constraint PK_MENUS primary key (MENU_ID);
+create table PRICES of PRICES_TYPE;
 /
-ALTER TABLE MENUS
-ADD constraint FK_RESTAURANT_MENUS foreign key (RESTAURANT_ID) REFERENCES RESTAURANTS(RESTAURANT_ID);
+create table DISHES of DISHES_TYPE;
 /
 
--- prices
-CREATE SEQUENCE prices_seq
- START WITH     1
- INCREMENT BY   1
- NOCACHE
- NOCYCLE;
-
-create table PRICES of prices_type;
+create table COMMENTS_RESTAURANT of COMMENT_RESTAURANT_TYPE;
 /
-ALTER TABLE PRICES
-MODIFY (PRICE_ID DEFAULT PRICES_SEQ.NEXTVAL );
+CREATE TABLE COMMENTS_DISH OF COMMENT_DISH_TYPE;
 /
-alter table prices
-add   constraint PK_PRICES primary key (PRICE_ID);
-/
-alter table prices
-add   constraint FK_MENUS foreign key (MENU_ID) REFERENCES MENUS(MENU_ID);
-/
--- dishes
-
-CREATE SEQUENCE dishes_seq
- START WITH     1
- INCREMENT BY   1
- NOCACHE
- NOCYCLE;
-/
-create table dishes of dishes_type;
-/
-ALTER TABLE DISHES
-MODIFY (DISH_ID DEFAULT DISHES_SEQ.NEXTVAL );
-/
-alter table DISHES
-add   constraint PK_DISHES primary key (DISH_ID);
-/
-
--- comments_restaurant
-CREATE SEQUENCE comments_restaurant_seq
- START WITH     1
- INCREMENT BY   1
- NOCACHE
- NOCYCLE;
-/
-
-create table comments_restaurant of COMMENT_RESTAURANT_TYPE;
-/
-ALTER TABLE COMMENTS_RESTAURANT
-MODIFY (COMMENT_ID DEFAULT COMMENTS_RESTAURANT_SEQ.NEXTVAL );
-/
-alter table COMMENTS_RESTAURANT
-modify (COMMENT_CREATION_DATE default sysdate);
-/
-create table DISHES_PRICES OF DISHES_PRICES_TYPE;
-/
-ALTER TABLE DISHES_PRICES
-ADD constraint PK_DISHES_PRICES primary key (DISH_ID, PRICE_ID);
-/
-ALTER TABLE DISHES_PRICES
-ADD  constraint FK_DISHES_DISH foreign key (DISH_ID) REFERENCES DISHES(DISH_ID);
-/
-ALTER TABLE DISHES_PRICES
-ADD constraint FK_DISHES_PRICE foreign key (PRICE_ID) REFERENCES PRICES(PRICE_ID);
+create table DISHES_PRICES of DISHES_PRICES_TYPE;
 /
 
 -- INSERTS --
@@ -286,7 +169,8 @@ values(
 sysdate,
 ' Este restaurante recomenda-se, pois tem um optimo funcionamento e a qualidade e muito boa'
 );
-INSERT INTO Comments_restaurant
+
+INSERT INTO Comments_Dish
 values(
 '1',
 '1',
@@ -295,13 +179,24 @@ sysdate,
 '15',
 '3,5'
 );
+INSERT INTO Comments_restaurant
+values(
+'1',
+'1',
+sysdate,
+' Este restaurante recomenda-se, pois tem um optimo funcionamento e a qualidade e muito boa',
+'15',
+'3,5',
+'familia'
+);
 
 --INSERTS RESTAURANTS--
-INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS ,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
+INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS,RESTAURANT_COORDS,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
 RESTAURANT_DELIVERY,RESTAURANT_MULTIBANCO,RESTAURANT_OUTDOOR_SEATING,RESTAURANT_POINTS, RESTAURANT_IMAGE, RESTAURANT_LATITUDE, RESTAURANT_LONGITUDE)
 values(
 'Tia Iva',
 'Viseu',
+coordinates_type('10','20'),
 open_hours_type('10:00','22:00'),
 '1',
 '1',
@@ -313,11 +208,12 @@ open_hours_type('10:00','22:00'),
 '40.656700',
 '-7.915568'
 );
-INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS ,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
+INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS,RESTAURANT_COORDS,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
 RESTAURANT_DELIVERY,RESTAURANT_MULTIBANCO,RESTAURANT_OUTDOOR_SEATING,RESTAURANT_POINTS,RESTAURANT_IMAGE, RESTAURANT_LATITUDE, RESTAURANT_LONGITUDE)
 values(
 'O Tosco',
 'Vila Cha de Sa',
+coordinates_type('12','20'),
 open_hours_type('12:00','23:00'),
 '1',
 '0',
@@ -329,11 +225,12 @@ open_hours_type('12:00','23:00'),
 '40.6600778',
 '-7.9127714'
 );
-INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS ,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
+INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS,RESTAURANT_COORDS,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
 RESTAURANT_DELIVERY,RESTAURANT_MULTIBANCO,RESTAURANT_OUTDOOR_SEATING,RESTAURANT_POINTS,RESTAURANT_IMAGE, RESTAURANT_LATITUDE, RESTAURANT_LONGITUDE)
 values(
 'Casa Arouquesa',
 'Repeses',
+coordinates_type('13','20'),
 open_hours_type('12:00','00:00'),
 '1',
 '0',
@@ -345,11 +242,12 @@ open_hours_type('12:00','00:00'),
 '40.6121032',
 '-7.9511443'
 );
-INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS ,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
+INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS,RESTAURANT_COORDS,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
 RESTAURANT_DELIVERY,RESTAURANT_MULTIBANCO,RESTAURANT_OUTDOOR_SEATING,RESTAURANT_POINTS,RESTAURANT_IMAGE, RESTAURANT_LATITUDE, RESTAURANT_LONGITUDE)
 values(
 'Maionese',
 'Jugueiros',
+coordinates_type('15','30'),
 open_hours_type('11:00','23:00'),
 '1',
 '0',
@@ -360,11 +258,12 @@ open_hours_type('11:00','23:00'),
 'maionese.jpg',
 '40.6382983',
 '-7.9300961');
-INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS ,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
+INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS,RESTAURANT_COORDS,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
 RESTAURANT_DELIVERY,RESTAURANT_MULTIBANCO,RESTAURANT_OUTDOOR_SEATING,RESTAURANT_POINTS,RESTAURANT_IMAGE, RESTAURANT_LATITUDE, RESTAURANT_LONGITUDE)
 values(
 'Churrasqueira Santa Eulalia',
 'Repeses',
+coordinates_type('20','35'),
 open_hours_type('09:00','23:00'),
 '0',
 '0',
@@ -375,11 +274,12 @@ open_hours_type('09:00','23:00'),
 'churrasqueria.jpg',
 '40.6462259',
 '-7.920701');
-INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS ,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
+INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS,RESTAURANT_COORDS,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
 RESTAURANT_DELIVERY,RESTAURANT_MULTIBANCO,RESTAURANT_OUTDOOR_SEATING,RESTAURANT_POINTS,RESTAURANT_IMAGE, RESTAURANT_LATITUDE, RESTAURANT_LONGITUDE)
 values(
 'Vintage',
 'Rossio',
+coordinates_type('40','5'),
 open_hours_type('09:00','23:00'),
 '1',
 '1',
@@ -390,11 +290,12 @@ open_hours_type('09:00','23:00'),
 'vintage.jpg',
 '40.642002',
 '-7.9268327');
-INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS ,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
+INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS,RESTAURANT_COORDS,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
 RESTAURANT_DELIVERY,RESTAURANT_MULTIBANCO,RESTAURANT_OUTDOOR_SEATING,RESTAURANT_POINTS,RESTAURANT_IMAGE, RESTAURANT_LATITUDE, RESTAURANT_LONGITUDE)
 values(
 'O Cortico',
 'Viseu',
+coordinates_type('10','51'),
 open_hours_type('13:00','23:00'),
 '1',
 '1',
@@ -405,11 +306,12 @@ open_hours_type('13:00','23:00'),
 'cortico.jpg',
 '40.659125',
 '7.9134872');
-INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS ,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
+INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS,RESTAURANT_COORDS,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
 RESTAURANT_DELIVERY,RESTAURANT_MULTIBANCO,RESTAURANT_OUTDOOR_SEATING,RESTAURANT_POINTS,RESTAURANT_IMAGE, RESTAURANT_LATITUDE, RESTAURANT_LONGITUDE)
 values(
 'Cantinho do Tito',
 'Viseu',
+coordinates_type('1','5'),
 open_hours_type('13:00','00:00'),
 '1',
 '1',
@@ -420,11 +322,12 @@ open_hours_type('13:00','00:00'),
 'cantinho_tito.jpg',
 '40.672276',
 '-7.9037807');
-INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS ,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
+INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS,RESTAURANT_COORDS,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
 RESTAURANT_DELIVERY,RESTAURANT_MULTIBANCO,RESTAURANT_OUTDOOR_SEATING,RESTAURANT_POINTS,RESTAURANT_IMAGE, RESTAURANT_LATITUDE, RESTAURANT_LONGITUDE)
 values(
 'Budega',
 'Viseu',
+coordinates_type('11','14'),
 open_hours_type('19:00','00:00'),
 '1',
 '1',
@@ -435,11 +338,12 @@ open_hours_type('19:00','00:00'),
 'budega.jpg',
 '40.66217',
 '-7.9115861');
-INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS ,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
+INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS,RESTAURANT_COORDS,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
 RESTAURANT_DELIVERY,RESTAURANT_MULTIBANCO,RESTAURANT_OUTDOOR_SEATING,RESTAURANT_POINTS,RESTAURANT_IMAGE, RESTAURANT_LATITUDE, RESTAURANT_LONGITUDE)
 values(
 'CasaBlanca',
 'Viseu',
+coordinates_type('2','10'),
 open_hours_type('12:00','22:00'),
 '1',
 '1',
@@ -450,11 +354,12 @@ open_hours_type('12:00','22:00'),
 'casablanca.jpg',
 '40.656575',
 '-7.9088937');
-INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS ,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
+INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS,RESTAURANT_COORDS,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
 RESTAURANT_DELIVERY,RESTAURANT_MULTIBANCO,RESTAURANT_OUTDOOR_SEATING,RESTAURANT_POINTS,RESTAURANT_IMAGE, RESTAURANT_LATITUDE, RESTAURANT_LONGITUDE)
 values(
 'CB House',
 'Viseu',
+coordinates_type('255','010'),
 open_hours_type('12:00','02:00'),
 '0',
 '1',
@@ -465,11 +370,12 @@ open_hours_type('12:00','02:00'),
 'cb.jpg',
 '40.6977016',
 '-7.91345');
-INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS ,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
+INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS,RESTAURANT_COORDS,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
 RESTAURANT_DELIVERY,RESTAURANT_MULTIBANCO,RESTAURANT_OUTDOOR_SEATING,RESTAURANT_POINTS,RESTAURANT_IMAGE, RESTAURANT_LATITUDE, RESTAURANT_LONGITUDE)
 values(
 'Forno da Mimi',
 'Viseu',
+coordinates_type('150','05'),
 open_hours_type('12:00','00:00'),
 '1',
 '1',
@@ -480,11 +386,12 @@ open_hours_type('12:00','00:00'),
 'forno_mimi.jpg',
 '40.5594641',
 '-7.9529667');
-INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS ,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
+INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS,RESTAURANT_COORDS,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
 RESTAURANT_DELIVERY,RESTAURANT_MULTIBANCO,RESTAURANT_OUTDOOR_SEATING,RESTAURANT_POINTS,RESTAURANT_IMAGE, RESTAURANT_LATITUDE, RESTAURANT_LONGITUDE)
 values(
 'O Martelo',
 'Viseu',
+coordinates_type('08','05'),
 open_hours_type('13:00','23:00'),
 '0',
 '0',
@@ -495,11 +402,12 @@ open_hours_type('13:00','23:00'),
 'martelo.jpg',
 '40.659196',
 '-7.9192967');
-INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS ,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
+INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS,RESTAURANT_COORDS,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
 RESTAURANT_DELIVERY,RESTAURANT_MULTIBANCO,RESTAURANT_OUTDOOR_SEATING,RESTAURANT_POINTS,RESTAURANT_IMAGE, RESTAURANT_LATITUDE, RESTAURANT_LONGITUDE)
 values(
  'Porta da Se',
 'Viseu',
+coordinates_type('081','051'),
 open_hours_type('11:00','01:00'),
 '0',
 '1',
@@ -510,11 +418,12 @@ open_hours_type('11:00','01:00'),
 'portase.png',
 '40.6977016',
 '-7.91345');
-INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS ,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
+INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS,RESTAURANT_COORDS,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
 RESTAURANT_DELIVERY,RESTAURANT_MULTIBANCO,RESTAURANT_OUTDOOR_SEATING,RESTAURANT_POINTS,RESTAURANT_IMAGE, RESTAURANT_LATITUDE, RESTAURANT_LONGITUDE)
 values(
 'Cervejaria Cacimbo',
 'Viseu',
+coordinates_type('00','222'),
 open_hours_type('10:00','22:00'),
 '0',
 '0',
@@ -525,11 +434,12 @@ open_hours_type('10:00','22:00'),
 'cacimbo.jpg',
 '40.653393',
 '-7.9160527');
-INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS ,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
+INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS,RESTAURANT_COORDS,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
 RESTAURANT_DELIVERY,RESTAURANT_MULTIBANCO,RESTAURANT_OUTDOOR_SEATING,RESTAURANT_POINTS,RESTAURANT_IMAGE, RESTAURANT_LATITUDE, RESTAURANT_LONGITUDE)
 values(
 'McDonalds',
 'Viseu',
+coordinates_type('111','200'),
 open_hours_type('9:00','3:00'),
 '0',
 '0',
@@ -540,11 +450,12 @@ open_hours_type('9:00','3:00'),
 'mac.jpg',
 '40.6462727',
 '-7.9194923');
-INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS ,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
+INSERT INTO Restaurants (RESTAURANT_NAME,RESTAURANT_ADDRESS,RESTAURANT_COORDS,RESTAURANT_OPEN_HOURS,RESTAURANT_RESERVATIONS,RESTAURANT_WIFI,
 RESTAURANT_DELIVERY,RESTAURANT_MULTIBANCO,RESTAURANT_OUTDOOR_SEATING,RESTAURANT_POINTS,RESTAURANT_IMAGE, RESTAURANT_LATITUDE, RESTAURANT_LONGITUDE)
 values(
 'Solar do Verde Gaio',
 'Viseu',
+coordinates_type('111','200'),
 open_hours_type('09:00','00:00'),
 '1',
 '0',
@@ -1304,580 +1215,7 @@ values(
 'Rafael',
 '81dc9bdb52d04dc20036dbd8313ed055',
 sysdate,
-Email_list_type('rafael.ntw@gmail.com','rafael.fsk@live.com.pt'),
+Email_list_type('rafael.ntw@gmail.com'),
 phone_list_type('935136300'));
 
--- XML
-
--- Tabela para receber valores XML
-create table DISHES_XML
- of xmltype
-xmlschema "XML_SCHEMA1"
-Element "xml";
-/
--- sequencia para incrementar o ID
-create sequence DISHES_XML_SEQ
- START WITH     1
- INCREMENT BY   1
- NOCACHE
- NOCYCLE;
- /
-
--- Procedimento para inserir todos os dishes em formato XML, na tabela DISHES_XML
-/*
-DECLARE
-  l_xmltype XMLTYPE;
-BEGIN
-  SELECT XMLELEMENT("xml",
-           XMLAGG(
-             XMLELEMENT("item",
-               XMLFOREST(
-                 e.DISH_ID AS "DISH_ID",
-                 e.DISH_NAME AS "DISH_NAME",
-                e.DISH_TYPE AS "DISH_TYPE",
-                e.DISH_IMAGE AS "DISH_IMAGE"
-               )
-             )
-           )
-         )
-  INTO   l_xmltype
-  FROM   dishes e;
-END;
-/*/
-
--- View com o  QUERY que vai buscar dados xml à tabela e coloca em colunas normais
-
-CREATE OR REPLACE VIEW DISHES_XML_VIEW AS
-  SELECT po.*
-    FROM DISHES_XML pur,
-         XMLTable(
-           '$p/xml/item' PASSING pur.OBJECT_VALUE as "p"
-           COLUMNS
-          "DISH_ID"    INT  PATH 'DISH_ID',
-           "DISH_NAME"    VARCHAR2(200) PATH 'DISH_NAME',
-           "DISH_TYPE"    VARCHAR2(200) PATH 'DISH_TYPE',
-           "DISH_IMAGE" VARCHAR2(4000) PATH 'DISH_IMAGE') po
-           ORDER BY DISH_ID;
-/
-
-insert into DISHES_XML
- values(
-xmltype(
-'<xml>
-<item>
-        <DISH_ID>1</DISH_ID>
-        <DISH_NAME>Bacalhau a Bras</DISH_NAME>
-        <DISH_TYPE>Peixe</DISH_TYPE>
-        <DISH_IMAGE>bacalhau_bras.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml>
-<item>
-        <DISH_ID>2</DISH_ID>
-        <DISH_NAME>Cozido a Potuguesa</DISH_NAME>
-        <DISH_TYPE>Carne</DISH_TYPE>
-        <DISH_IMAGE>cozido.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml>
-<item>
-        <DISH_ID>3</DISH_ID>
-        <DISH_NAME>Sardinha Assada com Batata Cozida e Pimentos</DISH_NAME>
-        <DISH_TYPE>Peixe</DISH_TYPE>
-        <DISH_IMAGE>sardinha.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml>
-<item>
-        <DISH_ID>4</DISH_ID>
-        <DISH_NAME>Creme de Legumes</DISH_NAME>
-        <DISH_TYPE>Sopa</DISH_TYPE>
-        <DISH_IMAGE>creme_legumes.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml>
-<item>
-        <DISH_ID>5</DISH_ID>
-        <DISH_NAME>Bitoque</DISH_NAME>
-        <DISH_TYPE>Carne</DISH_TYPE>
-        <DISH_IMAGE>bitoque.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml>
-<item>
-        <DISH_ID>6</DISH_ID>
-        <DISH_NAME>CheeseCake</DISH_NAME>
-        <DISH_TYPE>Sobremesa</DISH_TYPE>
-        <DISH_IMAGE>chesse.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml>
-<item>
-        <DISH_ID>7</DISH_ID>
-        <DISH_NAME>Caldo Verde</DISH_NAME>
-        <DISH_TYPE>Sopa</DISH_TYPE>
-        <DISH_IMAGE>caldo_verde.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml>
-<item>
-        <DISH_ID>8</DISH_ID>
-        <DISH_NAME>Mousse de Chocolate</DISH_NAME>
-        <DISH_TYPE>Sobremesa</DISH_TYPE>
-        <DISH_IMAGE>mousse.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml>
-<item>
-        <DISH_ID>9</DISH_ID>
-        <DISH_NAME>Pao e Azeitonas</DISH_NAME>
-        <DISH_TYPE>Entrada</DISH_TYPE>
-        <DISH_IMAGE>azeitonas.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml>
-<item>
-        <DISH_ID>10</DISH_ID>
-        <DISH_NAME>Vinho Tinto</DISH_NAME>
-        <DISH_TYPE>Bebida</DISH_TYPE>
-        <DISH_IMAGE>tinto.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml>
-<item>
-        <DISH_ID>11</DISH_ID>
-        <DISH_NAME>Tabuleiro de Queijos</DISH_NAME>
-        <DISH_TYPE>Entrada</DISH_TYPE>
-        <DISH_IMAGE>queijos.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml>
-<item>
-        <DISH_ID>12</DISH_ID>
-        <DISH_NAME>Vinho Branco</DISH_NAME>
-        <DISH_TYPE>Bebida</DISH_TYPE>
-        <DISH_IMAGE>branco.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml>
-<item>
-        <DISH_ID>13</DISH_ID>
-        <DISH_NAME>Agua</DISH_NAME>
-        <DISH_TYPE>Bebida</DISH_TYPE>
-        <DISH_IMAGE>agua.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml>
-<item>
-        <DISH_ID>14</DISH_ID>
-        <DISH_NAME>Sumo de Laranja</DISH_NAME>
-        <DISH_TYPE>Bebida</DISH_TYPE>
-        <DISH_IMAGE>sumo.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml>
-<item>
-        <DISH_ID>15</DISH_ID>
-        <DISH_NAME>Cafe</DISH_NAME>
-        <DISH_TYPE>Bebida</DISH_TYPE>
-        <DISH_IMAGE>cafe.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml>
-<item>
-        <DISH_ID>16</DISH_ID>
-        <DISH_NAME>Morangos</DISH_NAME>
-        <DISH_TYPE>Fruta</DISH_TYPE>
-        <DISH_IMAGE>morango.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml>
-<item>
-        <DISH_ID>17</DISH_ID>
-        <DISH_NAME>Hambuger com carne e salada</DISH_NAME>
-        <DISH_TYPE>Fast-Food</DISH_TYPE>
-        <DISH_IMAGE>fast.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml>
-<item>
-        <DISH_ID>18</DISH_ID>
-        <DISH_NAME>Francesinha</DISH_NAME>
-        <DISH_TYPE>Fast-Food</DISH_TYPE>
-        <DISH_IMAGE>francesinha.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml>
-<item>
-        <DISH_ID>19</DISH_ID>
-        <DISH_NAME>Grelhada Mista</DISH_NAME>
-        <DISH_TYPE>Carne</DISH_TYPE>
-        <DISH_IMAGE>mista.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml>
-<item>
-        <DISH_ID>20</DISH_ID>
-        <DISH_NAME>Martini</DISH_NAME>
-        <DISH_TYPE>Aperitivo</DISH_TYPE>
-        <DISH_IMAGE>drink.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml>
-<item>
-        <DISH_ID>21</DISH_ID>
-        <DISH_NAME>Banana</DISH_NAME>
-        <DISH_TYPE>Fruta</DISH_TYPE>
-        <DISH_IMAGE>banana.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml>
-<item>
-        <DISH_ID>22</DISH_ID>
-        <DISH_NAME>Salada Mista</DISH_NAME>
-        <DISH_TYPE>Salada</DISH_TYPE>
-        <DISH_IMAGE>salada_mista.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml>
-<item>
-        <DISH_ID>23</DISH_ID>
-        <DISH_NAME>Salada de Fruta</DISH_NAME>
-        <DISH_TYPE>Sobremesa</DISH_TYPE>
-        <DISH_IMAGE>salada_fruta.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml>
-<item>
-        <DISH_ID>24</DISH_ID>
-        <DISH_NAME>Cafe com Maceira</DISH_NAME>
-        <DISH_TYPE>Bebida</DISH_TYPE>
-        <DISH_IMAGE>bagacu.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml>
-<item>
-        <DISH_ID>25</DISH_ID>
-        <DISH_NAME>Salada de Alface</DISH_NAME>
-        <DISH_TYPE>Salada</DISH_TYPE>
-        <DISH_IMAGE>alface.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml>
-<item>
-        <DISH_ID>26</DISH_ID>
-        <DISH_NAME>Salada de Cenoura</DISH_NAME>
-        <DISH_TYPE>Salada</DISH_TYPE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml>
-<item>
-        <DISH_ID>27</DISH_ID>
-        <DISH_NAME>Salada de Tomate</DISH_NAME>
-        <DISH_TYPE>Salada</DISH_TYPE>
-        <DISH_IMAGE>tomate.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml>
-<item>
-        <DISH_ID>28</DISH_ID>
-        <DISH_NAME>Salada de Tomate e Alface</DISH_NAME>
-        <DISH_TYPE>Salada</DISH_TYPE>
-        <DISH_IMAGE>al_to.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml>
-<item>
-        <DISH_ID>29</DISH_ID>
-        <DISH_NAME>Salada de Pepino</DISH_NAME>
-        <DISH_TYPE>Salada</DISH_TYPE>
-        <DISH_IMAGE>pepino.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml>
-<item>
-        <DISH_ID>30</DISH_ID>
-        <DISH_NAME>Bola de Gelado</DISH_NAME>
-        <DISH_TYPE>Sobremesa</DISH_TYPE>
-        <DISH_IMAGE>gelado.png</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml>
-<item>
-        <DISH_ID>31</DISH_ID>
-        <DISH_NAME>Carbonara</DISH_NAME>
-        <DISH_TYPE>Carne</DISH_TYPE>
-        <DISH_IMAGE>carbonara.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml><item>
-        <DISH_ID>32</DISH_ID>
-        <DISH_NAME>Peixe com batata cozida</DISH_NAME>
-        <DISH_TYPE>Peixe</DISH_TYPE>
-        <DISH_IMAGE>ovo.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml><item>
-        <DISH_ID>33</DISH_ID>
-        <DISH_NAME>Legumes Saltiados</DISH_NAME>
-        <DISH_TYPE>Vegetariano</DISH_TYPE>
-        <DISH_IMAGE>legumes.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml><item>
-        <DISH_ID>34</DISH_ID>
-        <DISH_NAME>Legumes Cozidos</DISH_NAME>
-        <DISH_TYPE>Vegetariano</DISH_TYPE>
-        <DISH_IMAGE>leg_cozidos.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml><item>
-        <DISH_ID>35</DISH_ID>
-        <DISH_NAME>Feijoada</DISH_NAME>
-        <DISH_TYPE>Carne</DISH_TYPE>
-        <DISH_IMAGE>feijoada.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml><item>
-        <DISH_ID>36</DISH_ID>
-        <DISH_NAME>Rancho</DISH_NAME>
-        <DISH_TYPE>Carne</DISH_TYPE>
-        <DISH_IMAGE>rancho.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml><item>
-        <DISH_ID>37</DISH_ID>
-        <DISH_NAME>Bacalhau a Gomes de Sa</DISH_NAME>
-        <DISH_TYPE>Peixe</DISH_TYPE>
-        <DISH_IMAGE>bacalhau_gomes.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml><item>
-        <DISH_ID>38</DISH_ID>
-        <DISH_NAME>Bacalhau com Broa</DISH_NAME>
-        <DISH_TYPE>Peixe</DISH_TYPE>
-        <DISH_IMAGE>bacalhau_broa.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml><item>
-        <DISH_ID>39</DISH_ID>
-        <DISH_NAME>Salmao Grelhado com batata cozida</DISH_NAME>
-        <DISH_TYPE>Peixe</DISH_TYPE>
-        <DISH_IMAGE>salmao.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml><item>
-        <DISH_ID>40</DISH_ID>
-        <DISH_NAME>Maca</DISH_NAME>
-        <DISH_TYPE>Fruta</DISH_TYPE>
-        <DISH_IMAGE>maca.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml><item>
-        <DISH_ID>41</DISH_ID>
-        <DISH_NAME>Laranja</DISH_NAME>
-        <DISH_TYPE>Fruta</DISH_TYPE>
-        <DISH_IMAGE>laranja.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml><item>
-        <DISH_ID>42</DISH_ID>
-        <DISH_NAME>Vinho do Porto</DISH_NAME>
-        <DISH_TYPE>Aperitivo</DISH_TYPE>
-        <DISH_IMAGE>orto.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml><item>
-        <DISH_ID>43</DISH_ID>
-        <DISH_NAME>Favaios</DISH_NAME>
-        <DISH_TYPE>Aperitivo</DISH_TYPE>
-        <DISH_IMAGE>favaios.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml><item>
-        <DISH_ID>44</DISH_ID>
-        <DISH_NAME>Ricard</DISH_NAME>
-        <DISH_TYPE>Aperitivo</DISH_TYPE>
-        <DISH_IMAGE>ricard.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml><item>
-        <DISH_ID>45</DISH_ID>
-        <DISH_NAME>Canja</DISH_NAME>
-        <DISH_TYPE>Sopa</DISH_TYPE>
-        <DISH_IMAGE>canja.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml><item>
-        <DISH_ID>46</DISH_ID>
-        <DISH_NAME>Sopa da Pedra</DISH_NAME>
-        <DISH_TYPE>Sopa</DISH_TYPE>
-        <DISH_IMAGE>pedra.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml><item>
-        <DISH_ID>47</DISH_ID>
-        <DISH_NAME>Pate</DISH_NAME>
-        <DISH_TYPE>Entrada</DISH_TYPE>
-        <DISH_IMAGE>pate.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml><item>
-        <DISH_ID>48</DISH_ID>
-        <DISH_NAME>Camarao</DISH_NAME>
-        <DISH_TYPE>Entrada</DISH_TYPE>
-        <DISH_IMAGE>camarao.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml><item>
-        <DISH_ID>49</DISH_ID>
-        <DISH_NAME>Pizza</DISH_NAME>
-        <DISH_TYPE>Fast-Food</DISH_TYPE>
-        <DISH_IMAGE>pizza.jpg</DISH_IMAGE>
-</item></xml>' ));
-insert into DISHES_XML
- values(
-xmltype(
-'<xml><item>
-        <DISH_ID>50</DISH_ID>
-        <DISH_NAME>Cachorro</DISH_NAME>
-        <DISH_TYPE>Fast-Food</DISH_TYPE>
-        <DISH_IMAGE>cachorro.jpg</DISH_IMAGE>
-</item></xml>' ));
-/
--- Procedimentos Armazenados
-/* VERSAO COM CONCATENACAO
-CREATE OR REPLACE PROCEDURE insert_xml_proc (
-dish_name IN VARCHAR2,
-dish_type IN VARCHAR2,
-dish_image IN VARCHAR2 ) AS
-BEGIN
-INSERT INTO DISHES_XML
- (XML_DATA) values(
-xmltype(
-'<xml>
-<item>
-    <DISH_ID>'||DISHES_XML
-_SEQ.NEXTVAL||'</DISH_ID>
-    <DISH_NAME>'||dish_name||'</DISH_NAME>
-    <DISH_TYPE>'||dish_type||'</DISH_TYPE>
-    <DISH_IMAGE>'||dish_image||'</DISH_IMAGE>
-</item></xml>' ));
-INSERT INTO DISHES VALUES(DISHES_SEQ.NEXTVAL,dish_name,dish_type,dish_image);
-END;*/
-
-create or replace PROCEDURE insert_xml_proc (
-dish_id IN NUMBER,
-dish_name IN VARCHAR,
-dish_type IN VARCHAR,
-dish_image IN VARCHAR ) AS
-BEGIN
-select COUNT(*)+1 into dish_id FROM DISHES_XML;
-INSERT INTO DISHES_XML
- values (
-xmlelement("xml",
-   xmlelement("item",
-      xmlelement("DISH_ID", dish_id),
-      xmlelement("DISH_NAME", dish_name),
-      xmlelement("DISH_TYPE", dish_type),
-      xmlelement("DISH_IMAGE", dish_image)
-   )
-)
-);
-End;
+commit;
