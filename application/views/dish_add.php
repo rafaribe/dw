@@ -24,8 +24,6 @@
           <h2>Insert your XML Data</h2><br><hr>
             <textarea type="text" class="form-control input-lg" id="xmldata" rows="5"name="xmldata"  placeholder="Insert your XML Here"></textarea><br>
             <button class="btn btn-danger"type="submit">Registar XML</button>
-
-            php
         </form>
 </div>
   <script src="http://localhost/dw/assets/scripts/dishes.js"></script>
