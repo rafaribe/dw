@@ -71,6 +71,13 @@ updateXML(po.OBJECT_VALUE,
 WHERE XMLExists('$po2/PurchaseOrder[OrderNumber="10000"]'PASSING
 OBJECT_VALUE AS "po2");
 /
+
+UPDATE DISHES_XML po SET po.OBJECT_VALUE =
+updateXML(po.OBJECT_VALUE,
+'/xml/item/DISH_NAME/text()', 'Cebolinha')
+WHERE XMLExists('$po2/xml/item[DISH_ID="1"]'PASSING
+OBJECT_VALUE AS "po2");
+/
 -- Uso de coluna virtual
 UPDATE ex1_purchase_order SET OBJECT_VALUE =
 updateXML(OBJECT_VALUE, '/PurchaseOrder/SpecialInstructions/text()',
@@ -152,7 +159,7 @@ create table purchaseorder of xmltype;
 INSERT INTO purchaseorder values(
 xmltype(
 '<?xml version="1.0"?>
-<PurchaseOrder 
+<PurchaseOrder
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xsi:noNamespaceSchemaLocation="http://www.oracle.com/xdb/po.xsd">
   <Reference>ADAMS-20011127121040988PST</Reference>
@@ -233,8 +240,8 @@ WHERE XMLCast(XMLQuery('$p/PurchaseOrder/User' PASSING OBJECT_VALUE
 AS "p"
 RETURNING CONTENT)AS VARCHAR2(30))LIKE 'A%';
 
--- Esta query devolve o valor do Reference, e faz um XMLCAST para Varchar2(30), se alterarmos o comprimento do varchar, ele apenas devolve o resultado com 
--- a string com o respectivo numero de caracteres. O conteúdo do Reference tem de começar por A, tendo quaisquers caracteres a seguir.
+-- Esta query devolve o valor do Reference, e faz um XMLCAST para Varchar2(30), se alterarmos o comprimento do varchar, ele apenas devolve o resultado com
+-- a string com o respectivo numero de caracteres. O conteï¿½do do Reference tem de comeï¿½ar por A, tendo quaisquers caracteres a seguir.
 
 ------- c)
 
@@ -246,7 +253,7 @@ OBJECT_VALUE AS "p"
 RETURNING CONTENT)
 AS VARCHAR2(30)) = e.email AND e.employee_id = 100;
 
--- Esta tabela faz a relação entre a tabela XML purchaseorder e a tabela relacional employees, comparando o elemento XML '$p/PurchaseOrder/User'
+-- Esta tabela faz a relaï¿½ï¿½o entre a tabela XML purchaseorder e a tabela relacional employees, comparando o elemento XML '$p/PurchaseOrder/User'
 -- e a tabela relacional employees.
 
 --2.8
@@ -258,4 +265,4 @@ PASSING p.OBJECT_VALUE) des
 WHERE XMLExists('$p/PurchaseOrder[Reference="ADAMS-20011127121040988PST"]'
 PASSING OBJECT_VALUE AS "p");
 
--- A funcionalidade de XML Table é de mapear a 
+-- A funcionalidade de XML Table ï¿½ de mapear a

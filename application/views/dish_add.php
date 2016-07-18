@@ -22,7 +22,7 @@
 <div class="col-md-4 col-md-offset-1">
     <form name="dish_add2" method="post" action="<?php echo site_url().'Dish/dish_add_xml_direct'; ?>" enctype="text/multipart/form-data">
           <h2>Insert your XML Data</h2><br><hr>
-            <textarea type="text" class="form-control input-lg" id="xmldata" rows="5"name="xmldata"  placeholder="Insert your XML Here"></textarea><br>
+            <textarea type="text" class="form-control input-lg" id="xmldata" rows="15"name="xmldata"  placeholder="Insert your XML Here"></textarea><br>
             <button class="btn btn-danger"type="submit">Registar XML</button>
         </form>
 </div>

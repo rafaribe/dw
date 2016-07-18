@@ -1354,9 +1354,9 @@ CREATE OR REPLACE VIEW DISHES_XML_VIEW AS
            '$p/xml/item' PASSING pur.OBJECT_VALUE as "p"
            COLUMNS
           "DISH_ID"    INT  PATH 'DISH_ID',
-           "DISH_NAME"    VARCHAR2(200) PATH 'DISH_NAME',
-           "DISH_TYPE"    VARCHAR2(200) PATH 'DISH_TYPE',
-           "DISH_IMAGE" VARCHAR2(4000) PATH 'DISH_IMAGE') po
+          "DISH_NAME"    VARCHAR2(200) PATH 'DISH_NAME',
+          "DISH_TYPE"    VARCHAR2(200) PATH 'DISH_TYPE',
+          "DISH_IMAGE" VARCHAR2(4000) PATH 'DISH_IMAGE') po
            ORDER BY DISH_ID;
 /
 
@@ -1868,8 +1868,8 @@ dish_type IN VARCHAR,
 dish_image IN VARCHAR ) AS
 BEGIN
 INSERT INTO DISHES_XML values (
-xmlelement("xml", 
-   xmlelement("item", 
+xmlelement("xml",
+   xmlelement("item",
       xmlelement("DISH_ID", (SELECT COUNT(*)+1 FROM DISHES_XML),
       xmlelement("DISH_NAME", dish_name),
       xmlelement("DISH_TYPE", dish_type),

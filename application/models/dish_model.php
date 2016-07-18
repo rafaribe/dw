@@ -89,7 +89,7 @@ class Dish_Model extends CI_Model
 
     public function dish_add_xml($data)
     {
-        $conn = oci_connect('trabalho', '1234', '192.168.1.166:1521/orcl');
+        $conn = oci_connect('trabalho', '1234', '192.168.242.46/dw/:1521/orcl');
         $query = " begin INSERT_XML_PROC('".$data['DISH_NAME']."','".$data['DISH_TYPE']."','".$data['DISH_IMAGE']."');END;";
         $exec = OCIPARSE($conn, $query);
         OCIEXECUTE($exec);
